@@ -1,19 +1,24 @@
 <template>
   <div id="app">
-    <div>
-      <router-link to="/jayfai">Vers la page de Jay Fai</router-link>
-    </div>
-    <div>
-      <router-view></router-view>
-    </div>
+    <Menu class="menu"></Menu>
   </div>
 </template>
 
 <script>
+import Menu from "./components/Utils/TheMenu/Menu";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    Menu,
+  },
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+</style>
