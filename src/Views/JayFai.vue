@@ -1,4 +1,6 @@
-<template> </template>
+<template>
+  <p>test Jay Fai</p>
+</template>
 
 <script>
 export default {};
