@@ -31,7 +31,7 @@
 import AboutBrands from "../Utils/TheAbout/AboutBrands";
 export default {
   components: {
-    AboutBrands,
+    AboutBrands
   },
   data() {
     return {};
@@ -39,8 +39,8 @@ export default {
   methods: {
     slideAbout() {
       document.querySelector(".about__brands").classList.toggle("open");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -61,10 +61,11 @@ export default {
   }
   &__btn {
     font-family: poppins-semiBold;
+    font-size: 14px;
     cursor: pointer;
     position: absolute;
-    top: 1rem;
-    right: 2rem;
+    top: 1.5rem;
+    right: 1.5rem;
   }
 }
 .disclaimer {
