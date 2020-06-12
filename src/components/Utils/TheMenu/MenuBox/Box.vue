@@ -1,22 +1,32 @@
 <template>
-  <div class="greenBox">
-    <p>
+  <div v-on:click.stop="OpenList" id="GreenBox" class="greenBox">
+    <p class="letters">
       ME
       <br />
-      NU
+      NU  
     </p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+};
 </script>
 
 <style lang="scss" scoped>
 .greenBox {
-  width: 5rem;
-  height: 5rem;
+  width: 55px;
+  height: 55px;
   padding: 0.5rem;
-  background: green;
+  background: #6ad051;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
 }
+
 </style>
