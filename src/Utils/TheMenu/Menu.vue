@@ -1,42 +1,57 @@
 <template>
-  <div id="app" @click.stop="show = !show">
-    <box-menu></box-menu>
-    <transition>
-      <menu-nav v-if="show"></menu-nav>
-    </transition>
+  <div class="menu">
+    <div @click="slideNav" class="menu__button">
+      <p>
+        ME
+        <br />
+        NU
+      </p>
+    </div>
+    <menu-nav class="menu__nav"></menu-nav>
   </div>
 </template>
 
 <script>
-import BoxMenu from "./MenuBox/Box";
 import MenuNav from "./MenuBox/MenuNav";
 
 export default {
   components: {
-    BoxMenu,
     MenuNav,
   },
-  name: "app",
-  data() {
-    return {
-      show: false,
-    };
+  methods: {
+    slideNav() {
+      document.querySelector(".menu__nav").classList.toggle("open");
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.v-enter {
-  opacity: 0;
-  transform: translateX(20px);
+@import "@/assets/global.scss";
+.menu {
+  position: relative;
+  &__button {
+    background: $green;
+    padding: 1rem;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    @include flex(null, center, center);
+    cursor: pointer;
+  }
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: 1s;
+  }
 }
-
-.v-enter-to {
-  opacity: 1;
-}
-
-.v-enter-active {
-  transition: ease-in-out 300ms;
+.menu__nav.open {
+  transform: translateX(0);
 }
 </style>
-m

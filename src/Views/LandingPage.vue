@@ -72,6 +72,7 @@ export default {
   padding: 2rem 3rem;
   position: absolute;
   bottom: 0;
+  z-index: -1;
   font-family: poppins-regular;
   font-size: 10px;
   @include small {
