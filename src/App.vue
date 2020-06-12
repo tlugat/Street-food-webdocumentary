@@ -22,9 +22,11 @@ export default {
   height: 100%;
   width: 100%;
   font-family: calibri;
+  overflow: hidden;
 }
 .view {
   height: 100vh;
+  overflow: hidden;
 }
 </style>
 
