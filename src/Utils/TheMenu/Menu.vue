@@ -8,6 +8,7 @@
       </p>
     </div>
     <menu-nav class="menu__nav"></menu-nav>
+    <menu-nav class="menu__nav menu__nav--chap1"></menu-nav>
   </div>
 </template>
 
@@ -38,6 +39,7 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: 10;
     color: white;
     @include flex(null, center, center);
     cursor: pointer;
@@ -46,7 +48,6 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: -1;
     transform: translateX(100%);
     transition: 1s;
   }

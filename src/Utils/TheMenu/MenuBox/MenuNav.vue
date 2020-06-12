@@ -21,16 +21,40 @@
       />
     </svg>
     <ul class="menu__list">
-      <li><a href="#">Chapitre 1</a></li>
-      <li><a href="#">Chapitre 2</a></li>
+      <li v-for="(chapitre, index) in summary.chapitres" :key="index">
+        <a>{{ chapitre }}</a>
+      </li>
     </ul>
+    <!-- <ul v-if="test == true" class="menu__list">
+      <li v-for="(chapitre, index) in summary.chapitres1" :key="index">
+        <a>{{ chapitre }}</a>
+      </li>
+    </ul> -->
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      test: true,
+      summary: {
+        chapitreLink: ["test", "test2"],
+        chapitres: ["Chapitre 1", "Chapitre 2"],
+        chapitre1: [
+          "Les origines",
+          "La street food c'est quoi",
+          "La recette d'un succès",
+          "Jay Fai",
+        ],
+        Chapitre2: [
+          "Une street-food plus chic",
+          "Le fine Casual",
+          "Les grands chefs s'en mêlent",
+          "L'apogée de la cuisine de rue",
+        ],
+      },
+    };
   },
 };
 </script>
