@@ -63,6 +63,7 @@ export default {};
   position: relative;
   background: #fff;
   // font-family: poppins-regular;
+
   @include large {
     display: flex;
   }
@@ -72,9 +73,11 @@ export default {};
       padding: 2rem;
     }
   }
+
   &__titleWrapper {
     position: relative;
     margin-bottom: 1rem;
+    line-height: 16.5px;
   }
   &__square {
     height: 1rem;
@@ -85,9 +88,19 @@ export default {};
     left: 0;
     z-index: -1;
   }
+  &__title {
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 14px;
+  }
 }
 .about__section--1 {
   margin-bottom: 2rem;
+  p {
+    font-size: 11px;
+    line-height: 16.5px;
+    width: 240px;
+  }
   @media (min-width: 1024px) {
     width: 40%;
   }
@@ -107,7 +120,8 @@ export default {};
     justify-content: center;
   }
   &__part {
-    margin-right: 1.5rem;
+    margin-right: 3rem;
+    @include flex(column, null, flex-start);
     @include small {
       display: flex;
       justify-content: space-between;
@@ -116,12 +130,16 @@ export default {};
     }
   }
   &__item {
-    @include flex(column, null, center);
+    @include flex(column, null, flex-start);
     margin-bottom: 1rem;
+
+    p {
+      font-size: 13px;
+    }
   }
 }
 .expertise {
-  font-size: 12px;
+  font-size: 11px;
 }
 .trait {
   height: 8px;
