@@ -1,5 +1,5 @@
 <template>
-  <div v-on:click.stop="OpenList" id="GreenBox" class="greenBox">
+  <div  class="greenBox">
     <p class="letters">
       ME
       <br />
@@ -27,6 +27,13 @@ export default {
   bottom: 0;
   right: 0;
   z-index: 3;
+}
+
+.letters{
+  align-items: center;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 </style>
