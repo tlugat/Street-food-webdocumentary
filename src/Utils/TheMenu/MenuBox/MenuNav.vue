@@ -2,6 +2,21 @@
   <div class="menu">
     <h3 class="menu__title">STREET FOOD</h3>
     <svg
+      v-if="!displayChapters"
+      @click="back"
+      class="menu__retour"
+      width="14"
+      height="12"
+      viewBox="0 0 14 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14 5.14286V6.85714H3.5L7 10.2857L6.125 12L0 6L6.125 0L7 1.71429L3.5 5.14286H14Z"
+        fill="white"
+      />
+    </svg>
+    <svg
       class="menu__bowl"
       width="177"
       height="177"
@@ -20,16 +35,20 @@
         fill-opacity="0.4"
       />
     </svg>
-    <ul class="menu__list">
-      <li v-for="(chapitre, index) in summary.chapitres" :key="index">
-        <a>{{ chapitre }}</a>
+    <ul v-if="displayChapters" class="menu__list">
+      <li
+        @click="selectChapter(index)"
+        v-for="(chapter, index) in summary.chapters"
+        :key="index"
+      >
+        <a>{{ chapter }}</a>
       </li>
     </ul>
-    <!-- <ul v-if="test == true" class="menu__list">
-      <li v-for="(chapitre, index) in summary.chapitres1" :key="index">
-        <a>{{ chapitre }}</a>
+    <ul v-if="!displayChapters" class="menu__list">
+      <li v-for="(chapter, index) in summary.testChapters[test]" :key="index">
+        <a>{{ chapter }}</a>
       </li>
-    </ul> -->
+    </ul>
   </div>
 </template>
 
@@ -37,24 +56,37 @@
 export default {
   data() {
     return {
-      test: true,
+      displayChapters: true,
+      test: null,
       summary: {
-        chapitreLink: ["test", "test2"],
-        chapitres: ["Chapitre 1", "Chapitre 2"],
-        chapitre1: [
-          "Les origines",
-          "La street food c'est quoi",
-          "La recette d'un succès",
-          "Jay Fai",
-        ],
-        Chapitre2: [
-          "Une street-food plus chic",
-          "Le fine Casual",
-          "Les grands chefs s'en mêlent",
-          "L'apogée de la cuisine de rue",
+        chapterLink: ["test", "test2"],
+        chapters: ["Chapitre 1", "Chapitre 2"],
+        testChapters: [
+          [
+            "Les origines",
+            "La street food c'est quoi",
+            "La recette d'un succès",
+            "Jay Fai",
+          ],
+          [
+            "Une street-food plus chic",
+            "Le fine Casual",
+            "Les grands chefs s'en mêlent",
+            "L'apogée de la cuisine de rue",
+          ],
         ],
       },
     };
+  },
+  computed: {},
+  methods: {
+    selectChapter(index) {
+      this.test = index;
+      this.displayChapters = false;
+    },
+    back() {
+      this.displayChapters = true;
+    },
   },
 };
 </script>
@@ -90,6 +122,12 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  &__retour {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.1rem 0 0 1rem;
   }
 }
 </style>

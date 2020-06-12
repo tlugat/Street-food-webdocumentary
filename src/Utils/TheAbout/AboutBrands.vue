@@ -61,6 +61,7 @@ export default {};
 .about {
   padding: 2rem 1rem;
   position: relative;
+  background: #fff;
   // font-family: poppins-regular;
   @include large {
     display: flex;
