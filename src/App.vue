@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <landing-page class="view"></landing-page>
+    <Menu></Menu>
   </div>
 </template>
 
 <script>
 import LandingPage from "./Views/LandingPage";
+import Menu from "./Utils/TheMenu/Menu";
 export default {
   name: "App",
   components: {
     LandingPage,
+    Menu,
   },
 };
 </script>
