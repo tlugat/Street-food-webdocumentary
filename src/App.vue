@@ -1,7 +1,9 @@
 <template>
   <div id="app">
+    <!-- <router-link class="test" to="/chefs">chefs component</router-link>
+    <router-view class="view"></router-view> -->
     <landing-page class="view"></landing-page>
-    <Menu></Menu>
+    <Menu class="menu"></Menu>
   </div>
 </template>
 
@@ -19,14 +21,21 @@ export default {
 
 <style lang="scss" scoped>
 #app {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   font-family: calibri;
   overflow: hidden;
+  position: relative;
 }
 .view {
   height: 100vh;
+  width: 100%;
   overflow: hidden;
+}
+.menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 </style>
 
