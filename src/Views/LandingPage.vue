@@ -36,7 +36,7 @@
 import AboutBrands from "../Utils/TheAbout/AboutBrands";
 export default {
   components: {
-    AboutBrands
+    AboutBrands,
   },
   data() {
     return {};
@@ -44,8 +44,8 @@ export default {
   methods: {
     slideAbout() {
       document.querySelector(".about__brands").classList.toggle("open");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -53,6 +53,7 @@ export default {
 @import "@/assets/global.scss";
 .landing {
   width: 100%;
+  height: 100vh;
   background: url("../assets/img/landing-page/background-landing-small.png");
 }
 .menu {
@@ -63,7 +64,7 @@ export default {
 .about {
   z-index: 10;
   &__brands {
-    transform: translateY(-100%);
+    transform: translateY(-101%);
     transition: 1s;
   }
   &__brands.open {
@@ -94,7 +95,6 @@ export default {
   &__subtitle {
     font-size: 16px;
     width: 15rem;
-
   }
 }
 .disclaimer {

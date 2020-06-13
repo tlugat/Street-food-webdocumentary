@@ -1,8 +1,21 @@
 <template>
   <div id="app">
-    <!-- <router-link class="test" to="/chefs">chefs component</router-link>-->
-    <!-- <router-view class="view"></router-view>-->
-    <landing-page class="view"></landing-page> 
+    <ul @click="displayComponent">
+      <li>
+        <router-link class="test" to="/chefs">chefs component</router-link>
+      </li>
+      <li>
+        <router-link class="test" to="/intro-chapitre"
+          >Intro Chapitre</router-link
+        >
+      </li>
+    </ul>
+    <router-view class="view"></router-view>
+    <landing-page
+      v-if="!viewComponent"
+      style="height: 100vh"
+      class="view"
+    ></landing-page>
     <Menu class="menu"></Menu>
   </div>
 </template>
@@ -13,10 +26,19 @@ import Menu from "./Utils/TheMenu/Menu";
 export default {
   name: "App",
   components: {
-     LandingPage,
+    LandingPage,
     Menu,
   },
-
+  data() {
+    return {
+      viewComponent: false,
+    };
+  },
+  methods: {
+    displayComponent() {
+      this.viewComponent = true;
+    },
+  },
 };
 </script>
 
