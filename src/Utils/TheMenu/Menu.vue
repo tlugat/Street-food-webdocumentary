@@ -3,8 +3,7 @@
     <div @click="slideNav" class="menu__button">
       <p>
         ME
-        <br />
-        NU
+        <br />NU
       </p>
     </div>
     <menu-nav class="menu__nav"></menu-nav>
@@ -17,13 +16,13 @@ import MenuNav from "./MenuBox/MenuNav";
 
 export default {
   components: {
-    MenuNav,
+    MenuNav
   },
   methods: {
     slideNav() {
       document.querySelector(".menu__nav").classList.toggle("open");
-    },
-  },
+    }
+  }
 };
 </script>
 
