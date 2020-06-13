@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <h1>test</h1>
@@ -29,3 +30,4 @@ import ChefCTA from "./ChefsComponents/ChefCTA";
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
 </style>
+

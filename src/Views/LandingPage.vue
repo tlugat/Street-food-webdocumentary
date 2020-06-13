@@ -1,7 +1,11 @@
 <template>
-  <div>
+  <div class="landing">
     <about-brands class="about__brands"></about-brands>
     <p class="about__btn" @click="slideAbout">ABOUT</p>
+    <div class="globalTitles">
+      <p class="globalTitles__subtitle">D'un mode de vie à une tendance</p>
+      <h1 class="globalTitles__title">STREET FOOD</h1>
+    </div>
     <div class="disclaimer">
       <div class="disclaimer__textWrapper">
         <svg
@@ -16,6 +20,7 @@
             fill="#ECECEC"
           />
         </svg>
+
         <p class="disclaimer__text">
           "Ce site a été réalisé à des fins pédagogiques dans le cadre du cursus
           Bachelor de l’école HETIC. Les contenus présentés n'ont pas fait
@@ -46,12 +51,17 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
+.landing {
+  width: 100%;
+  background: url("../assets/img/landing-page/background-landing-small.png");
+}
 .menu {
   position: absolute;
   bottom: 0;
   right: 0;
 }
 .about {
+  z-index: 10;
   &__brands {
     transform: translateY(-100%);
     transition: 1s;
@@ -64,18 +74,37 @@ export default {
     font-size: 14px;
     cursor: pointer;
     position: absolute;
-    top: 1.5rem;
+
+    top: 1rem;
     right: 1.5rem;
+    z-index: 10;
+    color: #fff;
+  }
+}
+.globalTitles {
+  @include flex(column, center, center);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  &__title {
+    font-size: 64px;
+  }
+  &__subtitle {
+    font-size: 16px;
+    width: 15rem;
+
   }
 }
 .disclaimer {
   width: 10rem;
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
   position: absolute;
   bottom: 0;
-  z-index: -1;
-  font-family: poppins-regular;
-  font-size: 10px;
+  color: #fff;
+  font-size: 11px;
+  line-height: 150%;
   @include small {
     width: 20rem;
   }

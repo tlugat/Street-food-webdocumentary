@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    <router-link class="test" to="/chefs">chefs component</router-link>
-    <router-view class="view"></router-view>
-    <!-- <landing-page class="view"></landing-page> -->
+    <!-- <router-link class="test" to="/chefs">chefs component</router-link>-->
+    <!-- <router-view class="view"></router-view>-->
+    <landing-page class="view"></landing-page> 
     <Menu class="menu"></Menu>
   </div>
 </template>
 
 <script>
-// import LandingPage from "./Views/LandingPage";
+import LandingPage from "./Views/LandingPage";
 import Menu from "./Utils/TheMenu/Menu";
 export default {
   name: "App",
   components: {
-    // LandingPage,
-    Menu
-  }
+     LandingPage,
+    Menu,
+  },
+
 };
 </script>
 
