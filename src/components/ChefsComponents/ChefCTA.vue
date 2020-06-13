@@ -1,4 +1,3 @@
-
 <template>
   <div class="cardChef">
     <div class="chef">
@@ -18,7 +17,14 @@
           stroke="#F7B200"
           stroke-width="5"
         />
-        <line x1="2.18557e-07" y1="86.5" x2="90.4599" y2="86.5" stroke="#F7B200" stroke-width="5" />
+        <line
+          x1="2.18557e-07"
+          y1="86.5"
+          x2="90.4599"
+          y2="86.5"
+          stroke="#F7B200"
+          stroke-width="5"
+        />
       </svg>
       <svg
         class="coinJ-left"
@@ -36,10 +42,17 @@
           stroke="#F7B200"
           stroke-width="5"
         />
-        <line x1="2.18557e-07" y1="86.5" x2="90.4599" y2="86.5" stroke="#F7B200" stroke-width="5" />
+        <line
+          x1="2.18557e-07"
+          y1="86.5"
+          x2="90.4599"
+          y2="86.5"
+          stroke="#F7B200"
+          stroke-width="5"
+        />
       </svg>
       <div class="chef__face">
-        <h2>{{ title }}</h2>
+        <h2>{{ chef }}</h2>
         <img :src="url" alt />
       </div>
     </div>
@@ -48,11 +61,10 @@
 
 <script>
 export default {
-  name: "Chef",
   props: {
-    title: String,
-    url: String
-  }
+    chef: String,
+    url: String,
+  },
 };
 </script>
 
