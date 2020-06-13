@@ -103,7 +103,6 @@ export default {
   position: absolute;
   bottom: 0;
   color: #fff;
-  font-family: poppins-regular;
   font-size: 11px;
   line-height: 150%;
   @include small {
