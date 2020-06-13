@@ -104,9 +104,13 @@ export default {
   &__list {
     li {
       margin-bottom: 1rem;
+      cursor: pointer;
       a {
         text-decoration: none;
         color: white;
+        &:hover {
+          color: $yellow;
+        }
       }
     }
   }
@@ -128,6 +132,7 @@ export default {
     top: 0;
     left: 0;
     padding: 1.1rem 0 0 1rem;
+    cursor: pointer;
   }
 }
 </style>
