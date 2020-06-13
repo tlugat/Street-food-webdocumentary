@@ -1,39 +1,51 @@
 <template>
   <div id="app">
-    <router-link class="test" to="/chefs">chefs component</router-link>
-    <router-view class="view"></router-view>
-    <!-- <landing-page class="view"></landing-page> -->
+    <!-- <router-link class="test" to="/chefs">chefs component</router-link>-->
+    <!-- <router-view class="view"></router-view>-->
+    <landing-page class="view"></landing-page> 
     <Menu class="menu"></Menu>
   </div>
 </template>
 
 <script>
-// import LandingPage from "./Views/LandingPage";
+import LandingPage from "./Views/LandingPage";
 import Menu from "./Utils/TheMenu/Menu";
 export default {
   name: "App",
   components: {
-    // LandingPage,
+     LandingPage,
     Menu,
   },
+
 };
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/global.scss";
 #app {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   font-family: calibri;
   overflow: hidden;
   position: relative;
+
+  @include medium {
+    height: 100vh;
+  }
 }
 .view {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
+  @include medium {
+    height: 100vh;
+  }
 }
 .menu {
   position: absolute;
+  @media (max-width: 767px) {
+    position: fixed;
+  }
   bottom: 0;
   right: 0;
 }
