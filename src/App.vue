@@ -9,6 +9,11 @@
           >Intro Chapitre</router-link
         >
       </li>
+        <li>
+        <router-link class="test" to="/recettes"
+          >Recettes</router-link
+        >
+      </li>
     </ul>
     <router-view class="view"></router-view>
     <landing-page
