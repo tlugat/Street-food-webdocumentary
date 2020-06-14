@@ -1,7 +1,46 @@
-<template> </template>
+<template> 
+<div class="JayFaiCard">
+
+<div class="JayFaiCard__list">
+    
+    <div class="square">
+
+    </div>
+    <div class="title">
+        <h3></h3>
+    </div>
+    <p></p>
+</div>
+<div class="JayFaiCard__text">
+<img src="" alt="">
+<article></article>
+<p></p>
+<svg width="18"
+     height="18" 
+     viewBox="0 0 18 18" 
+     fill="none" 
+     xmlns="http://www.w3.org/2000/svg">
+
+<path d="M8.99998 7.11465L15.6 0.514648L17.4853 2.39998L10.8853 8.99998L17.4853 15.6L15.6 17.4853L8.99998 10.8853L2.39998 17.4853L0.514648 15.6L7.11465 8.99998L0.514648 2.39998L2.39998 0.514648L8.99998 7.11465Z" 
+      fill="#231F20"/>
+
+</svg>
+</div>
+</div>
+</template>
 
 <script>
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "@/assets/global.scss";
+.JayFaiCard {
+    &__list {
+        .square {
+            width: 26px;
+            border: 1px solid $green;
+        }
+    }
+}
+</style>
