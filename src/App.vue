@@ -17,7 +17,7 @@
     <transition name="slide">
       <router-view v-if="!viewLanding" class="view"></router-view>
     </transition>
-    <transition name="slide">
+    <transition name="slide" mode="out-in">
       <landing-page
         v-if="viewLanding"
         style="height: 100vh"

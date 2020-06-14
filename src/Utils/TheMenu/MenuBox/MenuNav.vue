@@ -76,6 +76,7 @@ export default {
                 text2: `On retrouve aussi en Chine ancienne, des traces de nourriture de rue probablement destinée aux populations pauvres. En Amérique du Nord pendant la période coloniale, des tripes, des huîtres ou encore des épis de maïs grillés étaient vendus à même la rue. Les rues des centres urbains deviennent finalement des lieux de restauration rapide.`,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721761134318977074/fish.png`,
                 title: `Les origines des cantines de rue`,
+                key: 5,
               },
             },
             {
@@ -85,6 +86,7 @@ export default {
                 text2: `Vendus depuis un :`,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721760690565808180/today.png`,
                 title: `Mais aujourd'hui la street food c'est quoi ?`,
+                key: 4,
               },
             },
             {
@@ -94,6 +96,7 @@ export default {
                 text2: ` La streetfood répond à ce besoin d’exotisme et d’authenticité culinaire et devient progressivement multiculturelle. Mexicains, américains, africains, indiens et bien sûr asiatiques, ces snacks internationaux sont proposés par des restaurateurs ou des voyageurs inspirés venus offrir leurs savoirs culinaires. `,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721760646554976316/recettesucces.png`,
                 title: `La recette d'un succès`,
+                key: 3,
               },
             },
             "/jay-fai",
@@ -106,6 +109,7 @@ export default {
                 text2: `Au contraire, la nouvelle street food mise sur des produits de qualité cuisinés avec goût et originalité comme on a pu le voir avec Jai Fay.Une tendance qui se confirme notamment du côté de la burger-mania. Finis, les burgers au steak rabougri, noyés sous les sauces et agrémentés de deux rondelles de tomate insipides…`,
                 title: `Une street food plus chic`,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721782756878712863/burger.png`,
+                key: 2,
               },
             },
             {
@@ -116,6 +120,7 @@ export default {
                 text3: `Si la cuisine de rue gagne en qualité et en réputation grâce à cette tendance, ce n’est que le début puisque les grands chefs s’en mêlent désormais.`,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721760299316805672/finecasual.png`,
                 title: `La tendance du "fine casual"`,
+                key: 1,
               },
             },
             {

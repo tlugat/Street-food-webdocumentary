@@ -1,5 +1,5 @@
 <template>
-  <div class="halfPage">
+  <div :key="this.$route.params.key" class="halfPage">
     <Title :title="this.$route.params.title" class="halfPage__title"></Title>
     <img class="halfPage__img" :src="img" />
     <div class="textContainer">
