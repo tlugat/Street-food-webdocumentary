@@ -71,26 +71,46 @@ export default {
           [
             {
               name: "origines",
-              params: { text1: "premier texte", text2: "second texte" },
+              params: {
+                text1: `Une coutume égyptienne, tradition du port d’Alexandrie , était de frire le poisson pour le vendre dans la rue. Cette coutume s’est répandue en Grèce puis à envahi le monde Romain.`,
+                text2: `On retrouve aussi en Chine ancienne, des traces de nourriture de rue probablement destinée aux populations pauvres. En Amérique du Nord pendant la période coloniale, des tripes, des huîtres ou encore des épis de maïs grillés étaient vendus à même la rue. Les rues des centres urbains deviennent finalement des lieux de restauration rapide.`,
+                img: `https://cdn.discordapp.com/attachments/697362929946722358/721761134318977074/fish.png`,
+              },
             },
             {
               name: "today",
-              params: { text1: "premier texte", text2: "second texte" },
+              params: {
+                text1: `Des plats sont préparés dans les rues de presque toutes les villes du monde.`,
+                text2: `Vendus depuis un :`,
+                img: `https://cdn.discordapp.com/attachments/697362929946722358/721760690565808180/today.png`,
+              },
             },
             {
               name: "recette",
-              params: { text1: "premier texte", text2: "second texte" },
+              params: {
+                text1: `A l’heure de la mondialisation et de la génération Y qui s’épanouit dans le voyage et les expériences insolites, la demande de plats internationaux se fait de plus en plus forte. La streetfood répond à ce besoin d’exotisme et d’authenticité culinaire et devient progressivement multiculturelle. Mexicains, américains, africains, indiens et bien sûr asiatiques, ces snacks internationaux sont proposés par des restaurateurs ou des voyageurs inspirés venus offrir leurs savoirs culinaires. `,
+                text2: ` La streetfood répond à ce besoin d’exotisme et d’authenticité culinaire et devient progressivement multiculturelle. Mexicains, américains, africains, indiens et bien sûr asiatiques, ces snacks internationaux sont proposés par des restaurateurs ou des voyageurs inspirés venus offrir leurs savoirs culinaires. `,
+                img: `https://cdn.discordapp.com/attachments/697362929946722358/721760646554976316/recettesucces.png`,
+              },
             },
             "/jay-fai",
           ],
           [
             {
               name: "chic",
-              params: { text1: "premier texte", text2: "second texte" },
+              params: {
+                text1: `Pendant des années, la street food était attachée à de grandes enseignes de fast food, aujourd’hui estampillées « malbouffe »… Comme le géant américain Mc Donald, symbole de la mondialisation.`,
+                text2: `Au contraire, la nouvelle street food mise sur des produits de qualité cuisinés avec goût et originalité comme on a pu le voir avec Jai Fay.Une tendance qui se confirme notamment du côté de la burger-mania. Finis, les burgers au steak rabougri, noyés sous les sauces et agrémentés de deux rondelles de tomate insipides…`,
+              },
             },
             {
               name: "fine-casual",
-              params: { text1: "premier texte", text2: "second texte" },
+              params: {
+                text1: `Le “fine casual” est un concept de street food haut de gamme. En allant de la conception de plats de bonne qualité jusqu’à la décoration soignée et branchée du restaurant, le “fine casual” s'identifie comme un fast food premium. Les produits frais et locaux sont souvent mis à l’honneur. `,
+                text2: `Tout droit arrivée des Etats-Unis, cette tendance américaine est déjà bien installée en France. Les Français sont très réceptifs à ce concept puisqu’il déculpabilise les consommateurs en proposant des produits sains, dans un espace confortable et à un coût inférieur à l’offre de restauration bistronomique.`,
+                text3: `Si la cusine de rue gagne en qualité et en réputation grâce à cette tendance, ce n’est que le début puisque les grands chefs s’en mêlent désormais.`,
+                img: `https://cdn.discordapp.com/attachments/697362929946722358/721760299316805672/finecasual.png`,
+              },
             },
             "/chefs",
             {
