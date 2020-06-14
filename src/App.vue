@@ -15,14 +15,20 @@
     </ul> -->
     <!-- <router-link class="test" to="/chapitre1">chapitre 1</router-link> -->
     <transition name="slide">
-      <router-view class="view"></router-view>
+      <router-view v-if="!viewLanding" class="view"></router-view>
     </transition>
-    <landing-page
-      v-if="viewLanding"
-      style="height: 100vh"
-      class="view"
-    ></landing-page>
-    <Menu @display-landing="displayLanding" class="menu"></Menu>
+    <transition name="slide">
+      <landing-page
+        v-if="viewLanding"
+        style="height: 100vh"
+        class="view"
+      ></landing-page>
+    </transition>
+    <Menu
+      @back-home="viewLanding = true"
+      @display-landing="displayLanding"
+      class="menu"
+    ></Menu>
   </div>
 </template>
 
