@@ -1,14 +1,18 @@
 <template>
   <div>
     <div class="title-wrapper">
-      <h2>Les origines des <br />cantines de rue</h2>
+      <h2>{{ title }}</h2>
       <div class="square"></div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    title: String,
+  },
+};
 </script>
 
 <style lang="scss" scoped>

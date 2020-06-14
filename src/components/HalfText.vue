@@ -1,6 +1,6 @@
 <template>
   <div class="halfPage">
-    <Title class="halfPage__title"></Title>
+    <Title :title="this.$route.params.title" class="halfPage__title"></Title>
     <img class="halfPage__img" :src="img" />
     <div class="textContainer">
       <p v-if="text1">{{ text1 }}</p>
@@ -14,16 +14,14 @@
 import Title from "../Utils/TheTitle/Title";
 
 export default {
+  props: {
+    text1: String,
+    text2: String,
+    text3: String,
+    img: String,
+  },
   components: {
     Title,
-  },
-  data() {
-    return {
-      text1: this.$route.params.text1,
-      text2: this.$route.params.text2,
-      text3: this.$route.params.text3,
-      img: this.$route.params.img,
-    };
   },
 };
 </script>

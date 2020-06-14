@@ -15,6 +15,7 @@ export default new VueRouter({
   routes: [
     {
       path: "/chefs",
+      name: "chefs",
       component: Chefs,
     },
     {
@@ -25,31 +26,37 @@ export default new VueRouter({
       path: "/origines",
       name: "origines",
       component: HalfText,
+      props: true,
     },
     {
       path: "/today",
       name: "today",
       component: HalfText,
+      props: true,
     },
     {
       path: "/recette",
       name: "recette",
       component: HalfText,
+      props: true,
     },
     {
       path: "/chic",
       name: "chic",
       component: HalfText,
+      props: true,
     },
     {
       path: "/conclusion",
       name: "conclusion",
       component: FullText,
+      props: true,
     },
     {
       path: "/fine-casual",
       name: "fine-casual",
       component: HalfText,
+      props: true,
     },
     {
       path: "/chapitre1",
