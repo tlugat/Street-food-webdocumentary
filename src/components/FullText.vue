@@ -53,9 +53,9 @@
           />
         </svg>
         <p>
-          {{ text.content1 }}
+          {{ text1 }}
         </p>
-        <p>{{ text.content2 }}.</p>
+        <p v-if="text2">{{ text2 }}.</p>
       </div>
     </div>
   </div>
@@ -63,9 +63,13 @@
 
 <script>
 export default {
-  props: {
-    text: Object,
+  data() {
+    return {
+      text1: this.$route.params.text1,
+      text2: this.$route.params.text2,
+    };
   },
+  methods: {},
 };
 </script>
 

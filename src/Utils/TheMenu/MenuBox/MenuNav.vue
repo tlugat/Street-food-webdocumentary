@@ -45,7 +45,11 @@
       </li>
     </ul>
     <ul v-if="!displayChapters" class="menu__list">
-      <li v-for="(chapter, index) in summary.testChapters[test]" :key="index">
+      <li
+        @click="displayLanding"
+        v-for="(chapter, index) in summary.testChapters[test]"
+        :key="index"
+      >
         <router-link :to="summary.routes[test][index]">{{
           chapter
         }}</router-link>
@@ -64,8 +68,38 @@ export default {
         chapterLink: ["test", "test2"],
         chapters: ["Chapitre 1", "Chapitre 2"],
         routes: [
-          ["/half-text", "/half-text", "/half-text", "/jay-fai"],
-          ["/half-text", "/half-text", "/chefs", "/full-text"],
+          [
+            {
+              name: "origines",
+              params: { text1: "premier texte", text2: "second texte" },
+            },
+            {
+              name: "today",
+              params: { text1: "premier texte", text2: "second texte" },
+            },
+            {
+              name: "recette",
+              params: { text1: "premier texte", text2: "second texte" },
+            },
+            "/jay-fai",
+          ],
+          [
+            {
+              name: "chic",
+              params: { text1: "premier texte", text2: "second texte" },
+            },
+            {
+              name: "fine-casual",
+              params: { text1: "premier texte", text2: "second texte" },
+            },
+            "/chefs",
+            {
+              name: "conclusion",
+              params: {
+                text1: `Bilan ? L’ancienne junk food répond désormais aux codes éthiques du bien manger. Le veau de lait tourne sur les broches des kebabs de luxe, et la cuisine devient spectacle. Là, on assemble les ingrédients sous les yeux des clients, ici on pétrit la pâte à noodle à grand renfort d’huile de coude. Quitte à faire grimper la note ! Comptez entre 13€ et 18€ pour cette nouvelle cuisine de luxe. Embourgeoisement de la street food, ou mutation éthique et healthy de la junk food ? À vous de voir… Après dégustation, bien sûr !`,
+              },
+            },
+          ],
         ],
         testChapters: [
           [
@@ -92,6 +126,9 @@ export default {
     },
     back() {
       this.displayChapters = true;
+    },
+    displayLanding() {
+      this.$emit("display-landing");
     },
   },
 };

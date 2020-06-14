@@ -18,11 +18,11 @@
       <router-view class="view"></router-view>
     </transition>
     <landing-page
-      v-if="!viewComponent"
+      v-if="viewLanding"
       style="height: 100vh"
       class="view"
     ></landing-page>
-    <Menu class="menu"></Menu>
+    <Menu @display-landing="displayLanding" class="menu"></Menu>
   </div>
 </template>
 
@@ -37,12 +37,12 @@ export default {
   },
   data() {
     return {
-      viewComponent: false,
+      viewLanding: true,
     };
   },
   methods: {
-    displayComponent() {
-      this.viewComponent = true;
+    displayLanding() {
+      this.viewLanding = false;
     },
   },
 };
