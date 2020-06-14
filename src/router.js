@@ -23,11 +23,33 @@ export default new VueRouter({
       component: IntroChapitre,
     },
     {
-      path: "/full-text",
+      path: "/origines",
+      name: "origines",
+      component: HalfText,
+    },
+    {
+      path: "/today",
+      name: "today",
+      component: HalfText,
+    },
+    {
+      path: "/recette",
+      name: "recette",
+      component: HalfText,
+    },
+    {
+      path: "/chic",
+      name: "chic",
+      component: HalfText,
+    },
+    {
+      path: "/conclusion",
+      name: "conclusion",
       component: FullText,
     },
     {
-      path: "/half-text",
+      path: "/fine-casual",
+      name: "fine-casual",
       component: HalfText,
     },
     {
