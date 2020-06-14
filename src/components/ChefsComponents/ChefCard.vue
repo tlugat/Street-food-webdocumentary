@@ -1,7 +1,7 @@
 <template>
   <div @click="toggleCard" class="cardChef">
     <transition name="flip">
-      <div v-if="!cardFlipped" class="chef chef--front">
+      <div v-if="!cardFlipped" class="chef">
         <svg
           class="coinJ-right"
           width="91"
@@ -111,7 +111,7 @@
           />
         </svg>
         <div class="chef__face chef__face--back">
-          <img class="chef__img chef__img--back" :src="recette.img" alt="" />
+          <img class="chef__img chef__img--back" :src="recette.img" alt />
           <div class="textWrapper">
             <p class="title">{{ recette.name }}</p>
             <p class="text">{{ recette.description }}</p>
@@ -142,24 +142,25 @@ export default {
   props: {
     chef: String,
     url: String,
-    recette: Object,
+    recette: Object
   },
   data() {
     return {
-      cardFlipped: false,
+      cardFlipped: false
     };
   },
   methods: {
     toggleCard() {
       this.cardFlipped = !this.cardFlipped;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
-.flip-enter-active {
+.flip-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s, transform 0.5s;
 }
 .flip-enter,
@@ -170,12 +171,12 @@ export default {
 
 .cardChef {
   @include flex(null, center, center);
-  // .chef--front {
-  //   &:hover {
-  //     transform: rotate(5deg);
-  //     transition: 0.3s;
-  //   }
-  // }
+  padding-bottom: 1rem;
+
+  @include xlarge {
+    padding-bottom: 0;
+  }
+
   .chef {
     width: 245px;
     height: 355px;
@@ -185,13 +186,13 @@ export default {
       width: 165px;
       height: 245px;
     }*/
-    @include xlarge {
+    @include small {
       width: 270px;
       height: 400px;
     }
     &__img {
-      width: 100%;
-      height: 100%;
+      width: 99.9%;
+      padding-bottom: 0.1px;
     }
 
     h3 {
@@ -213,12 +214,12 @@ export default {
       border: solid 2px $black;
       width: 225px;
       height: 335px;
-
+      @include flex(null, null, flex-end);
       h2 {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 120%);
         border-bottom: solid 2px $yellow;
         padding-bottom: 0.2rem;
       }
@@ -228,7 +229,7 @@ export default {
         height: 230px;
       }*/
 
-      @include xlarge {
+      @include small {
         width: 250px;
         height: 380px;
       }
@@ -236,11 +237,12 @@ export default {
   }
   .chef--back {
     .chef__img--back {
-      width: 100%;
-      height: 157px;
+      width: 95%;
+      padding-top: 10px;
     }
     .chef__face--back {
       position: relative;
+      @include flex(column, flex-start, center);
     }
     .textWrapper {
       @include flex(column, null, center);
@@ -250,6 +252,19 @@ export default {
         border-bottom: solid 1px $yellow;
         padding: 0.5rem 0 0.2rem 0;
         margin-bottom: 0.5rem;
+
+        @include small {
+          font-size: 18px;
+        }
+      }
+      .text {
+        font-size: 11px;
+        width: 200px;
+
+        @include small {
+          font-size: 14px;
+          width: 220px;
+        }
       }
     }
     .logo-couverts {
