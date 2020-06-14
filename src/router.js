@@ -12,7 +12,6 @@ import Stats from "./components/Stats";
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: "history",
   routes: [
     {
       path: "/chefs",
