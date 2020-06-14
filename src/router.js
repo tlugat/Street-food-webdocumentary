@@ -8,11 +8,15 @@ import Chapitre1 from "./Views/Chapitre1";
 import Chapitre2 from "./Views/Chapitre2";
 import JayFai from "./components/Jay-Fai";
 import Stats from "./components/Stats";
-// import LandingPage from "./Views/LandingPage";
+import LandingPage from "./Views/LandingPage";
 Vue.use(VueRouter);
 
 export default new VueRouter({
   routes: [
+    {
+      path: "/",
+      component: LandingPage,
+    },
     {
       path: "/chefs",
       name: "chefs",

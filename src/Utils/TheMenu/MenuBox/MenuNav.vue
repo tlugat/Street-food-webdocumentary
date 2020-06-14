@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <h3 class="menu__title">STREET FOOD</h3>
+    <h3 @click="backHome" class="menu__title">STREET FOOD</h3>
     <svg
       v-if="!displayChapters"
       @click="back"
@@ -149,7 +149,6 @@ export default {
       },
     };
   },
-  computed: {},
   methods: {
     selectChapter(index) {
       this.test = index;
@@ -160,6 +159,9 @@ export default {
     },
     displayLanding() {
       this.$emit("display-landing");
+    },
+    backHome() {
+      this.$emit("back-home");
     },
   },
 };
@@ -192,6 +194,10 @@ export default {
     position: absolute;
     top: 0;
     padding-top: 1rem;
+    cursor: pointer;
+    &:hover {
+      color: $green;
+    }
   }
   &__bowl {
     width: 10rem;

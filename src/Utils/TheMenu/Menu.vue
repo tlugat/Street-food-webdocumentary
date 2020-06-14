@@ -6,7 +6,11 @@
         <br />NU
       </p>
     </div>
-    <menu-nav @display-landing="displayLanding" class="menu__nav"></menu-nav>
+    <menu-nav
+      @back-home="backHome"
+      @display-landing="displayLanding"
+      class="menu__nav"
+    ></menu-nav>
   </div>
 </template>
 
@@ -23,6 +27,9 @@ export default {
     },
     displayLanding() {
       this.$emit("display-landing");
+    },
+    backHome() {
+      this.$emit("back-home");
     },
   },
 };
