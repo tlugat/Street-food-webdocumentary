@@ -9,7 +9,7 @@
 <script>
 import JayFaiCard from "./Jay-FaiComponents/JayFaiCard";
 export default {
-  component: {
+  components: {
     JayFaiCard,
   }
 };

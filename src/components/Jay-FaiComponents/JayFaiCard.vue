@@ -39,7 +39,13 @@ export default {};
     &__list {
         .square {
             width: 26px;
+            height: 26px;
             border: 1px solid $green;
+        }
+        .title {
+            background-color: #D6D6D6;
+            width: 126px;
+            height: 26px;
         }
     }
 }
