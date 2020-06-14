@@ -7,7 +7,6 @@
       </p>
     </div>
     <menu-nav class="menu__nav"></menu-nav>
-    <menu-nav class="menu__nav menu__nav--chap1"></menu-nav>
   </div>
 </template>
 
@@ -16,13 +15,13 @@ import MenuNav from "./MenuBox/MenuNav";
 
 export default {
   components: {
-    MenuNav
+    MenuNav,
   },
   methods: {
     slideNav() {
       document.querySelector(".menu__nav").classList.toggle("open");
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,21 +1,21 @@
 <template>
   <div class="chefs-page">
-    <ChefCardFront
+    <ChefCard
       v-for="(chef, index) in chefs"
       :key="index"
       :chef="chefs[index].name"
       :url="chefs[index].url"
       :recette="chefs[index].recette"
       class="chefs-page__card"
-    ></ChefCardFront>
+    ></ChefCard>
   </div>
 </template>
 
 <script>
-import ChefCardFront from "./ChefsComponents/ChefCardFront";
+import ChefCard from "./ChefsComponents/ChefCard";
 export default {
   components: {
-    ChefCardFront,
+    ChefCard,
   },
   data() {
     return {
@@ -79,6 +79,9 @@ export default {
 .chefs-page {
   @include xlarge {
     @include flex(null, space-around, center);
+  }
+  &__card {
+    cursor: pointer;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ul @click="displayComponent">
+    <!-- <ul @click="displayComponent">
       <li>
         <router-link class="test" to="/chefs">chefs component</router-link>
       </li>
@@ -9,8 +9,14 @@
           >Intro Chapitre</router-link
         >
       </li>
-    </ul>
-    <router-view class="view"></router-view>
+      <li>
+        <router-link class="test" to="/full-text">Full text</router-link>
+      </li>
+    </ul> -->
+    <!-- <router-link class="test" to="/chapitre1">chapitre 1</router-link> -->
+    <transition name="slide">
+      <router-view class="view"></router-view>
+    </transition>
     <landing-page
       v-if="!viewComponent"
       style="height: 100vh"
@@ -53,6 +59,15 @@ export default {
 
   @include medium {
     height: 100vh;
+  }
+  .slide-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .slide-enter,
+  .slide-leave-active {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
 .view {

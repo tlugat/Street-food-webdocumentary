@@ -1,7 +1,7 @@
 <template>
   <div @click="toggleCard" class="cardChef">
     <transition name="flip">
-      <div v-if="!cardFlipped" class="chef">
+      <div v-if="!cardFlipped" class="chef chef--front">
         <svg
           class="coinJ-right"
           width="91"
@@ -159,8 +159,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
-.flip-enter-active,
-.fade-leave-active {
+.flip-enter-active {
   transition: opacity 0.5s, transform 0.5s;
 }
 .flip-enter,
@@ -171,7 +170,12 @@ export default {
 
 .cardChef {
   @include flex(null, center, center);
-
+  // .chef--front {
+  //   &:hover {
+  //     transform: rotate(5deg);
+  //     transition: 0.3s;
+  //   }
+  // }
   .chef {
     width: 245px;
     height: 355px;
