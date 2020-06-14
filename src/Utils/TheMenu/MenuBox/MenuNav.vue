@@ -46,7 +46,9 @@
     </ul>
     <ul v-if="!displayChapters" class="menu__list">
       <li v-for="(chapter, index) in summary.testChapters[test]" :key="index">
-        <a>{{ chapter }}</a>
+        <router-link :to="summary.routes[test][index]">{{
+          chapter
+        }}</router-link>
       </li>
     </ul>
   </div>
@@ -61,6 +63,10 @@ export default {
       summary: {
         chapterLink: ["test", "test2"],
         chapters: ["Chapitre 1", "Chapitre 2"],
+        routes: [
+          ["/half-text", "/half-text", "/half-text", "/jay-fai"],
+          ["/half-text", "/half-text", "/chefs", "/full-text"],
+        ],
         testChapters: [
           [
             "Les origines",
