@@ -1,10 +1,10 @@
 <template>
   <div>
-  <recettesCTA v-for="(burger, index) in burgers"
+  <recettesCTA class="recette" v-for="(burger, index) in burgers"
       :key="index"
       :burger="burgers[index]"
       :url="urls[index]" 
-      :recipe="recipes[index]"
+      :type="index"
       ></recettesCTA>
   </div>
 </template>
@@ -25,17 +25,15 @@ export default {
         "https://www.la-viande.fr/sites/default/files/styles/slider_recettes/public/recettes/images/burger-de-hampe-de-boeuf-a-laustralienne.jpg?itok=91Hj2MMY",
         "https://www.hervecuisine.com/wp-content/uploads/2020/04/burger-vegan-1280x720.jpg"
       ],
-      recipes:[
-        " magret pains à burger tomates séchées tranches de tome de brebis tranches de salade Confit d’oignon Sel au piment d’Espelette",
-        "œufs oignons gousses d’ail pois chiches huile d’olive feuilles de salade  tomate oignon rouge tranches de fromage végétal pains à hamburger ketchup et/ou mayonnaise",
-        "aubergine Pesto (basilic, oignons de pin et huile d’olive) poignées de mâche petit oignon rouge Fromage de chèvre pain sans gluten"
-      ]
+      
     }
   }
 };
  
 </script>
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+  .recette{
+    height:15rem;
+  }
 
 </style>
