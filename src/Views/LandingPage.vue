@@ -54,7 +54,9 @@ export default {
 .landing {
   width: 100%;
   height: 100vh;
-  background: url("../assets/img/landing-page/background-landing-small.png");
+  background: url("../assets/img/landing-page/background-landing-small.png")
+    no-repeat;
+  background-size: cover;
 }
 .menu {
   position: absolute;
