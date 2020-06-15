@@ -6,7 +6,13 @@
         <p v-if="text1">{{ text1 }}</p>
         <p v-if="text2">{{ text2 }}</p>
         <p v-if="text3">{{ text3 }}</p>
-        <le-saviez-vous v-if="lsv" :lsv="lsv"></le-saviez-vous>
+        <le-saviez-vous
+          @slide-in-lsv="slideInLsv"
+          @slide-out-lsv="slideOutLsv"
+          class="lsv"
+          v-if="lsv"
+          :lsv="lsv"
+        ></le-saviez-vous>
       </div>
     </div>
     <img :src="img" class="halfPage__img" />
@@ -29,11 +35,27 @@ export default {
     Title,
     LeSaviezVous,
   },
+  methods: {
+    slideInLsv() {
+      document.querySelector(".lsv").style.transform = "translateX(0)";
+    },
+    slideOutLsv() {
+      document.querySelector(".lsv").style.transform = "translateX(85%)";
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
+
+.lsv {
+  position: absolute;
+  right: 0;
+  transform: translateX(85%);
+  transition: 0.4s ease-in-out;
+}
+
 .halfPage {
   // background: $black;
   width: 100%;

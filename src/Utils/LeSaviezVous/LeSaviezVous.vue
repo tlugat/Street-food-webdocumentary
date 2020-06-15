@@ -1,7 +1,19 @@
 <template>
   <div class="LSV">
-    <div class="fleche">
-      <div class="fleche__triangle"></div>
+    <svg
+      @click="slideOutLsv"
+      class="LSV__close"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+    >
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path
+        d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+      />
+    </svg>
+    <div @click="slideInLsv" class="fleche">
       <svg
         width="31"
         height="35"
@@ -48,8 +60,8 @@
       </svg>
     </div>
     <div class="fond">
-      <h4>Le saviez vous ?</h4>
-      <p>
+      <h4 class="fond__title">Le saviez vous ?</h4>
+      <p class="fond__text">
         {{ lsv }}
       </p>
     </div>
@@ -61,6 +73,14 @@ export default {
   props: {
     lsv: String,
   },
+  methods: {
+    slideInLsv() {
+      this.$emit("slide-in-lsv");
+    },
+    slideOutLsv() {
+      this.$emit("slide-out-lsv");
+    },
+  },
 };
 </script>
 
@@ -69,15 +89,21 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  width: 520px;
+  width: 120%;
   height: 115px;
-
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+  }
   .fond {
-    width: 520px;
+    width: 100%;
     height: 115px;
     background-color: #f7b200;
+    position: relative;
 
-    h4 {
+    &__title {
       font-size: 20px;
       color: white;
       padding-left: 28px;
@@ -85,10 +111,14 @@ export default {
       margin: 0;
     }
 
-    p {
-      font-size: 14px;
-      padding-left: 28px;
-      margin: 0;
+    &__text {
+      font-size: 12px;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 1rem;
+      width: 80%;
     }
   }
 
@@ -96,7 +126,7 @@ export default {
     width: 66px;
     height: 45px;
     background-color: #f7b200;
-
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%);
     bottom: 0;
     left: -55px;
     display: flex;
@@ -113,8 +143,8 @@ export default {
     }
 
     svg {
-      margin-left: 5px;
-      height: 35px;
+      margin-left: 1rem;
+      height: 32px;
       width: auto;
     }
   }
