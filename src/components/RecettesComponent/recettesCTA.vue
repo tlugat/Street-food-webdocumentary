@@ -15,12 +15,10 @@
     </transition>
     <transition name="flip">
   <div  v-if="cardFlipped" class="recettes recettes--back">
-    
       <h3 class="burger__title2">{{burger}}</h3>
       <ul>
       <li v-for="(ingredient,index) in types[type]" :key="index" class="burger__text">{{ ingredient }}</li>
       </ul>
-   
   </div>
     </transition>
   </div>
@@ -140,10 +138,8 @@ export default {
     border: solid #f7b200 1px;
     align-content: center;
     transform: translate(-50%,-50%);
-
-   
-    
   }
+
   &__burger--back {
      box-shadow: 10px 0px 0px 0px black;
       .text {
@@ -153,11 +149,17 @@ export default {
         }
       }
   }
-  &__img {
-        width: 100vw ;
-        height: 100%;
-      }
 
+  &__img {
+      width: 100vw ;
+      height: 33vh;
+      object-fit: cover;
+
+      @include medium{
+      width: 100%;
+      height: 100vh;
+      }
+  }
   &__text{
       color: #000;
       text-align: left;
@@ -166,6 +168,6 @@ export default {
 
 
   @include xlarge {
-       
+    
       }
 </style>

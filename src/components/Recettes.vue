@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="recettes">
   <recettesCTA class="recette" v-for="(burger, index) in burgers"
       :key="index"
       :burger="burgers[index]"
@@ -32,8 +32,20 @@ export default {
  
 </script>
 <style lang="scss" scoped>
+@import "@/assets/global.scss";
   .recette{
     height:15rem;
   }
+
+  .recettes{
+    width: 100%;
+    @include medium{
+      @include flex (row, null,null);
+      width: 33%;
+      height: 100%;
+    }
+  }
+
+  
 
 </style>
