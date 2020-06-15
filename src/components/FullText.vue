@@ -1,5 +1,11 @@
 <template>
-  <div>
+  <div class="fullPage">
+    <Title
+      v-if="title"
+      :title="this.$route.params.title"
+      s
+      class="fullPage__title"
+    ></Title>
     <div class="text-part">
       <div class="text-part__textContainer">
         <svg
@@ -62,20 +68,28 @@
 </template>
 
 <script>
+import Title from "../Utils/TheTitle/Title";
 export default {
-  data() {
-    return {
-      text1: this.$route.params.text1,
-      text2: this.$route.params.text2,
-    };
+  components: {
+    Title,
+  },
+  props: {
+    text1: String,
+    text2: String,
+    title: String,
   },
   methods: {},
 };
 </script>
 
 <style lang="scss">
+.fullPage {
+  &__title {
+    padding: 2rem;
+  }
+}
 .text-part {
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   &__textContainer {
