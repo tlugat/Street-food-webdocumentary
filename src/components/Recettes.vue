@@ -31,8 +31,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
+
 .recette {
   height: 15rem;
+  cursor: pointer;
+  // margin: ;
 }
 
 .recettes {
