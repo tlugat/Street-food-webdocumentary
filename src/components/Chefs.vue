@@ -1,40 +1,87 @@
 <template>
-  <div>
-    <h1>test</h1>
-    <ChefCTA
+  <div class="chefs-page">
+    <ChefCard
       v-for="(chef, index) in chefs"
       :key="index"
-      :chef="chefs[index]"
-      :url="urls[index]"
-    ></ChefCTA>
+      :chef="chefs[index].name"
+      :url="chefs[index].url"
+      :recette="chefs[index].recette"
+      class="chefs-page__card"
+    ></ChefCard>
   </div>
 </template>
 
 <script>
+import ChefCard from "./ChefsComponents/ChefCard";
 export default {
   components: {
-    ChefCTA,
+    ChefCard,
   },
   data() {
     return {
       chefs: [
-        "Thierry Marx",
-        "Christian Constant",
-        "Akram Benallal",
-        "Gregory Marchand",
-      ],
-      urls: [
-        "https://static.cotemaison.fr/medias_11912/w_1364,h_2048,c_crop,x_84,y_0/w_400%2Ch_600%2Cc_fill%2Cg_center/portrait-du-chef-cuisinier-thierry-marx_6099167.jpg",
-        "https://alchetron.com/cdn/wendy-beckett-8ee14307-2cf2-4c25-bbc4-08cbc3f858c-resize-750.jpeg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSn0Xf4rbBFELui6f1698uAPZAcvZUbHzT74MPA5nwJK70o3WY6&usqp=CAU",
-        "https://lh3.googleusercontent.com/proxy/wGlFSy9g6VJ762Hn-rcWGuU1Z7-MNMrdjwAs0lGiEKHX0WIjsPFzGOuNMc9q0BrvBg3p_mZ8URjQHACasDGf3uGtZjKCIclsPHtJJCP1ZChur3RIcRRF5mCh00BulRtMq6A",
+        {
+          name: "Thierry Marx",
+          url:
+            "https://cdn.discordapp.com/attachments/697362929946722358/721463263786958898/Thierry.png",
+          recette: {
+            name: "Marxito",
+            description:
+              "Des sandwich d’inspiration Japonaise pour renouveler la street food parisienne ",
+            img:
+              "https://cdn.discordapp.com/attachments/697362929946722358/721464037501698138/marxito.png",
+          },
+        },
+        {
+          name: "Christian Constant",
+          url:
+            "https://cdn.discordapp.com/attachments/697362929946722358/721463186376884224/christian.png",
+          recette: {
+            name: "Kebab",
+            description:
+              "Deliveroo, s'associe avec Christian Constant pour revisiter un plat street food, le kebab !",
+            img:
+              "https://cdn.discordapp.com/attachments/697362929946722358/721464074973741127/kebab.png",
+          },
+        },
+        {
+          name: "Akram Benallal",
+          url:
+            "https://cdn.discordapp.com/attachments/697362929946722358/721463153166254080/akram.png",
+          recette: {
+            name: "Panini",
+            description:
+              "« J'adore le panini. Il est bien pensé, fin, chaud, élégant, croustillant. »",
+            img:
+              "https://cdn.discordapp.com/attachments/697362929946722358/721464107060035584/panini.png",
+          },
+        },
+        {
+          name: "Gregory Marchand",
+          url:
+            "https://cdn.discordapp.com/attachments/697362929946722358/721463213283213382/gregory.png",
+          recette: {
+            name: "Sandwich",
+            description:
+              "Grégory Marchand, revisite le sandwich toasté au pastrami.",
+            img:
+              "https://cdn.discordapp.com/attachments/697362929946722358/721464138240360538/sandwich.png",
+          },
+        },
       ],
     };
   },
 };
-import ChefCTA from "./ChefsComponents/ChefCTA";
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
+.chefs-page {
+  @include xlarge {
+    @include flex(null, space-around, center);
+  }
+  &__card {
+    cursor: pointer;
+  }
+}
 </style>
