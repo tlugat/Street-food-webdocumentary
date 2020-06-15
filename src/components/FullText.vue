@@ -84,7 +84,7 @@ export default {
   methods: {},
   computed: {
     setBackground() {
-      return `background: url(${this.background})`;
+      return `background: url(${this.background}), backgroundSize: cover;`;
     },
   },
 };
@@ -94,6 +94,7 @@ export default {
 @import "@/assets/global.scss";
 .fullPage {
   color: #fff;
+
   .height {
     height: 100vh;
   }
@@ -104,7 +105,7 @@ export default {
 .text-part {
   height: 100%;
   @include flex(column, null, null);
-  padding: 1.5rem;
+  padding: 1rem;
 
   &__textContainer {
     position: relative;
