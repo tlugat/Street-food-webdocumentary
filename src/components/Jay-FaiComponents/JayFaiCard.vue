@@ -7,14 +7,16 @@
 
     </div>
     <div class="title">
-        <h3></h3>
+        <h3> {{title}} </h3>
     </div>
-    <p></p>
+    <p> {{number}}</p>
 </div>
 <div class="JayFaiCard__text">
-<img src="" alt="">
-<article></article>
-<p></p>
+<img :src="back.img" alt="">
+<div></div>
+<article> {{back.description}}</article>
+<p> {{back.chiffre}} </p>
+
 <svg width="18"
      height="18" 
      viewBox="0 0 18 18" 
@@ -30,22 +32,38 @@
 </template>
 
 <script>
-export default {};
+export default {
+      props: {
+    title: String,
+    number: Number,
+    back: Object,
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
 .JayFaiCard {
     &__list {
+        position: relative;
+        display: flex;
         .square {
+            position: absolute;
+            top: 0;
+            right: 0;
             width: 26px;
             height: 26px;
             border: 1px solid $green;
+            
         }
         .title {
             background-color: #D6D6D6;
             width: 126px;
             height: 26px;
+            h3 {
+                justify-content: center;
+                text-align: center;
+            }
         }
     }
 }
