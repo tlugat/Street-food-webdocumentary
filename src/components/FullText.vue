@@ -113,6 +113,7 @@ export default {
   transform: translate(-50%, -50%);
   padding: 1rem;
   &textContainer {
+
     position: relative;
     text-align: center;
     line-height: 150%;
