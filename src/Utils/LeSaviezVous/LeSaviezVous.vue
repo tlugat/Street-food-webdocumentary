@@ -49,13 +49,19 @@
     </div>
     <div class="fond">
       <h4>Le saviez vous ?</h4>
-      <p>Le burger le plus cher du monde coûte 4700 euros. Il est composé de bœuf de Kobé, truffes noires, du fois gras et une sauce faite à partir de truffes blanches.</p>
+      <p>
+        {{ lsv }}
+      </p>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    lsv: String,
+  },
+};
 </script>
 
 <style lang="scss" scoped>

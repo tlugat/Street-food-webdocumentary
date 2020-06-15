@@ -1,7 +1,9 @@
 <template>
   <div class="landing">
     <about-brands class="about__brands"></about-brands>
-    <p class="about__btn" @click="slideAbout">ABOUT</p>
+    <p @click="slideAbout" class="about__btn">
+      ABOUT
+    </p>
     <div class="globalTitles">
       <p class="globalTitles__subtitle">D'un mode de vie à une tendance</p>
       <h1 class="globalTitles__title">STREET FOOD</h1>
@@ -38,12 +40,16 @@ export default {
   components: {
     AboutBrands,
   },
-  data() {
-    return {};
-  },
+  // data() {
+  //   return {
+  //     aboutBlack: false,
+  //     black: "black",
+  //   };
+  // },
   methods: {
     slideAbout() {
       document.querySelector(".about__brands").classList.toggle("open");
+      document.querySelector(".about__btn").classList.toggle("black");
     },
   },
 };
@@ -83,6 +89,9 @@ export default {
     z-index: 10;
     color: #fff;
   }
+}
+.black {
+  color: $black;
 }
 .globalTitles {
   @include flex(column, center, center);

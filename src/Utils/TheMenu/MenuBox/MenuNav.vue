@@ -56,7 +56,7 @@
       </li>
       <li>
         <router-link class="test" to="/recettes">
-        <a>Recettes</a>
+          <a>Recettes</a>
         </router-link>
       </li>
     </ul>
@@ -70,7 +70,6 @@ export default {
       displayChapters: true,
       test: null,
       summary: {
-        chapterLink: ["test", "test2"],
         chapters: ["Chapitre 1", "Chapitre 2"],
         routes: [
           [
@@ -81,7 +80,8 @@ export default {
                 text2: `On retrouve aussi en Chine ancienne, des traces de nourriture de rue probablement destinée aux populations pauvres. En Amérique du Nord pendant la période coloniale, des tripes, des huîtres ou encore des épis de maïs grillés étaient vendus à même la rue. Les rues des centres urbains deviennent finalement des lieux de restauration rapide.`,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721761134318977074/fish.png`,
                 title: `Les origines des cantines de rue`,
-                key: 5,
+                lsv: `Dans les rues de paris au 19ème siècle on vendait des lanières de pommes de terre frites qui sont d’ailleurs à l’origine des frites que l’on connait si bien. `,
+                key: 6,
               },
             },
             {
@@ -91,7 +91,7 @@ export default {
                 text2: `Vendus depuis un :`,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721760690565808180/today.png`,
                 title: `Mais aujourd'hui la street food c'est quoi ?`,
-                key: 4,
+                key: 5,
               },
             },
             {
@@ -101,10 +101,16 @@ export default {
                 text2: ` La streetfood répond à ce besoin d’exotisme et d’authenticité culinaire et devient progressivement multiculturelle. Mexicains, américains, africains, indiens et bien sûr asiatiques, ces snacks internationaux sont proposés par des restaurateurs ou des voyageurs inspirés venus offrir leurs savoirs culinaires. `,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721760646554976316/recettesucces.png`,
                 title: `La recette d'un succès`,
+                key: 4,
+              },
+            },
+            {
+              name: "jay-fai",
+              params: {
+                lsv: `Au début elle à même refusé cette distinction, elle n’avait pas compris pourquoi un marchand de pneu voulait lui donner un prix.`,
                 key: 3,
               },
             },
-            "/jay-fai",
           ],
           [
             {
@@ -114,6 +120,7 @@ export default {
                 text2: `Au contraire, la nouvelle street food mise sur des produits de qualité cuisinés avec goût et originalité comme on a pu le voir avec Jai Fay.Une tendance qui se confirme notamment du côté de la burger-mania. Finis, les burgers au steak rabougri, noyés sous les sauces et agrémentés de deux rondelles de tomate insipides…`,
                 title: `Une street food plus chic`,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721782756878712863/burger.png`,
+                lsv: `Le burger le plus cher du monde coûte 4700 euros. Il est composé de bœuf de Kobé, truffes noires, du fois gras et une sauce faite à partir de truffes blanches.`,
                 key: 2,
               },
             },
@@ -125,6 +132,7 @@ export default {
                 text3: `Si la cuisine de rue gagne en qualité et en réputation grâce à cette tendance, ce n’est que le début puisque les grands chefs s’en mêlent désormais.`,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721760299316805672/finecasual.png`,
                 title: `La tendance du "fine casual"`,
+                lsv: `La gastronomie française représenterait pas moins de 20 à 50% de notre impact environnemental.`,
                 key: 1,
               },
             },
