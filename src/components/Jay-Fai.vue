@@ -5,7 +5,6 @@
       src="https://cdn.discordapp.com/attachments/697362929946722358/721752094654332968/jay_fai.png"
       alt=""
     />
-    <jay-tag></jay-tag>
   </div>
 </template>
 
