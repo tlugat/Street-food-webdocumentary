@@ -33,21 +33,26 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/global.scss";
 .fullPage {
+  background-color: $black;;
   &__title {
     padding: 2rem;
+    color: white;
+    font-size: 20px;
   }
 }
 .text-part {
-  height: 100%;
-  display: flex;
+  height: 100vh;
   align-items: center;
+  color: white;
   &__textContainer {
     position: relative;
     line-height: 150%;
     padding: 1rem;
     p {
       margin-bottom: 2rem;
+      font-size: 11px;
     }
   }
 }
