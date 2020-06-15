@@ -20,11 +20,11 @@ export default {
     text1: String,
     text2: String,
     text3: String,
-    img: String
+    img: String,
   },
   components: {
-    Title
-  }
+    Title,
+  },
 };
 </script>
 
@@ -61,7 +61,6 @@ export default {
       line-height: 16.5px;
       p {
         margin-bottom: 1rem;
-        font-size: 11px;
 
         @include small {
           font-size: 14px;

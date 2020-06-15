@@ -73,7 +73,7 @@
 import Title from "../Utils/TheTitle/Title";
 export default {
   components: {
-    Title
+    Title,
   },
   props: {
     text1: String,
@@ -84,7 +84,7 @@ export default {
   methods: {},
   computed: {
     setBackground() {
-      return `background: url(${this.background}), backgroundSize: cover;`;
+      return { background: `url(${this.background})`, backgroundSize: "cover" };
     },
   },
 };
@@ -115,7 +115,6 @@ export default {
     padding: 1rem;
     .text1 {
       margin-bottom: 2rem;
-      font-size: 11px;
     }
   }
   .coinJ-right {
