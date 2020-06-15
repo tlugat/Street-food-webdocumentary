@@ -118,6 +118,9 @@ export default {
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
+    @include medium {
+      width: 33vw;
+    }
   }
 }
 .burger {
