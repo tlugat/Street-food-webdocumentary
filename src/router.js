@@ -31,6 +31,7 @@ export default new VueRouter({
     },
     {
       path:"/recettes",
+      name:"recettes",
       component: Recettes,
     },
     {
