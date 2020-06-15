@@ -132,8 +132,10 @@ export default {
             {
               name: "conclusion",
               params: {
-                text1: `Bilan ? L’ancienne junk food répond désormais aux codes éthiques du bien manger. Le veau de lait tourne sur les broches des kebabs de luxe, et la cuisine devient spectacle. Là, on assemble les ingrédients sous les yeux des clients, ici on pétrit la pâte à noodle à grand renfort d’huile de coude. Quitte à faire grimper la note ! Comptez entre 13€ et 18€ pour cette nouvelle cuisine de luxe. Embourgeoisement de la street food, ou mutation éthique et healthy de la junk food ? À vous de voir… Après dégustation, bien sûr !`,
+                text1: `Bilan ? L’ancienne junk food répond désormais aux codes éthiques du bien manger. Le veau de lait tourne sur les broches des kebabs de luxe, et la cuisine devient spectacle. Là, on assemble les ingrédients sous les yeux des clients, ici on pétrit la pâte à noodle à grand renfort d’huile de coude. Quitte à faire grimper la note ! Comptez entre 13€ et 18€ pour cette nouvelle cuisine de luxe.`,
+                text2: `Embourgeoisement de la street food, ou mutation éthique et healthy de la junk food ? À vous de voir… Après dégustation, bien sûr !`,
                 title: `L'apogée de la street food ?`,
+                background: `https://cdn.discordapp.com/attachments/697362929946722358/722084316250636288/img-apogee-desktop.png`,
               },
             },
           ],
