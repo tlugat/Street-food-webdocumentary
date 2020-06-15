@@ -1,5 +1,5 @@
 <template>
-  <div class="recettes">
+  <div @click="toggleCard" class="recettes">
     <transition name="flip">
       <div v-if="!cardFlipped" class="burger">
         <h2 class="burger__title">{{ burger }}</h2>
@@ -132,6 +132,9 @@ export default {
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
+    @include medium {
+      width: 33vw;
+    }
   }
 }
 .burger {
