@@ -1,43 +1,23 @@
 <template>
-<div class="jay-fai">
-  <h1>Jay Fai </h1>
-  <img src="https://cdn.discordapp.com/attachments/697362929946722358/721752094654332968/jay_fai.png" alt="">
-  <JayFaiCard 
-  v-for="(jayfaicard, index) in jayfaicards"
-    :key="index"
-    :jayfaicard="jayfaicards[index].title" 
-    :number="jayfaicards[index].number"
-    :back="jayfaicards[index].back"
-  ></JayFaiCard>
-</div>
+  <div class="jay-fai">
+    <h1>Jay Fai</h1>
+    <img
+      src="https://cdn.discordapp.com/attachments/697362929946722358/721752094654332968/jay_fai.png"
+      alt=""
+    />
+    <jay-tag></jay-tag>
+  </div>
 </template>
 
 <script>
-import JayFaiCard from "./Jay-FaiComponents/JayFaiCard";
+import JayTag from "./JayTag";
 export default {
-  props: { 
-  components: {
-    JayFaiCard,
+  props: {
+    components: {
+      JayTag,
+    },
   },
-  data () {
-    return {
-      jayfaicards: [
-        {
-          title: "En Famille",
-          number: 1,
-          back: {
-            img: 
-            "https://cdn.discordapp.com/attachments/656868877879345162/721852030594842754/fillejayfai.png",
-            chiffre: 1,
-            description: 
-            "Ses deux filles ont démissionné de leur travailler afin d’aider leur mère à tenir le restaurant suite au prix qu’elle a reçu.",
-          },
-        },
-      ],
-    };
-  },
-}
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -48,7 +28,7 @@ export default {
     font-size: 72px;
     margin-top: 18px;
     color: transparent;
-    -webkit-text-stroke: 2px #D1D1D1;
+    -webkit-text-stroke: 2px #d1d1d1;
   }
   img {
     width: 230px;
