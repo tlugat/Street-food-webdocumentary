@@ -1,21 +1,26 @@
 <template>
   <div class="chefs-page">
-    <ChefCard
-      v-for="(chef, index) in chefs"
-      :key="index"
-      :chef="chefs[index].name"
-      :url="chefs[index].url"
-      :recette="chefs[index].recette"
-      class="chefs-page__card"
-    ></ChefCard>
+    <Title :title="this.$route.params.title" class="chefs-page__title"></Title>
+    <div class="chefs-page__cards">
+      <ChefCard
+        v-for="(chef, index) in chefs"
+        :key="index"
+        :chef="chefs[index].name"
+        :url="chefs[index].url"
+        :recette="chefs[index].recette"
+        class="chefs-page__card"
+      ></ChefCard>
+    </div>
   </div>
 </template>
 
 <script>
 import ChefCard from "./ChefsComponents/ChefCard";
+import Title from "../Utils/TheTitle/Title";
 export default {
   components: {
     ChefCard,
+    Title,
   },
   data() {
     return {
@@ -77,8 +82,14 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
 .chefs-page {
-  @include xlarge {
-    @include flex(null, space-around, center);
+  &__cards {
+    @include xlarge {
+      @include flex(null, space-around, center);
+    }
+  }
+  &__title {
+    z-index: 1;
+    padding: 2rem;
   }
   &__card {
     cursor: pointer;

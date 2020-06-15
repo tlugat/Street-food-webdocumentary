@@ -1,5 +1,11 @@
 <template>
-  <div>
+  <div class="fullPage">
+    <Title
+      v-if="title"
+      :title="this.$route.params.title"
+      s
+      class="fullPage__title"
+    ></Title>
     <div class="text-part">
       <div class="text-part__textContainer">
         <svg
@@ -53,25 +59,37 @@
           />
         </svg>
         <p>
-          {{ text.content1 }}
+          {{ text1 }}
         </p>
-        <p>{{ text.content2 }}.</p>
+        <p v-if="text2">{{ text2 }}.</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Title from "../Utils/TheTitle/Title";
 export default {
-  props: {
-    text: Object,
+  components: {
+    Title,
   },
+  props: {
+    text1: String,
+    text2: String,
+    title: String,
+  },
+  methods: {},
 };
 </script>
 
 <style lang="scss">
+.fullPage {
+  &__title {
+    padding: 2rem;
+  }
+}
 .text-part {
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   &__textContainer {

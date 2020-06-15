@@ -6,7 +6,11 @@
         <br />NU
       </p>
     </div>
-    <menu-nav class="menu__nav"></menu-nav>
+    <menu-nav
+      @back-home="backHome"
+      @display-landing="displayLanding"
+      class="menu__nav"
+    ></menu-nav>
   </div>
 </template>
 
@@ -20,6 +24,12 @@ export default {
   methods: {
     slideNav() {
       document.querySelector(".menu__nav").classList.toggle("open");
+    },
+    displayLanding() {
+      this.$emit("display-landing");
+    },
+    backHome() {
+      this.$emit("back-home");
     },
   },
 };
