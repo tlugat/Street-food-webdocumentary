@@ -92,6 +92,7 @@ export default {
 
 <style lang="scss">
 @import "@/assets/global.scss";
+@import "@/assets/_fonts.scss";
 .fullPage {
   color: #fff;
 
@@ -106,13 +107,14 @@ export default {
 }
 .text-part {
   height: 100%;
-  @include flex(column, null, null);
-
   padding: 1rem;
   &__textContainer {
     position: relative;
     line-height: 150%;
     padding: 1rem;
+    font-family: poppins, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     .text1 {
       margin-bottom: 2rem;
     }
