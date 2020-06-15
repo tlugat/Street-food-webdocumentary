@@ -99,19 +99,23 @@ export default {
   }
   &__title {
     padding: 2rem;
+    color: white;
+    font-size: 20px;
   }
 }
 .text-part {
   height: 100%;
   @include flex(column, null, null);
   padding: 1.5rem;
-
+  height: 100vh;
+  align-items: center;
   &__textContainer {
     position: relative;
     line-height: 150%;
     padding: 1rem;
     .text1 {
       margin-bottom: 2rem;
+      font-size: 11px;
     }
   }
   .coinJ-right {
