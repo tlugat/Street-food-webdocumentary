@@ -1,11 +1,12 @@
 <template>
   <div :key="this.$route.params.key" class="halfPage">
     <div class="halfPage__content">
-      <Title :title="this.$route.params.title" class="title"></Title>
+      <Title :title="title" class="title"></Title>
       <div class="textContainer">
         <p v-if="text1">{{ text1 }}</p>
         <p v-if="text2">{{ text2 }}</p>
         <p v-if="text3">{{ text3 }}</p>
+        <le-saviez-vous v-if="lsv" :lsv="lsv"></le-saviez-vous>
       </div>
     </div>
     <img :src="img" class="halfPage__img" />
@@ -14,16 +15,19 @@
 
 <script>
 import Title from "../Utils/TheTitle/Title";
-
+import LeSaviezVous from "../Utils/LeSaviezVous/LeSaviezVous";
 export default {
   props: {
     text1: String,
     text2: String,
     text3: String,
     img: String,
+    title: String,
+    lsv: String,
   },
   components: {
     Title,
+    LeSaviezVous,
   },
 };
 </script>

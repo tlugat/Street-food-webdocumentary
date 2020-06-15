@@ -71,6 +71,7 @@
 
 <script>
 import Title from "../Utils/TheTitle/Title";
+
 export default {
   components: {
     Title,
@@ -99,7 +100,7 @@ export default {
   .height {
     height: 100vh;
   }
-  &__title {
+  &title {
     padding: 2rem;
     color: white;
     font-size: 20px;
@@ -107,11 +108,12 @@ export default {
 }
 .text-part {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem;
-  &__textContainer {
-    
+  &textContainer {
+
     position: relative;
     text-align: center;
     line-height: 150%;
