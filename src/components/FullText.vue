@@ -105,12 +105,15 @@ export default {
   }
 }
 .text-part {
-  height: 100%;
-  @include flex(column, null, null);
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
 
   padding: 1rem;
   &__textContainer {
+    
     position: relative;
+    text-align: center;
     line-height: 150%;
     padding: 1rem;
     .text1 {
