@@ -1,16 +1,9 @@
 <template>
   <div class="fullPage">
-    <Title
-      v-if="title"
-      :title="this.$route.params.title"
-      s
-      class="fullPage__title"
-    ></Title>
+    <Title v-if="title" :title="this.$route.params.title" s class="fullPage__title"></Title>
     <div class="text-part">
       <div class="text-part__textContainer">
-        <p>
-          {{ text1 }}
-        </p>
+        <p>{{ text1 }}</p>
         <p v-if="text2">{{ text2 }}.</p>
       </div>
     </div>
@@ -21,25 +14,27 @@
 import Title from "../Utils/TheTitle/Title";
 export default {
   components: {
-    Title,
+    Title
   },
   props: {
     text1: String,
     text2: String,
-    title: String,
+    title: String
   },
-  methods: {},
+  methods: {}
 };
 </script>
 
 <style lang="scss">
+@import "@/assets/global.scss";
 .fullPage {
+  background-color: $black;
   &__title {
     padding: 2rem;
   }
 }
 .text-part {
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   &__textContainer {

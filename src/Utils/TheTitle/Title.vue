@@ -10,8 +10,8 @@
 <script>
 export default {
   props: {
-    title: String,
-  },
+    title: String
+  }
 };
 </script>
 
@@ -21,15 +21,21 @@ export default {
 .title-wrapper {
   position: relative;
   font-size: $title-mobileFont;
-  @include flex(null, flex-end, null);
+  // @include flex(null, flex-end, null);
   width: 100%;
+
+  h2 {
+    font-size: 18px;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
   .square {
     height: 1.5rem;
     width: 1.5rem;
     background: $green;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     z-index: -1;
   }
 }
