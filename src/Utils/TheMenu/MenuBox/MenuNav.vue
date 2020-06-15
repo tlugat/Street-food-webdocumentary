@@ -54,6 +54,11 @@
           chapter
         }}</router-link>
       </li>
+      <li>
+        <router-link class="test" to="/recettes">
+        <a>Recettes</a>
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>

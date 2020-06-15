@@ -1,4 +1,5 @@
 <template>
+
   <div  @click="toggleCard" class="recettes">
     <transition name="flip">
   <div v-if="!cardFlipped"  class="burger">
@@ -14,13 +15,16 @@
     </transition>
     <transition name="flip">
   <div  v-if="cardFlipped" class="recettes recettes--back">
-    <div class="burger burger--back">
+    
       <h3 class="burger__title2">{{burger}}</h3>
-      <p class="burger__text">{{ recipe }}</p>
-    </div>
+      <ul>
+      <li v-for="(ingredient,index) in types[type]" :key="index" class="burger__text">{{ ingredient }}</li>
+      </ul>
+   
   </div>
     </transition>
   </div>
+
 </template>
 
 <script>
@@ -28,12 +32,46 @@ export default {
    props: {
     burger: String,
     url: String,
-    recipe:String,
+    type:Number,
   },
   data() {
     return {
-      cardFlipped: false
-    };
+      cardFlipped: false,
+      types:[
+      [
+        "magret",
+        "pains à burger",
+        "tomates séchées",
+        "tranches de tome de brebis",
+        "tranches de salade ",
+        "Confit d’oignon",
+        "Sel au piment d’Espelette"
+        ],
+
+        [
+        "œufs",
+        "oignons",
+        "gousses d’ail",
+        "pois chiches ",
+        "huile d’olive ",
+        "feuilles de salade",
+        "tomate",
+        "oignon rouge",
+        "tranches de fromage végétal",
+        "pains à hamburger",
+        "ketchup et/ou mayonnaise",
+        ],
+
+        [
+        "aubergine",
+        "Pesto (basilic, oignons de pin et huile d’olive)",
+        "poignées de mâche",
+        "tranches de tome de brebis",
+        " Fromage de chèvre ",
+        "pain sans gluten",
+        ]
+      ]
+    }
   },
     methods: {
     toggleCard() {
@@ -47,6 +85,8 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
 
+
+
 .flip-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s, transform 0.5s;
@@ -59,39 +99,38 @@ export default {
 .recettes{
   @include flex(null, center, center);
   .recettes--back{
-    background-color: #fff;
+    @include flex(column, null, center);
     align-items: center;
-    transform: translateX(-50%,-50%);
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
-    height: 220px;
   }
 }
 .burger{
   position: relative;
   width:100vw;
   
-
   &__title{
-    position:absolute;
     @include flex(null, center, center);
-    font-size: $title-font;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 25px;
     color: #fff;
     font-family: Helvetica;
+    width: 12rem;
+    transform: translate(-50%,-50%);
+    z-index: 0;
   }
   &__title2{
-    position:absolute;
-    top: 0;
-    right: 5%;
-    font-size: $title-font;
-    color: #000;
+    font-size: 25px;
     font-family: Helvetica;
     border-bottom: solid #f7b200 2px;
+    margin-bottom: 1.5rem;
   }
   &__plus{
     position: absolute;
     top:70%;
-    left: 45%;
+    left: 50%;
     width: 30px;
     height: 30px;
     @include flex(null, center, center);
@@ -100,54 +139,33 @@ export default {
     z-index: 0;
     border: solid #f7b200 1px;
     align-content: center;
-    transform: translateX(-50%,-50%);
+    transform: translate(-50%,-50%);
 
-    p{
-      transform: translateX(-50%,-50%);
-    }
+   
     
   }
   &__burger--back {
      box-shadow: 10px 0px 0px 0px black;
       .text {
         font-size: 11px;
-
         @include small {
-          font-size: 14px;
-          width: 220px;
+          
         }
       }
   }
+  &__img {
+        width: 100vw ;
+        height: 100%;
+      }
 
   &__text{
-      margin: 20% 0% 20% 5%;
       color: #000;
       text-align: left;
     }
-
-
-  h2 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-bottom: solid 2px $yellow;
-        padding-bottom: 0.2rem;
-      }
-  img {
-        width: 100vw ;
-        height: 185px;
-      }
-
 }
 
-  @include xlarge {
-        .burger{
-          display: flex;
-          flex-direction: column;
-          width: 423px;
-          height: 750px;
 
-        }
+  @include xlarge {
+       
       }
 </style>

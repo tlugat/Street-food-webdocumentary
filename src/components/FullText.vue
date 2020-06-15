@@ -73,7 +73,7 @@
 import Title from "../Utils/TheTitle/Title";
 export default {
   components: {
-    Title,
+    Title
   },
   props: {
     text1: String,
@@ -100,19 +100,22 @@ export default {
   }
   &__title {
     padding: 2rem;
+    color: white;
+    font-size: 20px;
   }
 }
 .text-part {
   height: 100%;
   @include flex(column, null, null);
-  padding: 1rem;
 
+  padding: 1rem;
   &__textContainer {
     position: relative;
     line-height: 150%;
     padding: 1rem;
     .text1 {
       margin-bottom: 2rem;
+      font-size: 11px;
     }
   }
   .coinJ-right {
