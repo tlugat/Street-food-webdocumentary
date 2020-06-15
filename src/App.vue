@@ -1,19 +1,5 @@
 <template>
   <div id="app">
-    <!-- <ul @click="displayComponent">
-      <li>
-        <router-link class="test" to="/chefs">chefs component</router-link>
-      </li>
-      <li>
-        <router-link class="test" to="/intro-chapitre"
-          >Intro Chapitre</router-link
-        >
-      </li>
-      <li>
-        <router-link class="test" to="/full-text">Full text</router-link>
-      </li>
-    </ul> -->
-    <!-- <router-link class="test" to="/chapitre1">chapitre 1</router-link> -->
     <transition name="slide">
       <router-view v-if="!viewLanding" class="view"></router-view>
     </transition>

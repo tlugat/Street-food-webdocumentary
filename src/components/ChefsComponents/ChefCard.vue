@@ -1,6 +1,5 @@
 <template>
   <div @click="toggleCard" class="cardChef">
-
     <transition name="flip" mode="out-in">
       <div v-if="!cardFlipped" class="chef chef--front">
         <svg

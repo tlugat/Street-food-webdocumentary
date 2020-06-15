@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Chefs from "./components/Chefs";
 import IntroChapitre from "./components/IntroChapitre.vue";
+import Recettes from "./components/Recettes.vue";
 import FullText from "./components/FullText";
 import HalfText from "./components/HalfText";
 import Chapitre1 from "./Views/Chapitre1";
@@ -9,9 +10,11 @@ import Chapitre2 from "./Views/Chapitre2";
 import JayFai from "./components/Jay-Fai";
 import Stats from "./components/Stats";
 import LandingPage from "./Views/LandingPage";
+
 Vue.use(VueRouter);
 
 export default new VueRouter({
+  mode: "history",
   routes: [
     {
       path: "/",
@@ -25,6 +28,10 @@ export default new VueRouter({
     {
       path: "/intro-chapitre",
       component: IntroChapitre,
+    },
+    {
+      path:"/recettes",
+      component: Recettes,
     },
     {
       path: "/origines",

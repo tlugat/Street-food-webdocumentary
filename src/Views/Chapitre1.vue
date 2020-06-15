@@ -4,7 +4,7 @@
     <half-text class="halfText"></half-text>
     <full-text class="FullText"></full-text>
     <half-text class="halfText"></half-text>
-    <full-text class="fullText"></full-text>
+    <full-text :text="text" class="fullText"></full-text>
     <stats class="stats"></stats>
     <half-text class="halfText"></half-text>
     <jay-fai class="jay-fai"></jay-fai>
@@ -28,6 +28,7 @@ export default {
   },
   data() {
     return {};
+
   },
 };
 </script>
