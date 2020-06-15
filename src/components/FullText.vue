@@ -73,7 +73,7 @@
 import Title from "../Utils/TheTitle/Title";
 export default {
   components: {
-    Title,
+    Title
   },
   props: {
     text1: String,
