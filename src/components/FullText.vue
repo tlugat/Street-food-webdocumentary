@@ -1,7 +1,12 @@
 <template>
   <div :style="setBackground" class="fullPage">
     <div class="height">
-      <Title v-if="title" :title="this.$route.params.title" s class="fullPage__title"></Title>
+      <Title
+        v-if="title"
+        :title="this.$route.params.title"
+        s
+        class="fullPage__title"
+      ></Title>
       <div class="text-part">
         <div class="text-part__textContainer">
           <svg
@@ -67,20 +72,20 @@ import Title from "../Utils/TheTitle/Title";
 
 export default {
   components: {
-    Title
+    Title,
   },
   props: {
     text1: String,
     text2: String,
     title: String,
-    background: String
+    background: String,
   },
   methods: {},
   computed: {
     setBackground() {
       return { background: `url(${this.background})`, backgroundSize: "cover" };
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -105,8 +110,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem;
-  &textContainer {
-
+  &__textContainer {
     position: relative;
     text-align: center;
     line-height: 150%;
