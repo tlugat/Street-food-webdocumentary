@@ -79,7 +79,7 @@ export default {
     transform: translateY(0);
   }
   &__btn {
-    font-family: poppins-semiBold;
+    font-weight: 500;
     font-size: 14px;
     cursor: pointer;
     position: absolute;
@@ -87,6 +87,9 @@ export default {
     right: 1.5rem;
     z-index: 10;
     color: #fff;
+    @include medium {
+      font-size: 18px;
+    }
   }
 }
 .black {

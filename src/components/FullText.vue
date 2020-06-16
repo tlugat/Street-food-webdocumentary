@@ -1,5 +1,6 @@
 <template>
   <div :style="setBackground" class="fullPage">
+    <div class="test"></div>
     <div class="height">
       <Title
         v-if="title"
@@ -92,16 +93,22 @@ export default {
 <style lang="scss">
 @import "@/assets/global.scss";
 @import "@/assets/_fonts.scss";
+.test {
+  height: 100vh;
+  background: $black;
+  opacity: 70%;
+}
 .fullPage {
   color: #fff;
-
   .height {
     height: 100vh;
   }
-  &title {
+  &__title {
     padding: 2rem;
     color: white;
     font-size: 20px;
+    position: absolute;
+    top: 1rem;
   }
 }
 .text-part {
@@ -119,8 +126,8 @@ export default {
     font-family: poppins, sans-serif;
     font-weight: 400;
     font-style: normal;
-     @include medium{
-       font-size: $large-desktopText;
+    @include medium {
+      font-size: $large-desktopText;
     }
 
     .text1 {

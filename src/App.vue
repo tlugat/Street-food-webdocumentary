@@ -48,7 +48,7 @@ export default {
   font-family: calibri;
   overflow: hidden;
   position: relative;
-
+  font-family: poppins;
   @include medium {
     height: 100vh;
   }
@@ -66,7 +66,6 @@ export default {
   height: 100%;
   width: 100vw;
   overflow: hidden;
-  font-family: poppins;
   @include medium {
     height: 100vh;
   }

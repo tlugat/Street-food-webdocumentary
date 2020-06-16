@@ -43,8 +43,8 @@
           class="recettes--back__close"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          width="24"
-          height="24"
+          width="36"
+          height="36"
         >
           <path fill="none" d="M0 0h24v24H0z" />
           <path
@@ -91,7 +91,7 @@ export default {
 
         [
           "aubergine",
-          "Pesto (basilic, oignons de pin et huile d’olive)",
+          "Pesto (+ pignons de pin)",
           "poignées de mâche",
           "tranches de tome de brebis",
           " Fromage de chèvre ",
@@ -122,56 +122,70 @@ export default {
 }
 
 .recettes {
-  // @include flex(null, center, center);
   @include medium {
     width: 100%;
   }
   &__plus {
     cursor: pointer;
+    transition: 0.4s ease-in-out;
+    &:hover {
+      transform: rotate(180deg);
+    }
   }
   .recettes--back {
-    @include flex(column, null, center);
-    position :relative;
+    @include flex(column, flex-start, center);
+    position: relative;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
+
     @include medium {
       width: 100%;
     }
-    &__close{
+    &__close {
       position: absolute;
       top: 5%;
-      left:80%;
+      left: 80%;
       cursor: pointer;
+      transition: 0.4s;
+      &:hover {
+        transform: rotate(180deg);
+        background: $green;
+        fill: #fff;
+      }
     }
   }
 }
 .burger {
   position: relative;
   width: 100%;
+  height: 100%;
 
   &__title {
     @include flex(null, center, center);
     position: absolute;
     top: 40%;
     left: 50%;
-    font-size: 40px;
-    font-weight: bold;
+    font-weight: 700;
     color: #fff;
-    font-family: Helvetica;
-    width: 18rem;
+    width: 19rem;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 1;
+    border-bottom: solid 2px $yellow;
+    font-size: 24px;
+    @include medium {
+      font-size: $title-font;
+    }
   }
   &__title2 {
-    font-size: 25px;
-    font-family: Helvetica;
-    border-bottom: solid #f7b200 2px;
-    margin-bottom: 1.5rem;
-    margin-top: 5%;
-    @include medium{
-      margin-top:20%;
-    } 
+    border-bottom: solid $yellow 2px;
+    padding-bottom: 0.5rem;
+    margin: 5% 0;
+    position: relative;
+    font-size: 24px;
+    @include medium {
+      font-size: $title-font;
+    }
   }
   &__plus {
     position: absolute;
@@ -183,27 +197,24 @@ export default {
     font-size: 30px;
     color: #fff;
     z-index: 0;
-    border: solid #f7b200 1px;
+    border: solid $yellow 2px;
     align-content: center;
     transform: translate(-50%, -50%);
-
-     @include medium{
-      border: solid #f7b200 3px;
+    transition: 0.5s;
+    &:hover {
+      background: $yellow;
+    }
+    @include medium {
+      border: solid $yellow 3px;
       font-size: 90px;
       width: 50px;
       height: 50px;
-    } 
+    }
   }
 
-  // &__plus:hover{
-  //   transform-origin: 45% 45%;
-  //   transform: rotate(180deg);
-  //   transition: .8s ease-in-out;
-  // }
-   
   &__img {
     width: 100vw;
-    height: 33vh;
+    height: 100%;
     object-fit: cover;
     filter: grayscale(1);
     -webkit-filter: grayscale(1);
@@ -214,20 +225,30 @@ export default {
     }
   }
   &__img:hover {
-      filter: grayscale(0);
-      -webkit-filter: grayscale(0);
-      transition: ease-in-out 1s;
-    }
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    transition: ease-in-out 0.2s;
+  }
 
   &__text {
     color: #000;
     text-align: left;
-    @include medium{
-       margin-top: 10%;
+    position: relative;
+
+    @include medium {
+      margin-top: 10%;
+      font-size: 18px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.8rem;
+      width: 0.8rem;
+      background: $green;
     }
   }
-}
-
-@include xlarge {
 }
 </style>
