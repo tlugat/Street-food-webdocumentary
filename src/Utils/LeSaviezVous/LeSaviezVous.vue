@@ -98,10 +98,10 @@ export default {
     height: 115px;
     background-color: #f7b200;
     position: relative;
+    @include flex(column, center, null);
     @include medium {
       width: 40%;
     }
-
     &__title {
       font-size: 20px;
       color: white;
@@ -109,18 +109,12 @@ export default {
       padding-top: 15px;
       margin: 0;
     }
-
     &__text {
       font-size: 12px;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 1rem;
+      padding: 0.5rem 2rem;
       width: 80%;
     }
   }
-
   .fleche {
     width: 66px;
     height: 45px;
@@ -130,7 +124,6 @@ export default {
     flex-direction: row;
     align-items: center;
     position: relative;
-
     &__triangle {
       display: inline-block;
       height: 0;
@@ -139,7 +132,6 @@ export default {
       border-bottom: 23px solid transparent;
       border-left: 16px solid white;
     }
-
     svg {
       height: 1.8rem;
       width: 1.8rem;
