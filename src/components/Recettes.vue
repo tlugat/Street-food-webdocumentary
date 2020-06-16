@@ -1,21 +1,21 @@
 <template>
   <div class="recettes">
-    <recettesCTA
+    <recette
       class="recette"
       v-for="(burger, index) in burgers"
       :key="index"
       :burger="burgers[index]"
       :url="urls[index]"
       :type="index"
-    ></recettesCTA>
+    ></recette>
   </div>
 </template>
 
 <script>
-import RecettesCTA from "./RecettesComponent/recettesCTA";
+import Recette from "./RecettesComponent/Recette";
 export default {
   components: {
-    RecettesCTA,
+    Recette,
   },
   data() {
     return {
@@ -34,13 +34,18 @@ export default {
 
 .recette {
   height: 15rem;
+  &:nth-child(-n + 2) {
+    @media (max-width: 767px) {
+      margin-bottom: 0.3rem;
+    }
+  }
 }
 
 .recettes {
   width: 100%;
+  @include flex(column, space-between, null);
   @include medium {
     @include flex(row, space-between, null);
-    width: 33vw;
     height: 100%;
   }
 }

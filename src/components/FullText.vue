@@ -1,6 +1,6 @@
 <template>
   <div :style="setBackground" class="fullPage">
-    <div class="fullpage__background"></div>
+    <div class="test"></div>
     <div class="height">
       <Title
         v-if="title"
@@ -95,16 +95,13 @@ export default {
 <style lang="scss">
 @import "@/assets/global.scss";
 @import "@/assets/_fonts.scss";
+.test {
+  height: 100vh;
+  background: $black;
+  opacity: 70%;
+}
 .fullPage {
   color: #fff;
- &__background {
-   position: absolute;
-   top:50%;
-   height: 100vh;
-   background-color: $black;
-   opacity: 50%;
-   z-index: 10;
- }
   .height {
     height: 100vh;
   }
@@ -112,6 +109,8 @@ export default {
     padding: 2rem;
     color: white;
     font-size: 20px;
+    position: absolute;
+    top: 1rem;
   }
   .backbutton {
     position:absolute;

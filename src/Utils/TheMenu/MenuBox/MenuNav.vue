@@ -207,6 +207,7 @@ export default {
       a {
         text-decoration: none;
         color: white;
+        font-size: 14px;
         &:hover {
           color: $yellow;
         }
