@@ -119,6 +119,9 @@ export default {
     font-family: poppins, sans-serif;
     font-weight: 400;
     font-style: normal;
+     @include medium{
+       font-size: $large-desktopText;
+    }
 
     .text1 {
       margin-bottom: 2rem;

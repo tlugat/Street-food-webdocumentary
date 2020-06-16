@@ -78,17 +78,15 @@ export default {
         ],
 
         [
-          "œufs",
           "oignons",
           "gousses d’ail",
           "pois chiches ",
           "huile d’olive ",
           "feuilles de salade",
           "tomate",
+          "pain burger",
           "oignon rouge",
           "tranches de fromage végétal",
-          "pains à hamburger",
-          "ketchup et/ou mayonnaise",
         ],
 
         [
@@ -133,11 +131,18 @@ export default {
   }
   .recettes--back {
     @include flex(column, null, center);
+    position :relative;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
     @include medium {
       width: 100%;
+    }
+    &__close{
+      position: absolute;
+      top: 5%;
+      left:80%;
+      cursor: pointer;
     }
   }
 }
@@ -148,20 +153,25 @@ export default {
   &__title {
     @include flex(null, center, center);
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    font-size: 25px;
+    font-size: 40px;
+    font-weight: bold;
     color: #fff;
     font-family: Helvetica;
-    width: 12rem;
+    width: 18rem;
     transform: translate(-50%, -50%);
-    z-index: 0;
+    z-index: 3;
   }
   &__title2 {
     font-size: 25px;
     font-family: Helvetica;
     border-bottom: solid #f7b200 2px;
     margin-bottom: 1.5rem;
+    margin-top: 5%;
+    @include medium{
+      margin-top:20%;
+    } 
   }
   &__plus {
     position: absolute;
@@ -176,21 +186,45 @@ export default {
     border: solid #f7b200 1px;
     align-content: center;
     transform: translate(-50%, -50%);
+
+     @include medium{
+      border: solid #f7b200 3px;
+      font-size: 90px;
+      width: 50px;
+      height: 50px;
+    } 
   }
 
+  // &__plus:hover{
+  //   transform-origin: 45% 45%;
+  //   transform: rotate(180deg);
+  //   transition: .8s ease-in-out;
+  // }
+   
   &__img {
     width: 100vw;
     height: 33vh;
     object-fit: cover;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
 
     @include medium {
       width: 33vw;
       height: 100vh;
     }
   }
+  &__img:hover {
+      filter: grayscale(0);
+      -webkit-filter: grayscale(0);
+      transition: ease-in-out 1s;
+    }
+
   &__text {
     color: #000;
     text-align: left;
+    @include medium{
+       margin-top: 10%;
+    }
   }
 }
 
