@@ -34,14 +34,13 @@ export default {
 
 .recette {
   height: 15rem;
-  cursor: pointer;
-  // margin: ;
 }
 
 .recettes {
   width: 100%;
   @include medium {
-    @include flex(row, null, null);
+    @include flex(row, space-between, null);
+    width: 33vw;
     height: 100%;
   }
 }

@@ -123,7 +123,10 @@ export default {
   transform: translateX(50px);
 }
 .recettes {
-  @include flex(null, center, center);
+  // @include flex(null, center, center);
+  @include medium {
+    width: 100%;
+  }
   &__plus {
     cursor: pointer;
   }
@@ -133,13 +136,13 @@ export default {
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
     @include medium {
-      width: 33vw;
+      width: 100%;
     }
   }
 }
 .burger {
   position: relative;
-  width: 100vw;
+  width: 100%;
 
   &__title {
     @include flex(null, center, center);
@@ -174,22 +177,13 @@ export default {
     transform: translate(-50%, -50%);
   }
 
-  &__burger--back {
-    box-shadow: 10px 0px 0px 0px black;
-    .text {
-      font-size: 11px;
-      @include small {
-      }
-    }
-  }
-
   &__img {
     width: 100vw;
     height: 33vh;
     object-fit: cover;
 
     @include medium {
-      width: 100%;
+      width: 33vw;
       height: 100vh;
     }
   }
