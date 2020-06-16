@@ -5,7 +5,9 @@
     <div class="globalTitles">
       <p class="globalTitles__subtitle">D'un mode de vie à une tendance</p>
       <h1 class="globalTitles__title">STREET FOOD</h1>
+      <button class="startButton"> Place à la dégusation ! </button>
     </div>
+    
     <div class="disclaimer">
       <div class="disclaimer__textWrapper">
         <svg
@@ -124,6 +126,24 @@ export default {
       font-size: 28px;
       width: auto;
       font-weight: 500;
+    }
+  }
+  .startButton {
+    position:absolute;
+    padding: 1rem 2rem;
+    background: none;
+    color: white;
+    border: solid 2px $green;
+    bottom: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    @include medium {
+      bottom: -6rem;
+      font-size: 18px;
+      transition: .2s;
+      &:hover {
+        background: $green;
+      }
     }
   }
 }

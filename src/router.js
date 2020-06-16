@@ -5,8 +5,6 @@ import IntroChapitre from "./components/IntroChapitre.vue";
 import Recettes from "./components/Recettes.vue";
 import FullText from "./components/FullText";
 import HalfText from "./components/HalfText";
-import Chapitre1 from "./Views/Chapitre1";
-import Chapitre2 from "./Views/Chapitre2";
 import JayFai from "./components/Jay-Fai";
 import Stats from "./components/Stats";
 import LandingPage from "./Views/LandingPage";
@@ -94,10 +92,6 @@ export default new VueRouter({
       props: true,
     },
     {
-      path: "/chapitre1",
-      component: Chapitre1,
-    },
-    {
       path: "/stats",
       component: Stats,
     },
@@ -106,10 +100,6 @@ export default new VueRouter({
       name: "jay-fai",
       component: JayFai,
       props: true,
-    },
-    {
-      path: "/chapitre2",
-      component: Chapitre2,
     },
   ],
 });
