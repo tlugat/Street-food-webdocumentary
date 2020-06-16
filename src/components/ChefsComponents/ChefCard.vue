@@ -142,18 +142,18 @@ export default {
   props: {
     chef: String,
     url: String,
-    recette: Object
+    recette: Object,
   },
   data() {
     return {
-      cardFlipped: false
+      cardFlipped: false,
     };
   },
   methods: {
     toggleCard() {
       this.cardFlipped = !this.cardFlipped;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -170,6 +170,7 @@ export default {
 }
 
 .cardChef {
+  width: 270px;
   @include flex(null, center, center);
   padding-bottom: 1rem;
 

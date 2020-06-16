@@ -103,7 +103,9 @@ export default new VueRouter({
     },
     {
       path: "/jay-fai",
+      name: "jay-fai",
       component: JayFai,
+      props: true,
     },
     {
       path: "/chapitre2",

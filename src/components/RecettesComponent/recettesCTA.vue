@@ -6,6 +6,8 @@
         <img class="burger__img" :src="url" alt />
         <div class="burger__plus">
           <svg
+            @click="toggleCard"
+            class="recettes__plus"
             width="45"
             height="45"
             viewBox="0 0 45 45"
@@ -36,6 +38,19 @@
             {{ ingredient }}
           </li>
         </ul>
+        <svg
+          @click="toggleCard"
+          class="recettes--back__close"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+          />
+        </svg>
       </div>
     </transition>
   </div>
@@ -108,10 +123,12 @@ export default {
   transform: translateX(50px);
 }
 .recettes {
-  @include flex(null, center, center);
-  width: 100vw;
+  // @include flex(null, center, center);
   @include medium {
-    width: 33vw;
+    width: 100%;
+  }
+  &__plus {
+    cursor: pointer;
   }
   .recettes--back {
     @include flex(column, null, center);
@@ -119,7 +136,7 @@ export default {
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
     @include medium {
-      width: 33vw;
+      width: 100%;
     }
   }
 }
@@ -160,22 +177,13 @@ export default {
     transform: translate(-50%, -50%);
   }
 
-  &__burger--back {
-    box-shadow: 10px 0px 0px 0px black;
-    .text {
-      font-size: 11px;
-      @include small {
-      }
-    }
-  }
-
   &__img {
     width: 100vw;
     height: 33vh;
     object-fit: cover;
 
     @include medium {
-      width: 100%;
+      width: 33vw;
       height: 100vh;
     }
   }

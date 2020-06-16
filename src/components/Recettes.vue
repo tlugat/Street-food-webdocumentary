@@ -31,6 +31,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
+
 .recette {
   height: 15rem;
 }
@@ -38,7 +39,8 @@ export default {
 .recettes {
   width: 100%;
   @include medium {
-    @include flex(row, null, null);
+    @include flex(row, space-between, null);
+    width: 33vw;
     height: 100%;
   }
 }

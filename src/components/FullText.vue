@@ -64,6 +64,7 @@
 
 <script>
 import Title from "../Utils/TheTitle/Title";
+
 export default {
   components: {
     Title
@@ -85,28 +86,36 @@ export default {
 
 <style lang="scss">
 @import "@/assets/global.scss";
+@import "@/assets/_fonts.scss";
 .fullPage {
   color: #fff;
 
   .height {
     height: 100vh;
   }
-  &__title {
+  &title {
     padding: 2rem;
     color: white;
     font-size: 20px;
   }
 }
 .text-part {
-  height: 100%;
-  @include flex(column, null, null);
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 1rem;
-  &__textContainer {
+  &textContainer {
+
     position: relative;
+    text-align: center;
     line-height: 150%;
     padding: 1rem;
     font-size: 14px;
+    font-family: poppins, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
     .text1 {
       margin-bottom: 2rem;
     }

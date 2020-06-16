@@ -1,11 +1,18 @@
 <template>
   <div :key="this.$route.params.key" class="halfPage">
     <div class="halfPage__content">
-      <Title :title="this.$route.params.title" class="title"></Title>
+      <Title :title="title" class="title"></Title>
       <div class="textContainer">
         <p v-if="text1">{{ text1 }}</p>
         <p v-if="text2">{{ text2 }}</p>
         <p v-if="text3">{{ text3 }}</p>
+        <le-saviez-vous
+          @slide-in-lsv="slideInLsv"
+          @slide-out-lsv="slideOutLsv"
+          class="lsv"
+          v-if="lsv"
+          :lsv="lsv"
+        ></le-saviez-vous>
       </div>
     </div>
     <img :src="img" class="halfPage__img" />
@@ -14,22 +21,41 @@
 
 <script>
 import Title from "../Utils/TheTitle/Title";
-
+import LeSaviezVous from "../Utils/LeSaviezVous/LeSaviezVous";
 export default {
   props: {
     text1: String,
     text2: String,
     text3: String,
-    img: String
+    img: String,
+    title: String,
+    lsv: String,
   },
   components: {
-    Title
-  }
+    Title,
+    LeSaviezVous,
+  },
+  methods: {
+    slideInLsv() {
+      document.querySelector(".lsv").style.transform = "translateX(0)";
+    },
+    slideOutLsv() {
+      document.querySelector(".lsv").style.transform = "translateX(85%)";
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
+
+.lsv {
+  position: absolute;
+  right: 0;
+  transform: translateX(85%);
+  transition: 0.4s ease-in-out;
+}
+
 .halfPage {
   // background: $black;
   width: 100%;
