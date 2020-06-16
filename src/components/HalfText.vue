@@ -81,15 +81,23 @@ export default {
     .title {
       z-index: 1;
       padding: 1.5rem;
+      @include medium {
+        padding-left: 4.5rem;
+      }
     }
     .textContainer {
       padding: 1.5rem;
-      line-height: 16.5px;
+      line-height: 21px;
+      @include medium {
+        width: 80%;
+        line-height: 24px;
+        padding-left: 4.5rem;
+      }
       p {
         margin-bottom: 1rem;
-
-        @include small {
-          font-size: 14px;
+        font-size: 14px;
+        @include medium {
+          font-size: 16px;
         }
       }
     }
