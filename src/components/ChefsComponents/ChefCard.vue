@@ -142,18 +142,18 @@ export default {
   props: {
     chef: String,
     url: String,
-    recette: Object,
+    recette: Object
   },
   data() {
     return {
-      cardFlipped: false,
+      cardFlipped: false
     };
   },
   methods: {
     toggleCard() {
       this.cardFlipped = !this.cardFlipped;
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -36,7 +36,7 @@
 import AboutBrands from "../Utils/TheAbout/AboutBrands";
 export default {
   components: {
-    AboutBrands,
+    AboutBrands
   },
   data() {
     return {};
@@ -45,8 +45,8 @@ export default {
     slideAbout() {
       document.querySelector(".about__brands").classList.toggle("open");
       document.querySelector(".about__btn").classList.toggle("black");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -97,25 +97,30 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 60%;
   transform: translate(-50%, -50%);
   color: #fff;
   &__title {
     font-size: 64px;
+    text-align: center;
+    width: auto;
+    font-weight: bold;
     @include medium {
       font-size: 120px;
       width: 55rem;
-      font-weight: bold;
     }
   }
   &__subtitle {
     font-size: 16px;
-    width: 15rem;
+    width: auto;
     color: #f7b200;
+    text-align: center;
+    font-weight: 500;
 
     @include medium {
       font-size: 28px;
-      width: 25rem;
-      font-weight: bold;
+      width: auto;
+      font-weight: 500;
     }
   }
 }
