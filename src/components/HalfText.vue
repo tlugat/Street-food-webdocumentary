@@ -1,12 +1,7 @@
 <template>
   <div :key="this.$route.params.key" class="halfPage">
     <div class="halfPage__content">
-      <le-saviez-vous
-        @slide-lsv="slideLsv"
-        class="lsv"
-        v-if="lsv"
-        :lsv="lsv"
-      ></le-saviez-vous>
+      <le-saviez-vous @slide-lsv="slideLsv" class="lsv" v-if="lsv" :lsv="lsv"></le-saviez-vous>
       <Title :title="title" class="title"></Title>
       <div class="textContainer">
         <p v-if="text1">{{ text1 }}</p>
@@ -180,7 +175,7 @@
         </div>
         <svg
           v-if="svg == 'pyramide'"
-          class="textContainer__background"
+          class="textContainer__background textContainer__background--pyramide"
           width="413"
           height="245"
           viewBox="0 0 413 245"
@@ -202,7 +197,7 @@
         </svg>
         <svg
           v-if="svg == 'burger'"
-          class="textContainer__bakground"
+          class="textContainer__background textContainer__background--burger"
           width="330"
           height="305"
           viewBox="0 0 330 305"
@@ -371,22 +366,22 @@ export default {
     img: String,
     title: String,
     lsv: String,
-    svg: String,
+    svg: String
   },
   components: {
     Title,
-    LeSaviezVous,
+    LeSaviezVous
   },
   data() {
     return {
-      trucks: false,
+      trucks: false
     };
   },
   methods: {
     slideLsv() {
       document.querySelector(".lsv").classList.toggle("open");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -432,6 +427,8 @@ export default {
   .trucks {
     @include flex(null, flex-start, center);
     margin-top: 5rem;
+    padding-left: 1.5rem;
+
     &__itemText {
       position: absolute;
       bottom: -4rem;
@@ -461,7 +458,7 @@ export default {
 
   &__img {
     width: 100%;
-    height: 350px;
+    height: 40%;
     object-fit: cover;
     order: 1;
     @include medium {
@@ -478,26 +475,50 @@ export default {
       z-index: 1;
       padding: 1.5rem;
       @include medium {
-        padding-left: 4.5rem;
+        padding-left: 7rem;
+        padding-top: 4rem;
       }
     }
     .textContainer {
       padding: 1.5rem;
       line-height: 21px;
       position: relative;
+      font-size: 14px;
+      font-weight: normal;
       @include medium {
-        width: 80%;
+        width: 75%;
+        font-size: 16px;
         line-height: 24px;
-        padding-left: 4.5rem;
+        padding-left: 7rem;
+        padding-top: 0.5rem;
       }
       &__background {
         z-index: -1;
         position: absolute;
         top: 50%;
         left: 50%;
+        width: 350px;
         transform: translate(-50%, -50%);
         @include medium {
+          width: 350px;
           top: 100%;
+          left: 75%;
+        }
+      }
+      &__background--burger {
+        width: 250px;
+        @include medium {
+          width: 350px;
+          top: 120%;
+          left: 70%;
+        }
+      }
+      &__background--pyramide {
+        width: 250px;
+        @include medium {
+          width: 450px;
+          top: 130%;
+          left: 75%;
         }
       }
       p {
