@@ -1,5 +1,6 @@
 <template>
   <div :style="setBackground" class="fullPage">
+    <div class="fullpage__background"></div>
     <div class="height">
       <Title
         v-if="title"
@@ -61,7 +62,9 @@
           </svg>
           <p class="text1">{{ text1 }}</p>
           <p v-if="text2">{{ text2 }}.</p>
+          <button class="backbutton"> Retour au départ </button>
         </div>
+        
       </div>
     </div>
   </div>
@@ -94,14 +97,35 @@ export default {
 @import "@/assets/_fonts.scss";
 .fullPage {
   color: #fff;
-
+ &__background {
+   position: absolute;
+   top:50%;
+   height: 100vh;
+   background-color: $black;
+   opacity: 50%;
+   z-index: 10;
+ }
   .height {
     height: 100vh;
   }
-  &title {
+  &__title {
     padding: 2rem;
     color: white;
     font-size: 20px;
+  }
+  .backbutton {
+    position:absolute;
+    padding: 1rem 2rem;
+    background: $yellow;
+    color: white;
+    border: none;
+    //width: 50%;
+    bottom: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    @include medium {
+      bottom: -6rem;
+    }
   }
 }
 .text-part {
@@ -109,7 +133,10 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1rem;
+  width: 90%;
+  @include medium {
+    width: 60%;
+  }
   &__textContainer {
     position: relative;
     text-align: center;
@@ -121,6 +148,7 @@ export default {
     font-style: normal;
      @include medium{
        font-size: $large-desktopText;
+       padding: 2rem;
     }
 
     .text1 {
