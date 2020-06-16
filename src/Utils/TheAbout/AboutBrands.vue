@@ -93,7 +93,7 @@ export default {};
     padding-left: 5px;
     font-size: 14px;
     font-weight: bold;
-    @include medium{
+    @include medium {
       font-size: 22px;
     }
   }
@@ -105,11 +105,10 @@ export default {};
     line-height: 16.5px;
     width: 20rem;
 
-    @include medium{
+    @include medium {
       font-size: $regular-desktopText;
     }
   }
-
 }
 // .about__section--2 {
 //   @media (min-width: 500px) {
@@ -124,8 +123,7 @@ export default {};
   @include medium {
     @include flex(row, null, center);
     flex-wrap: wrap;
-    width: 1
-    50rem;
+    width: 1 50rem;
     justify-content: center;
   }
   &__part {
@@ -136,24 +134,26 @@ export default {};
       width: 100%;
       margin: 0.5rem 0;
     }
-    @include medium{
+    @include medium {
       font-size: $regular-desktopText;
     }
   }
   &__item {
     @include flex(column, null, flex-start);
     margin-bottom: 1rem;
-
+    font-weight: 500;
     p {
       font-size: 13px;
-      @include medium{
-      font-size: $regular-desktopText;
-    }
+      @include medium {
+        font-size: $regular-desktopText;
+      }
     }
   }
 }
 .expertise {
   font-size: 11px;
+  font-weight: 300;
+  margin-top: 0.2rem;
 }
 .trait {
   height: 8px;

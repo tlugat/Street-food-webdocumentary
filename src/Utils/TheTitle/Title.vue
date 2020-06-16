@@ -10,8 +10,8 @@
 <script>
 export default {
   props: {
-    title: String
-  }
+    title: String,
+  },
 };
 </script>
 
@@ -47,7 +47,6 @@ export default {
     top: 0;
     left: 0;
     z-index: -1;
-
     @include medium {
       height: 3rem;
       width: 3rem;
