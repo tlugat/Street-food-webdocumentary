@@ -83,7 +83,7 @@ export default {
 @import "@/assets/global.scss";
 .chefs-page {
   &__cards {
-    @include xlarge {
+    @include large {
       @include flex(null, space-around, center);
     }
   }

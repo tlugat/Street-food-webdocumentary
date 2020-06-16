@@ -1,6 +1,6 @@
 <template>
   <div class="LSV">
-    <div class="test">
+    <div class="flecheContainer">
       <div @click="slideLsv" class="fleche">
         <svg
           width="31"
@@ -66,9 +66,6 @@ export default {
     slideLsv() {
       this.$emit("slide-lsv");
     },
-    // slideOutLsv() {
-    //   this.$emit("slide-out-lsv");
-    // },
   },
 };
 </script>
@@ -81,12 +78,7 @@ export default {
   justify-content: flex-end;
   width: 100%;
   height: 115px;
-  &__close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1;
-  }
+
   .test {
     margin-right: -1px;
     width: 20%;
@@ -120,18 +112,9 @@ export default {
     height: 45px;
     background-color: #f7b200;
     clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     position: relative;
-    &__triangle {
-      display: inline-block;
-      height: 0;
-      width: 0;
-      border-top: 22px solid transparent;
-      border-bottom: 23px solid transparent;
-      border-left: 16px solid white;
-    }
+    margin-right: -1px;
+
     svg {
       height: 1.8rem;
       width: 1.8rem;
