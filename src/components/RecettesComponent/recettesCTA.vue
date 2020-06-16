@@ -122,6 +122,7 @@ export default {
   opacity: 0;
   transform: translateX(50px);
 }
+
 .recettes {
   // @include flex(null, center, center);
   @include medium {

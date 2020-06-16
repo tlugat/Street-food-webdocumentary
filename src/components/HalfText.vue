@@ -7,8 +7,7 @@
         <p v-if="text2">{{ text2 }}</p>
         <p v-if="text3">{{ text3 }}</p>
         <le-saviez-vous
-          @slide-in-lsv="slideInLsv"
-          @slide-out-lsv="slideOutLsv"
+          @slide-lsv="slideLsv"
           class="lsv"
           v-if="lsv"
           :lsv="lsv"
@@ -36,11 +35,8 @@ export default {
     LeSaviezVous,
   },
   methods: {
-    slideInLsv() {
-      document.querySelector(".lsv").style.transform = "translateX(0)";
-    },
-    slideOutLsv() {
-      document.querySelector(".lsv").style.transform = "translateX(85%)";
+    slideLsv() {
+      document.querySelector(".lsv").classList.toggle("open");
     },
   },
 };
@@ -52,8 +48,15 @@ export default {
 .lsv {
   position: absolute;
   right: 0;
-  transform: translateX(85%);
+  transform: translateX(80%);
   transition: 0.4s ease-in-out;
+  width: 100%;
+  @include medium {
+    transform: translateX(40%);
+  }
+}
+.lsv.open {
+  transform: translateX(0);
 }
 
 .halfPage {
