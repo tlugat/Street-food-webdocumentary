@@ -1,9 +1,7 @@
 <template>
   <div class="landing">
     <about-brands class="about__brands"></about-brands>
-    <p @click="slideAbout" class="about__btn">
-      ABOUT
-    </p>
+    <p class="about__btn" @click="slideAbout">ABOUT</p>
     <div class="globalTitles">
       <p class="globalTitles__subtitle">D'un mode de vie à une tendance</p>
       <h1 class="globalTitles__title">STREET FOOD</h1>
@@ -40,12 +38,11 @@ export default {
   components: {
     AboutBrands,
   },
-  // data() {
-  //   return {
-  //     aboutBlack: false,
-  //     black: "black",
-  //   };
-  // },
+  data() {
+    return {
+      
+    };
+  },
   methods: {
     slideAbout() {
       document.querySelector(".about__brands").classList.toggle("open");
@@ -62,6 +59,10 @@ export default {
   height: 100vh;
   background: url("../assets/img/landing-page/background-landing-small.png")
     no-repeat;
+  @include medium {
+    object-fit: cover;
+    background:url("../assets/img/landing-page/background_home_desktop.png")no-repeat;
+  }
   background-size: cover;
 }
 .menu {
@@ -83,7 +84,6 @@ export default {
     font-size: 14px;
     cursor: pointer;
     position: absolute;
-
     top: 1rem;
     right: 1.5rem;
     z-index: 10;
@@ -102,10 +102,22 @@ export default {
   color: #fff;
   &__title {
     font-size: 64px;
+    @include medium{
+      font-size: 120px;
+      width: 55rem;
+      font-weight: bold;
+    }
   }
   &__subtitle {
     font-size: 16px;
     width: 15rem;
+    color: #F7B200;
+
+    @include medium{
+      font-size: 28px;
+      width: 25rem;
+      font-weight: bold;
+    }
   }
 }
 .disclaimer {

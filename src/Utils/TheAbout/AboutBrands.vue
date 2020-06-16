@@ -92,6 +92,10 @@ export default {};
     padding-top: 5px;
     padding-left: 5px;
     font-size: 14px;
+    font-weight: bold;
+    @include medium{
+      font-size: 22px;
+    }
   }
 }
 .about__section--1 {
@@ -99,11 +103,13 @@ export default {};
   p {
     font-size: 11px;
     line-height: 16.5px;
-    width: 240px;
+    width: 20rem;
+
+    @include medium{
+      font-size: $regular-desktopText;
+    }
   }
-  @media (min-width: 1024px) {
-    width: 40%;
-  }
+
 }
 // .about__section--2 {
 //   @media (min-width: 500px) {
@@ -116,17 +122,22 @@ export default {};
     @include flex(column, null, center);
   }
   @include medium {
-    width: 30rem;
+    @include flex(row, null, center);
+    flex-wrap: wrap;
+    width: 1
+    50rem;
     justify-content: center;
   }
   &__part {
     margin-right: 3rem;
-    @include flex(column, null, flex-start);
     @include small {
       display: flex;
       justify-content: space-between;
       width: 100%;
       margin: 0.5rem 0;
+    }
+    @include medium{
+      font-size: $regular-desktopText;
     }
   }
   &__item {
@@ -135,6 +146,9 @@ export default {};
 
     p {
       font-size: 13px;
+      @include medium{
+      font-size: $regular-desktopText;
+    }
     }
   }
 }
