@@ -78,7 +78,7 @@ export default {
   methods: {},
   computed: {
     setBackground() {
-      return { background: `url(${this.background})`, backgroundSize: "cover" };
+      return { background:`url(${this.background})`, backgroundSize: "cover",opacity:"80%",backgroundColor:"$black"};
     }
   }
 };
@@ -105,8 +105,8 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem;
-  &textContainer {
 
+  &__textContainer {
     position: relative;
     text-align: center;
     line-height: 150%;
@@ -115,6 +115,9 @@ export default {
     font-family: poppins, sans-serif;
     font-weight: 400;
     font-style: normal;
+     @include medium{
+       font-size: $large-desktopText;
+    }
 
     .text1 {
       margin-bottom: 2rem;
