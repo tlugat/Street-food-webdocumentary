@@ -25,9 +25,15 @@ export default {
   width: 100%;
 
   h2 {
-    font-size: 18px;
+    font-size: 20px;
     padding-top: 5px;
     padding-left: 5px;
+
+    @include medium {
+      font-size: 40px;
+      padding-top: 10px;
+      padding-left: 10px;
+    }
   }
   .square {
     height: 1.5rem;
@@ -37,6 +43,11 @@ export default {
     top: 0;
     left: 0;
     z-index: -1;
+
+    @include medium {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
   }
 }
 </style>
