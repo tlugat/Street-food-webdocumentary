@@ -78,7 +78,7 @@ export default {
   methods: {},
   computed: {
     setBackground() {
-      return { background:`url(${this.background})`, backgroundSize: "cover",opacity:"80%",backgroundColor:"$black"};
+      return { background: "$black" `url(${this.background})`, backgroundSize: "cover",opacity:"80%"};
     }
   }
 };

@@ -3,7 +3,7 @@
     <transition name="flip">
       <div v-if="!cardFlipped" class="burger">
         <h2 class="burger__title">{{ burger }}</h2>
-        <img class="burger__img" :src="url" alt />
+        <img class="burger__img" :src="url" alt style= "opacity:70%"/>
         <div class="burger__plus">
           <svg
             @click="toggleCard"
@@ -135,6 +135,7 @@ export default {
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
+    background-color: #fff;
     @include medium {
       width: 100%;
     }
