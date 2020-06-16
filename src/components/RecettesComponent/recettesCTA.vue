@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggleCard" class="recettes">
+  <div class="recettes">
     <transition name="flip">
       <div v-if="!cardFlipped" class="burger">
         <h2 class="burger__title">{{ burger }}</h2>
