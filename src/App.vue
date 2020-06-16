@@ -64,8 +64,9 @@ export default {
 }
 .view {
   height: 100%;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
+  font-family: poppins;
   @include medium {
     height: 100vh;
   }

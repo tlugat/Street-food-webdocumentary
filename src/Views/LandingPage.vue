@@ -39,9 +39,7 @@ export default {
     AboutBrands,
   },
   data() {
-    return {
-      
-    };
+    return {};
   },
   methods: {
     slideAbout() {
@@ -61,7 +59,8 @@ export default {
     no-repeat;
   @include medium {
     object-fit: cover;
-    background:url("../assets/img/landing-page/background_home_desktop.png")no-repeat;
+    background: url("../assets/img/landing-page/background_home_desktop.png")
+      no-repeat;
   }
   background-size: cover;
 }
@@ -102,7 +101,7 @@ export default {
   color: #fff;
   &__title {
     font-size: 64px;
-    @include medium{
+    @include medium {
       font-size: 120px;
       width: 55rem;
       font-weight: bold;
@@ -111,9 +110,9 @@ export default {
   &__subtitle {
     font-size: 16px;
     width: 15rem;
-    color: #F7B200;
+    color: #f7b200;
 
-    @include medium{
+    @include medium {
       font-size: 28px;
       width: 25rem;
       font-weight: bold;
