@@ -5,7 +5,13 @@
         <h3 class="about__title">À propos du projet</h3>
         <div class="about__square"></div>
       </div>
-      <p>Création d'un webdoc sur le thème de la street</p>
+      <p>
+        Bienvenue sur notre projet de fin d'année ! <br />
+        Notre mission à été de réaliser un web documentaire sur le thème de
+        notre choix. Pour cloturer notre première année. Nous avons donc choisi
+        la street food, car nous sommes tous des grands gourmands ! Bon appétit
+        à vous !
+      </p>
     </div>
     <div class="about__section about__section--2">
       <div class="about__titleWrapper">
