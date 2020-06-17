@@ -55,6 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/global.scss";
 
 .cards{
   display: flex;
@@ -70,8 +71,11 @@ export default {
   padding: 10px ;
   align-items: center;
   justify-content: space-around;
+  transition: .2s;
+      &:hover {
+        background: $yellow;
+      }
 }
-
 h3{
   width:15rem;
   padding-left: 5%;
