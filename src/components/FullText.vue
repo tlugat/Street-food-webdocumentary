@@ -57,9 +57,8 @@
           </svg>
           <p class="text1">{{ text1 }}</p>
           <p v-if="text2">{{ text2 }}.</p>
-          <button class="backbutton"> Retour au départ </button>
+          <button class="backbutton">Retour au départ</button>
         </div>
-        
       </div>
     </div>
   </div>
@@ -97,12 +96,7 @@ export default {
 }
 .fullPage {
   color: #fff;
-  .height {
-    height: 100%;
-    @include medium {
-      height: 100vh;
-    }
-  }
+
   &__title {
     padding: 2rem;
     color: white;
@@ -111,12 +105,18 @@ export default {
     top: 1rem;
   }
   .backbutton {
-    position:absolute;
+    position: absolute;
     padding: 1rem 2rem;
     background: none;
     color: white;
+
+
+    //width: 50%;
+    bottom: -5rem;
+
     border: solid 2px $yellow;
-    bottom: -4rem;
+
+
     left: 50%;
     font-size: 14px;
     transform: translateX(-50%);
@@ -149,9 +149,9 @@ export default {
     font-family: poppins, sans-serif;
     font-weight: 400;
     font-style: normal;
-     @include medium{
-       font-size: $large-desktopText;
-       padding: 2rem;
+    @include medium {
+      font-size: $large-desktopText;
+      padding: 2rem;
     }
 
     .text1 {
