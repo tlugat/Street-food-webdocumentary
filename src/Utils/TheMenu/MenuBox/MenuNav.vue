@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <h3 @click="backHome" class="menu__title">STREET FOOD</h3>
+    <router-link to="/" class="menu__title">STREET FOOD</router-link>
     <svg
       v-if="!displayChapters"
       @click="back"
@@ -36,30 +36,23 @@
       />
     </svg>
     <ul v-if="displayChapters" class="menu__list">
-      <li @click="selectChapter(index)" v-for="(chapter, index) in summary.chapters" :key="index">
+      <li
+        @click="selectChapter(index)"
+        v-for="(chapter, index) in summary.chapters"
+        :key="index"
+      >
         <a>{{ chapter }}</a>
       </li>
     </ul>
     <ul v-if="!displayChapters" class="menu__list">
-      <li
-        @click="displayLanding"
-        v-for="(chapter, index) in summary.testChapters[test]"
-        :key="index"
-      >
-        <router-link :to="summary.routes[test][index]">
-          {{
+      <li v-for="(chapter, index) in summary.testChapters[test]" :key="index">
+        <router-link :to="summary.routes[test][index]">{{
           chapter
-          }}
-        </router-link>
+        }}</router-link>
       </li>
       <li>
         <router-link class="test" to="/recettes">
-          <a>Recettes</a>
-        </router-link>
-      </li>
-      <li>
-        <router-link class="test" to="/video">
-          <a>Video</a>
+          Recettes
         </router-link>
       </li>
     </ul>
@@ -73,115 +66,26 @@ export default {
       displayChapters: true,
       test: null,
       summary: {
-        chapters: ["Chapitre 1", "Chapitre 2"],
         routes: [
-          [
-            {
-              name: "origines",
-              params: {
-                text1: `Une coutume égyptienne, tradition du port d’Alexandrie , était de frire le poisson pour le vendre dans la rue. Cette coutume s’est répandue en Grèce puis à envahi le monde Romain.`,
-                text2: `On retrouve aussi en Chine ancienne, des traces de nourriture de rue probablement destinée aux populations pauvres. En Amérique du Nord pendant la période coloniale, des tripes, des huîtres ou encore des épis de maïs grillés étaient vendus à même la rue. Les rues des centres urbains deviennent finalement des lieux de restauration rapide.`,
-                img: `https://cdn.discordapp.com/attachments/697362929946722358/721761134318977074/fish.png`,
-                title: `Les origines des cantines de rue`,
-                lsv: `Dans les rues de paris au 19ème siècle on vendait des lanières de pommes de terre frites qui sont d’ailleurs à l’origine des frites que l’on connait si bien. `,
-                svg: "pyramide",
-                key: 6
-              }
-            },
-            {
-              name: "today",
-              params: {
-                text1: `Des plats sont préparés dans les rues de presque toutes les villes du monde.`,
-                text2: `Vendus depuis un :`,
-                img: `https://cdn.discordapp.com/attachments/697362929946722358/721760690565808180/today.png`,
-                title: `Mais aujourd'hui la street food c'est quoi ?`,
-                svg: "trucks",
-                key: 5
-              }
-            },
-            {
-              name: "recette",
-              params: {
-                text1: `A l’heure de la mondialisation et de la génération Y qui s’épanouit dans le voyage et les expériences insolites, la demande de plats internationaux se fait de plus en plus forte. La streetfood répond à ce besoin d’exotisme et d’authenticité culinaire et devient progressivement multiculturelle. Mexicains, américains, africains, indiens et bien sûr asiatiques, ces snacks internationaux sont proposés par des restaurateurs ou des voyageurs inspirés venus offrir leurs savoirs culinaires. `,
-                text2: ` La streetfood répond à ce besoin d’exotisme et d’authenticité culinaire et devient progressivement multiculturelle. Mexicains, américains, africains, indiens et bien sûr asiatiques, ces snacks internationaux sont proposés par des restaurateurs ou des voyageurs inspirés venus offrir leurs savoirs culinaires. `,
-                img: `https://cdn.discordapp.com/attachments/697362929946722358/721760646554976316/recettesucces.png`,
-                title: `La recette d'un succès`,
-                svg:"cards",
-                key: 4
-              }
-            },
-            {
-              name: "jay-fai",
-              params: {
-                lsv: `Au début elle à même refusé cette distinction, elle n’avait pas compris pourquoi un marchand de pneu voulait lui donner un prix.`,
-                key: 3
-              }
-            }
-          ],
-          [
-            {
-              name: "chic",
-              params: {
-                text1: `Pendant des années, la street food était attachée à de grandes enseignes de fast food, aujourd’hui estampillées « malbouffe »… Comme le géant américain Mc Donald, symbole de la mondialisation.`,
-                text2: `Au contraire, la nouvelle street food mise sur des produits de qualité cuisinés avec goût et originalité comme on a pu le voir avec Jai Fay.Une tendance qui se confirme notamment du côté de la burger-mania. Finis, les burgers au steak rabougri, noyés sous les sauces et agrémentés de deux rondelles de tomate insipides…`,
-                title: `Une street food plus chic`,
-                img: `https://cdn.discordapp.com/attachments/697362929946722358/721782756878712863/burger.png`,
-                lsv: `Le burger le plus cher du monde coûte 4700 euros. Il est composé de bœuf de Kobé, truffes noires, du fois gras et une sauce faite à partir de truffes blanches.`,
-                svg: "burger",
-                key: 2
-              }
-            },
-            {
-              name: "fine-casual",
-              params: {
-                text1: `Le “fine casual” est un concept de street food haut de gamme. En allant de la conception de plats de bonne qualité jusqu’à la décoration soignée et branchée du restaurant, le “fine casual” s'identifie comme un fast food premium. Les produits frais et locaux sont souvent mis à l’honneur. `,
-                text2: `Tout droit arrivée des Etats-Unis, cette tendance américaine est déjà bien installée en France. Les Français sont très réceptifs à ce concept puisqu’il déculpabilise les consommateurs en proposant des produits sains, dans un espace confortable et à un coût inférieur à l’offre de restauration bistronomique.`,
-                text3: `Si la cuisine de rue gagne en qualité et en réputation grâce à cette tendance, ce n’est que le début puisque les grands chefs s’en mêlent désormais.`,
-                img: `https://cdn.discordapp.com/attachments/697362929946722358/721760299316805672/finecasual.png`,
-                title: `La tendance du "fine casual"`,
-                lsv: `La gastronomie française représenterait pas moins de 20 à 50% de notre impact environnemental.`,
-                svg: "toque",
-                key: 1
-              }
-            },
-            {
-              name: "chefs",
-              params: {
-                title: "Les grands chefs s'en mêlent"
-              }
-            },
-            {
-              name: "video",
-              params: {
-                title: "video"
-              }
-            },
-            {
-              name: "conclusion",
-              params: {
-                text1: `Bilan ? L’ancienne junk food répond désormais aux codes éthiques du bien manger. Le veau de lait tourne sur les broches des kebabs de luxe, et la cuisine devient spectacle. Là, on assemble les ingrédients sous les yeux des clients, ici on pétrit la pâte à noodle à grand renfort d’huile de coude. Quitte à faire grimper la note ! Comptez entre 13€ et 18€ pour cette nouvelle cuisine de luxe.`,
-                text2: `Embourgeoisement de la street food, ou mutation éthique et healthy de la junk food ? À vous de voir… Après dégustation, bien sûr !`,
-                title: `L'apogée de la street food ?`,
-                background: `https://cdn.discordapp.com/attachments/697362929946722358/722084316250636288/img-apogee-desktop.png`
-              }
-            }
-          ]
+          ["/text/1", "/text/2", "/text/3", { name: "jay-fai" }],
+          ["/text/4", "/text/5", "chefs", "/full-text/3"],
         ],
+        chapters: ["Chapitre 1", "Chapitre 2"],
         testChapters: [
           [
             "Les origines",
             "La street food c'est quoi ?",
             "La recette d'un succès",
-            "Jay Fai"
+            "Jay Fai",
           ],
           [
             "Une street-food plus chic",
             "Le fine Casual",
             "Les grands chefs s'en mêlent",
-            "L'apogée de la cuisine de rue"
-          ]
-        ]
-      }
+            "L'apogée de la cuisine de rue",
+          ],
+        ],
+      },
     };
   },
   methods: {
@@ -192,13 +96,7 @@ export default {
     back() {
       this.displayChapters = true;
     },
-    displayLanding() {
-      this.$emit("display-landing");
-    },
-    backHome() {
-      this.$emit("back-home");
-    }
-  }
+  },
 };
 </script>
 
@@ -230,6 +128,8 @@ export default {
     position: absolute;
     top: 0;
     padding-top: 1rem;
+    text-decoration: none;
+    color: #fff;
     cursor: pointer;
     &:hover {
       color: $green;
