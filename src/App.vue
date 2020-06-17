@@ -1,34 +1,85 @@
 <template>
   <div id="app">
+    <svg
+      @click="nextPage"
+      class="arrow-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="64"
+      height="64"
+    >
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path
+        d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"
+      />
+    </svg>
+    <svg
+      @click="previousPage"
+      class="arrow-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="64"
+      height="64"
+    >
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path
+        d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"
+      />
+    </svg>
     <transition name="slide">
-      <router-view v-if="!viewLanding" class="view"></router-view>
+      <router-view class="view"></router-view>
     </transition>
-    <transition name="slide" mode="out-in">
-      <landing-page v-if="viewLanding" style="height: 100vh" class="view"></landing-page>
-    </transition>
-    <Menu @back-home="viewLanding = true" @display-landing="displayLanding" class="menu"></Menu>
+    <Menu class="menu"></Menu>
   </div>
 </template>
 
 <script>
-import LandingPage from "./Views/LandingPage";
 import Menu from "./Utils/TheMenu/Menu";
 export default {
   name: "App",
   components: {
-    LandingPage,
-    Menu
+    Menu,
   },
   data() {
     return {
-      viewLanding: true
+      indexPage: 0,
+      routes: [
+        "/intro-chapitre/1",
+        "/text/1",
+        "/full-text/1",
+        "/text/2",
+        "/full-text/2",
+        "/stats",
+        "/text/3",
+        "/jay-fai",
+        "/intro-chapitre/2",
+        "/text/4",
+        "/recettes",
+        "/text/5",
+        "/chefs",
+        "/full-text/3",
+      ],
     };
   },
-  methods: {
-    displayLanding() {
-      this.viewLanding = false;
+  mounted() {
+    if (this.$router.path == !"/") {
+      this.$router.push({ path: "/" });
     }
-  }
+  },
+  methods: {
+    nextPage() {
+      if (this.indexPage < this.routes.length) {
+        this.$router.push(this.routes[this.indexPage]);
+        this.indexPage++;
+      }
+    },
+    previousPage() {
+      if (this.indexPage > 0) {
+        this.$router.go(-1);
+        this.indexPage--;
+      }
+    },
+  },
 };
 </script>
 
@@ -37,11 +88,27 @@ export default {
 #app {
   height: 100%;
   width: 100%;
+  font-family: calibri;
   overflow: hidden;
   position: relative;
   font-family: poppins;
   @include medium {
     height: 100vh;
+  }
+  .arrow-right {
+    position: absolute;
+    position: fixed;
+    top: 50%;
+    right: 2.5%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .arrow-left {
+    position: absolute;
+    position: fixed;
+    top: 50%;
+    left: 2.5%;
+    transform: translateY(-50%);
   }
   .slide-enter-active,
   .fade-leave-active {
