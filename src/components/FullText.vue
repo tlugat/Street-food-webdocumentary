@@ -18,7 +18,7 @@
               y1="88.6855"
               x2="2.50196"
               y2="-0.000587876"
-              stroke="#F7B200"
+              stroke="#6AD051"
               stroke-width="5"
             />
             <line
@@ -26,7 +26,7 @@
               y1="86.5"
               x2="90.4599"
               y2="86.5"
-              stroke="#F7B200"
+              stroke="#6AD051"
               stroke-width="5"
             />
           </svg>
@@ -43,7 +43,7 @@
               y1="88.6855"
               x2="2.50196"
               y2="-0.000587876"
-              stroke="#F7B200"
+              stroke="#6AD051"
               stroke-width="5"
             />
             <line
@@ -51,7 +51,7 @@
               y1="86.5"
               x2="90.4599"
               y2="86.5"
-              stroke="#F7B200"
+              stroke="#6AD051"
               stroke-width="5"
             />
           </svg>
@@ -110,12 +110,10 @@ export default {
     background: none;
     color: white;
 
-
     //width: 50%;
     bottom: -5rem;
 
     border: solid 2px $yellow;
-
 
     left: 50%;
     font-size: 14px;
@@ -123,7 +121,7 @@ export default {
     @include medium {
       bottom: -6rem;
       font-size: 18px;
-      transition: .2s;
+      transition: 0.2s;
       &:hover {
         background: $yellow;
       }
