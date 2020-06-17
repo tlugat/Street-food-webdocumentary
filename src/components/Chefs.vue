@@ -90,7 +90,7 @@ export default {
   &__title {
     z-index: 1;
     padding: 2rem;
-    opacity: 0;
+        opacity: 0;
 	animation: opacity 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1 forwards;  
 }
 @keyframes opacity {
