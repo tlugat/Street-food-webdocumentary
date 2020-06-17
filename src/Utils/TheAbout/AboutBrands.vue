@@ -121,10 +121,9 @@ export default {};
     @include flex(column, null, center);
   }
   @include medium {
-    @include flex(row, null, center);
+    @include flex(row, center, center);
     flex-wrap: wrap;
     width: 1 50rem;
-    justify-content: center;
   }
   &__part {
     margin-right: 3rem;
@@ -136,6 +135,7 @@ export default {};
     }
     @include medium {
       font-size: $regular-desktopText;
+      @include flex(null, null, center);
     }
   }
   &__item {

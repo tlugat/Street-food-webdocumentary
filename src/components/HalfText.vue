@@ -391,8 +391,8 @@ export default {
 @mixin green-square($top, $bottom, $left, $right) {
   &::before {
     content: "";
-    height: 3rem;
-    width: 3rem;
+    height: 1.6rem;
+    width: 1.6rem;
     background: $green;
     position: absolute;
     top: $top;
@@ -400,6 +400,11 @@ export default {
     left: $left;
     right: $right;
     z-index: -1;
+
+    @include medium {
+      height: 3rem;
+      width: 3rem;
+    }
   }
 }
 
@@ -425,34 +430,88 @@ export default {
     @include flex(row, flex-start, flex-start);
   }
   .trucks {
-    @include flex(null, flex-start, center);
-    margin-top: 5rem;
-    padding-left: 1.5rem;
+    @include flex(null, center, center);
+    margin-top: 2rem;
+    padding-left: 0.5rem;
+    margin-bottom: 3rem;
+    @include medium {
+      @include flex(null, flex-start, center);
+      margin-top: 5rem;
+      padding-left: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    svg {
+      width: 60px;
+      height: auto;
+
+      @include medium {
+        width: auto;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+
+      @include medium {
+        width: 135px;
+        font-size: 16px;
+      }
+    }
 
     &__itemText {
       position: absolute;
       bottom: -4rem;
       left: 50%;
       transform: translateX(-50%);
+      width: auto;
+
+      @include medium {
+        bottom: -4rem;
+      }
     }
     &__item1 {
-      margin-right: 4rem;
       position: relative;
       height: 100%;
       align-self: flex-end;
-      @include green-square(-1rem, null, -1rem, null);
+      @include green-square(-1rem, null, -0.5rem, null);
+
+      @include medium {
+        @include green-square(-1rem, null, -1rem, null);
+      }
     }
     &__item2 {
-      margin-right: 4rem;
+      margin-right: 3rem;
+      margin-left: 3rem;
       position: relative;
       height: 100%;
       @include green-square(null, -0.1rem, null, -1rem);
+
+      @include medium {
+        @include green-square(null, -0.1rem, null, -1rem);
+        margin-right: 4rem;
+        margin-left: 4rem;
+      }
+      svg {
+        width: 45px;
+        height: auto;
+
+        @include medium {
+          width: auto;
+        }
+      }
     }
+
     &__item3 {
       height: 100%;
       align-self: flex-end;
       @include green-square(-0.5rem, null, null, -0.5rem);
       position: relative;
+
+      @include medium {
+        @include green-square(-0.5rem, null, null, -0.5rem);
+      }
     }
   }
 

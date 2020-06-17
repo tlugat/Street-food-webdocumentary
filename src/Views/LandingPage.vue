@@ -83,8 +83,8 @@ export default {
     font-size: 14px;
     cursor: pointer;
     position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+    top: 2rem;
+    right: 2rem;
     z-index: 10;
     color: #fff;
     @include medium {

@@ -4,17 +4,9 @@
       <router-view v-if="!viewLanding" class="view"></router-view>
     </transition>
     <transition name="slide" mode="out-in">
-      <landing-page
-        v-if="viewLanding"
-        style="height: 100vh"
-        class="view"
-      ></landing-page>
+      <landing-page v-if="viewLanding" style="height: 100vh" class="view"></landing-page>
     </transition>
-    <Menu
-      @back-home="viewLanding = true"
-      @display-landing="displayLanding"
-      class="menu"
-    ></Menu>
+    <Menu @back-home="viewLanding = true" @display-landing="displayLanding" class="menu"></Menu>
   </div>
 </template>
 
@@ -25,18 +17,18 @@ export default {
   name: "App",
   components: {
     LandingPage,
-    Menu,
+    Menu
   },
   data() {
     return {
-      viewLanding: true,
+      viewLanding: true
     };
   },
   methods: {
     displayLanding() {
       this.viewLanding = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
