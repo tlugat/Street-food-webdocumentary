@@ -18,8 +18,8 @@
       class="arrow-left"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      width="32"
-      height="32"
+      width="64"
+      height="64"
     >
       <path fill="none" d="M0 0h24v24H0z" />
       <path
@@ -55,8 +55,8 @@ export default {
         "/intro-chapitre/2",
         "/text/4",
         "/recettes",
-        "/half-text/5",
-        "chefs",
+        "/text/5",
+        "/chefs",
         "/full-text/3",
       ],
     };
@@ -75,7 +75,7 @@ export default {
     },
     previousPage() {
       if (this.indexPage > 0) {
-        this.$router.go(this.routes[this.indexPage - 1]);
+        this.$router.go(-1);
         this.indexPage--;
       }
     },
