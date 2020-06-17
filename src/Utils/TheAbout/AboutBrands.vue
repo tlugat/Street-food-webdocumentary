@@ -5,11 +5,7 @@
         <h3 class="about__title">À propos du projet</h3>
         <div class="about__square"></div>
       </div>
-      <p>
-        Thalassius vero ea tempestate praefectus praetorio praesens ipse quoque
-        adrogantis ingenii, considerans incitationem eius ad multorum augeri
-        discrimina, non maturitate vel consiliis mitigabat.
-      </p>
+      <p>Création d'un webdoc sur le thème de la street</p>
     </div>
     <div class="about__section about__section--2">
       <div class="about__titleWrapper">

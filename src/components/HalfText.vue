@@ -8,10 +8,13 @@
         <p v-if="text2">{{ text2 }}</p>
         <p v-if="text3">{{ text3 }}</p>
         <div v-if="svg=='cards'" class="cards">
-        <succesCard  class="cards__card" v-for="(data, index) in avantages"
-        :key="10+index"
-        :avantage="avantages[index]"  
-        :svg="svgs[index]" ></succesCard>
+          <succesCard
+            class="cards__card"
+            v-for="(data, index) in avantages"
+            :key="10+index"
+            :avantage="avantages[index]"
+            :svg="svgs[index]"
+          ></succesCard>
         </div>
         <div v-if="svg == 'trucks'" class="trucks">
           <div class="trucks__item1">
@@ -375,9 +378,9 @@ export default {
     text3: String,
     img: String,
     title: String,
-    svg:String,
+    svg: String,
     lsv: String,
-    avantage:String,
+    avantage: String
   },
   components: {
     Title,
@@ -387,9 +390,13 @@ export default {
   data() {
     return {
       trucks: false,
-      svgs:["money","time","fast","star"],
-      avantages:["Peut couteux ","Gain de temps","Préparation rapide","Produits de qualité"]
-
+      svgs: ["money", "time", "fast", "star"],
+      avantages: [
+        "Peut couteux ",
+        "Gain de temps",
+        "Préparation rapide",
+        "Produits de qualité"
+      ]
     };
   },
   methods: {
@@ -459,10 +466,15 @@ export default {
     svg {
       width: 60px;
       height: auto;
+      transition: all 1s;
+      transform-origin: 50% 50%;
 
       @include medium {
         width: auto;
       }
+    }
+    svg:hover {
+      transform: scale(1.2);
     }
 
     p {
@@ -611,6 +623,7 @@ export default {
       }
       &__background--burger {
         width: 250px;
+
         @include medium {
           width: 350px;
           top: 120%;
@@ -619,12 +632,14 @@ export default {
       }
       &__background--pyramide {
         width: 250px;
+
         @include medium {
           width: 450px;
           top: 130%;
           left: 75%;
         }
       }
+
       p {
         margin-bottom: 1rem;
         font-size: 14px;
@@ -634,13 +649,13 @@ export default {
       }
     }
   }
-  .cards{
+  .cards {
     display: flex;
     flex-wrap: wrap;
     padding-top: 5%;
-    &__card{
+    &__card {
       margin-left: 5%;
-      @include medium{
+      @include medium {
         margin-left: 10%;
       }
     }

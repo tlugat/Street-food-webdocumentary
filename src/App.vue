@@ -37,7 +37,6 @@ export default {
 #app {
   height: 100%;
   width: 100%;
-  font-family: calibri;
   overflow: hidden;
   position: relative;
   font-family: poppins;
