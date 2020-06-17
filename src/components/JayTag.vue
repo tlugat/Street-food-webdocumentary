@@ -27,7 +27,11 @@ export default {
   background-color: $yellow;
   margin-bottom: 50%;
   text-align: center;
-
+  @include medium{
+    font-size: 16px;
+    width: 180px;
+    height: 40px;
+  }
   &__number {
     color: #fff;
     position: absolute;
@@ -38,6 +42,10 @@ export default {
     height: 20rem;
     font-weight: bold;
     height: auto;
+  }
+  &__title{
+    vertical-align:middle;
+    line-height: 50px;
   }
 }
 </style>
