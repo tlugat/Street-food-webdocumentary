@@ -5,7 +5,7 @@ import IntroChapitre from "./components/IntroChapitre.vue";
 import Recettes from "./components/Recettes.vue";
 import FullText from "./components/FullText";
 import HalfText from "./components/HalfText";
-import JayFai from "./components/JayFaiComponents/Jay-Fai";
+import JayFai from "./components/Jay-Fai";
 import Stats from "./components/Stats";
 import LandingPage from "./Views/LandingPage";
 
