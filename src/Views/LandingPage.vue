@@ -5,9 +5,9 @@
     <div class="globalTitles">
       <p class="globalTitles__subtitle">D'un mode de vie à une tendance</p>
       <h1 class="globalTitles__title">STREET FOOD</h1>
-      <button class="startButton"> Place à la dégusation ! </button>
+      <button class="startButton">Place à la dégusation !</button>
     </div>
-    
+
     <div class="disclaimer">
       <div class="disclaimer__textWrapper">
         <svg
@@ -129,7 +129,7 @@ export default {
     }
   }
   .startButton {
-    position:absolute;
+    position: absolute;
     padding: 1rem 1rem;
     background: none;
     color: white;
@@ -146,7 +146,7 @@ export default {
       bottom: -6rem;
       font-size: 18px;
       width: 40%;
-      transition: .2s;
+      transition: 0.2s;
       &:hover {
         background: $green;
       }
