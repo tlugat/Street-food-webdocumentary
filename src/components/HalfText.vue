@@ -570,6 +570,18 @@ export default {
       @include medium {
         padding-left: 7rem;
         padding-top: 4rem;
+        opacity: 0;
+	animation: opacity 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1 forwards;  
+}
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
       }
     }
     .textContainer {
@@ -634,5 +646,5 @@ export default {
       }
     }
   }
-}
+
 </style>
