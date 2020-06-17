@@ -12,6 +12,15 @@
         <p v-if="content[item].data.text1">{{ content[item].data.text1 }}</p>
         <p v-if="content[item].data.text2">{{ content[item].data.text2 }}</p>
         <p v-if="content[item].data.text3">{{ content[item].data.text3 }}</p>
+        <div v-if="content[item].data.svg == 'cards'" class="cards">
+          <succesCard
+            class="cards__card"
+            v-for="(data, index) in avantages"
+            :key="10 + index"
+            :avantage="avantages[index]"
+            :icon="svgs[index]"
+          ></succesCard>
+        </div>
         <div v-if="content[item].data.svg == 'trucks'" class="trucks">
           <div class="trucks__item1">
             <svg
@@ -363,20 +372,12 @@
 <script>
 import Title from "../Utils/TheTitle/Title";
 import LeSaviezVous from "../Utils/LeSaviezVous/LeSaviezVous";
+import SuccesCard from "../components/SuccesComponents/succesCard";
 export default {
-  // props: {
-  //   text1: String,
-  //   text2: String,
-  //   text3: String,
-  //   img: String,
-  //   title: String,
-  //   lsv: String,
-  //   svg: String,
-  //   id: String,
-  // },
   components: {
     Title,
     LeSaviezVous,
+    SuccesCard,
   },
 
   beforeRouteUpdate(to, from, next) {
@@ -388,6 +389,13 @@ export default {
     return {
       item: this.$route.params.id - 1,
       trucks: false,
+      svgs: ["money", "time", "fast", "star"],
+      avantages: [
+        "Peut couteux ",
+        "Gain de temps",
+        "Préparation rapide",
+        "Produits de qualité",
+      ],
       content: [
         {
           name: "origines",
@@ -419,6 +427,7 @@ export default {
             text2: ` La streetfood répond à ce besoin d’exotisme et d’authenticité culinaire et devient progressivement multiculturelle. Mexicains, américains, africains, indiens et bien sûr asiatiques, ces snacks internationaux sont proposés par des restaurateurs ou des voyageurs inspirés venus offrir leurs savoirs culinaires. `,
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721760646554976316/recettesucces.png`,
             title: `La recette d'un succès`,
+            svg: "cards",
             key: 4,
           },
         },
