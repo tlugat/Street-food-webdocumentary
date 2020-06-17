@@ -21,6 +21,7 @@ export default {
 .title-wrapper {
   position: relative;
   font-size: $title-mobileFont;
+  z-index: 1;
   // @include flex(null, flex-end, null);
   width: 100%;
 
@@ -36,7 +37,7 @@ export default {
       font-size: 40px;
       padding-top: 15px;
       padding-left: 20px;
-      line-height: 40px;
+      line-height: 50px;
     }
   }
   .square {

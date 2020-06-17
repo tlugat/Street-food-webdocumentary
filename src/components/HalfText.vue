@@ -67,6 +67,7 @@
                 stroke-width="3"
               />
             </svg>
+            <div class="pointJaune1"></div>
             <p class="trucks__itemText">Chariot portable</p>
           </div>
           <div class="trucks__item2">
@@ -123,6 +124,7 @@
                 stroke-width="3"
               />
             </svg>
+            <div class="pointJaune2"></div>
             <p class="trucks__itemText">Kiosque</p>
           </div>
           <div class="trucks__item3">
@@ -170,6 +172,7 @@
                 stroke-width="3"
               />
             </svg>
+            <div class="pointJaune3"></div>
             <p class="trucks__itemText">Food truck</p>
           </div>
         </div>
@@ -462,13 +465,13 @@ export default {
 
     &__itemText {
       position: absolute;
-      bottom: -4rem;
+      bottom: -2.5rem;
       left: 50%;
       transform: translateX(-50%);
       width: auto;
 
       @include medium {
-        bottom: -4rem;
+        bottom: -2.5rem;
       }
     }
     &__item1 {
@@ -480,18 +483,31 @@ export default {
       @include medium {
         @include green-square(-1rem, null, -1rem, null);
       }
+      .pointJaune1 {
+        width: 8px;
+        height: 8px;
+        margin-top: 2rem;
+        background-color: $yellow;
+      }
     }
     &__item2 {
       margin-right: 3rem;
       margin-left: 3rem;
       position: relative;
       height: 100%;
-      @include green-square(null, -0.1rem, null, -1rem);
+      @include green-square(null, 2.2rem, null, -1rem);
 
       @include medium {
-        @include green-square(null, -0.1rem, null, -1rem);
+        @include green-square(null, 2rem, null, -1rem);
         margin-right: 4rem;
         margin-left: 4rem;
+      }
+
+      .pointJaune2 {
+        width: 8px;
+        height: 8px;
+        background-color: $yellow;
+        margin-top: 2rem;
       }
       svg {
         width: 45px;
@@ -511,6 +527,12 @@ export default {
 
       @include medium {
         @include green-square(-0.5rem, null, null, -0.5rem);
+      }
+      .pointJaune3 {
+        width: 8px;
+        height: 8px;
+        background-color: $yellow;
+        margin-top: 2rem;
       }
     }
   }
