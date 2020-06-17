@@ -3,8 +3,8 @@
     <div class="test"></div>
     <div class="height">
       <Title
-        v-if="title"
-        :title="this.$route.params.title"
+        v-if="content[item].title"
+        :title="content[item].title"
         s
         class="fullPage__title"
       ></Title>
@@ -60,8 +60,8 @@
               stroke-width="5"
             />
           </svg>
-          <p class="text1">{{ text1 }}</p>
-          <p v-if="text2">{{ text2 }}.</p>
+          <p class="text1">{{ content[item].text1 }}</p>
+          <p v-if="content[item].text2">{{ content[item].text2 }}.</p>
         </div>
       </div>
     </div>
@@ -75,16 +75,39 @@ export default {
   components: {
     Title,
   },
-  props: {
-    text1: String,
-    text2: String,
-    title: String,
-    background: String,
+  data() {
+    return {
+      item: this.$route.params.id - 1,
+      content: [
+        {
+          text1: `La cuisine de rue accompagne l’évolution de nos sociétés au fil des siècles et emprunte différentes formes selon le lieu et l’époque. Pour certains pays, elle se fait moins présente tandis que pour d’autres elle constitue un secteur lucratif et une source importante d’emplois.`,
+          text2: `Les classes urbaines et défavorisées de l’époque partageaient leur habitation et ne disposaient pas pour la plupart d’une cuisine. Ils devaient manger dans la rue en se rendant dans un thermopolium (un établissement de restauration rapide qui proposait des repas pour toutes les bourses).`,
+          background: `https://cdn.discordapp.com/attachments/697362929946722358/722862550882058291/fire.png`,
+        },
+        {
+          text1: `Les plats sont diverses et tirent leur origine de la culture locale, internationale, un mélange des deux ou bien de la créativité de celui ou celle qui les réalise.`,
+          text2: `Autour de ces restaurants en plein air, souvent peu voire pas de places pour les clients mais pourtant ils sont légion à tenter l’expérience culinaire.`,
+          background: `https://cdn.discordapp.com/attachments/697362929946722358/722862614400598047/food.png`,
+        },
+        {
+          text1: `Bilan ? L’ancienne junk food répond désormais aux codes éthiques du bien manger. Le veau de lait tourne sur les broches des kebabs de luxe, et la cuisine devient spectacle. Là, on assemble les ingrédients sous les yeux des clients, ici on pétrit la pâte à noodle à grand renfort d’huile de coude. Quitte à faire grimper la note ! Comptez entre 13€ et 18€ pour cette nouvelle cuisine de luxe. Embourgeoisement de la street food, ou mutation éthique et healthy de la junk food ? À vous de voir… Après dégustation, bien sûr !`,
+          title: `L'apogée de la cuisine de rue ?`,
+          background: `https://cdn.discordapp.com/attachments/697362929946722358/722862534968737862/boucher.png`,
+        },
+      ],
+    };
   },
-  methods: {},
+  beforeRouteUpdate(to, from, next) {
+    this.item = this.$route.params.id - 1;
+    next();
+  },
+
   computed: {
     setBackground() {
-      return { background: `url(${this.background})`, backgroundSize: "cover" };
+      return {
+        background: `url(${this.content[this.item].background})`,
+        backgroundSize: "cover",
+      };
     },
   },
 };
