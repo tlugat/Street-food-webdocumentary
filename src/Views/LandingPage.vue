@@ -137,7 +137,6 @@ export default {
     bottom: -4rem;
     left: 50%;
     width: 100%;
-    font-size: 14px;
     transform: translateX(-50%);
     @include small {
       width: 70%;
