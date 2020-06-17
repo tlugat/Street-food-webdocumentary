@@ -174,8 +174,8 @@ export default {
   @include flex(null, center, center);
   padding-bottom: 1rem;
 
-  @include xlarge {
-    padding-bottom: 0;
+  @include medium {
+    padding-top: 3rem;
   }
 
   .chef {

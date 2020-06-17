@@ -10,8 +10,8 @@
 <script>
 export default {
   props: {
-    title: String,
-  },
+    title: String
+  }
 };
 </script>
 
@@ -40,8 +40,8 @@ export default {
     }
   }
   .square {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.6rem;
+    width: 1.6rem;
     background: $green;
     position: absolute;
     top: 0;
