@@ -45,6 +45,10 @@ export default {
   width: 250px;
   height: 300px;
   background: $black;
+  @include medium{
+    width: 325px;
+    height: 388px;
+  }
 
   &__img {
     width: 100%;
@@ -73,6 +77,10 @@ export default {
     transition: 0.2s;
     &:hover {
       background: $green;
+    }
+    @include medium{
+      width: 38px;
+      height: 38px;
     }
   }
 }

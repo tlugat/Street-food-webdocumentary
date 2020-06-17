@@ -70,7 +70,7 @@ export default {
         },
         {
           img:
-            "https://cdn.discordapp.com/attachments/697362929946722358/722534235533213777/michelin.png",
+            "https://cdn.discordapp.com/attachments/697362929946722358/722830736343957594/michelin.png",
           description:
             "Elle a reçu en 2018 l’une des 17 étoiles récompensées par le célèbre guide Michelin.",
           number: "2",
@@ -126,12 +126,22 @@ export default {
   h1 {
     font-size: 72px;
     margin-top: 18px;
+    font-weight: bold;
     color: transparent;
     -webkit-text-stroke: 2px #d1d1d1;
+    @include medium{
+      font-size: 288px;
+      position: absolute;
+    }
   }
   img {
     width: 230px;
     margin-top: 56px;
+    @include medium{
+      width: 614px;
+      height: 584px;
+      position: absolute;
+    }
   }
 }
 @keyframes rotate {
@@ -148,6 +158,9 @@ export default {
   top: 15%;
   transform: translateX(-50%);
   transition: 0.4s ease-in-out;
+  @include medium{
+    top: 30%;
+  }
 }
 
 .tags {
@@ -159,6 +172,9 @@ export default {
   &__col1 {
     display: flex;
     flex-direction: column;
+  }
+  @include medium{
+    margin-top: 10%;
   }
 }
 </style>
