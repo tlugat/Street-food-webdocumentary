@@ -34,9 +34,7 @@
             v-for="(ingredient, index) in types[type]"
             :key="index"
             class="burger__text"
-          >
-            {{ ingredient }}
-          </li>
+          >{{ ingredient }}</li>
         </ul>
         <svg
           @click="toggleCard"
@@ -61,7 +59,7 @@ export default {
   props: {
     burger: String,
     url: String,
-    type: Number,
+    type: Number
   },
   data() {
     return {
@@ -74,7 +72,7 @@ export default {
           "tranches de tome de brebis",
           "tranches de salade ",
           "Confit d’oignon",
-          "Sel au piment d’Espelette",
+          "Sel au piment d’Espelette"
         ],
 
         [
@@ -86,7 +84,7 @@ export default {
           "tomate",
           "pain burger",
           "oignon rouge",
-          "tranches de fromage végétal",
+          "tranches de fromage végétal"
         ],
 
         [
@@ -95,16 +93,16 @@ export default {
           "poignées de mâche",
           "tranches de tome de brebis",
           " Fromage de chèvre ",
-          "pain sans gluten",
-        ],
-      ],
+          "pain sans gluten"
+        ]
+      ]
     };
   },
   methods: {
     toggleCard() {
       this.cardFlipped = !this.cardFlipped;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -166,8 +164,8 @@ export default {
     position: absolute;
     top: 40%;
     left: 50%;
-    font-weight: 700;
-    color: #fff;
+    font-weight: bold;
+    color: #ffff;
     width: 19rem;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -183,8 +181,10 @@ export default {
     margin: 5% 0;
     position: relative;
     font-size: 24px;
+    font-weight: bold;
     @include medium {
       font-size: $title-font;
+      padding-top: 5rem;
     }
   }
   &__plus {
