@@ -1,15 +1,36 @@
 <template>
-  <div class="card">
-    <img class="card__img" :src="data.img" />
-    <p class="card__text">{{ data.description }}</p>
-    <span class="card__number">{{ data.number }}</span>
-  </div>
+  <transition name="flip">
+    <div class="card">
+      <img class="card__img" :src="data.img" />
+      <p class="card__text">{{ data.description }}</p>
+      <span class="card__number">{{ data.number }}</span>
+      <svg
+        @click="closeCard"
+        class="card__close"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path
+          fill="#fff"
+          d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+        />
+      </svg>
+    </div>
+  </transition>
 </template>
 
 <script>
 export default {
   props: {
     data: Object,
+  },
+  methods: {
+    closeCard() {
+      this.$emit("close-card");
+    },
   },
 };
 </script>
@@ -44,5 +65,23 @@ export default {
     z-index: -1;
     font-weight: bold;
   }
+  &__close {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.2s;
+    &:hover {
+      background: $green;
+    }
+  }
+}
+.flip-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.flip-enter,
+.flip-leave-active {
+  opacity: 0;
 }
 </style>
