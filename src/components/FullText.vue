@@ -96,6 +96,7 @@ export default {
 }
 .fullPage {
   color: #fff;
+
   &__title {
     padding: 2rem;
     color: white;
@@ -106,15 +107,26 @@ export default {
   .backbutton {
     position: absolute;
     padding: 1rem 2rem;
-    background: $yellow;
+    background: none;
     color: white;
-    border: none;
+
+
     //width: 50%;
     bottom: -5rem;
+
+    border: solid 2px $yellow;
+
+
     left: 50%;
+    font-size: 14px;
     transform: translateX(-50%);
     @include medium {
       bottom: -6rem;
+      font-size: 18px;
+      transition: .2s;
+      &:hover {
+        background: $yellow;
+      }
     }
   }
 }

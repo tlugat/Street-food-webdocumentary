@@ -130,16 +130,22 @@ export default {
   }
   .startButton {
     position:absolute;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     background: none;
     color: white;
     border: solid 2px $green;
     bottom: -4rem;
     left: 50%;
+    width: 100%;
+    font-size: 14px;
     transform: translateX(-50%);
+    @include small {
+      width: 70%;
+    }
     @include medium {
       bottom: -6rem;
       font-size: 18px;
+      width: 40%;
       transition: .2s;
       &:hover {
         background: $green;
@@ -148,12 +154,12 @@ export default {
   }
 }
 .disclaimer {
-  width: 10rem;
+  width: 13rem;
   padding: 1rem 3rem;
   position: absolute;
   bottom: 0;
   color: #fff;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 150%;
   @include small {
     width: 20rem;

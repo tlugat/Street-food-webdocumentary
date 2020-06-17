@@ -7,6 +7,12 @@
         <p v-if="text1">{{ text1 }}</p>
         <p v-if="text2">{{ text2 }}</p>
         <p v-if="text3">{{ text3 }}</p>
+        <div v-if="svg=='cards'" class="cards">
+        <succesCard  class="cards__card" v-for="(data, index) in avantages"
+        :key="10+index"
+        :avantage="avantages[index]"  
+        :svg="svgs[index]" ></succesCard>
+        </div>
         <div v-if="svg == 'trucks'" class="trucks">
           <div class="trucks__item1">
             <svg
@@ -361,6 +367,7 @@
 <script>
 import Title from "../Utils/TheTitle/Title";
 import LeSaviezVous from "../Utils/LeSaviezVous/LeSaviezVous";
+import SuccesCard from "../components/SuccesComponents/succesCard";
 export default {
   props: {
     text1: String,
@@ -368,16 +375,21 @@ export default {
     text3: String,
     img: String,
     title: String,
+    svg:String,
     lsv: String,
-    svg: String
+    avantage:String,
   },
   components: {
     Title,
-    LeSaviezVous
+    LeSaviezVous,
+    SuccesCard
   },
   data() {
     return {
-      trucks: false
+      trucks: false,
+      svgs:["money","time","fast","star"],
+      avantages:["Peut couteux ","Gain de temps","Préparation rapide","Produits de qualité"]
+
     };
   },
   methods: {
@@ -608,6 +620,17 @@ export default {
         @include medium {
           font-size: 16px;
         }
+      }
+    }
+  }
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5%;
+    &__card{
+      margin-left: 5%;
+      @include medium{
+        margin-left: 10%;
       }
     }
   }
