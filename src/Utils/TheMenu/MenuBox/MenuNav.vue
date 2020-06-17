@@ -101,6 +101,7 @@ export default {
                 text2: ` La streetfood répond à ce besoin d’exotisme et d’authenticité culinaire et devient progressivement multiculturelle. Mexicains, américains, africains, indiens et bien sûr asiatiques, ces snacks internationaux sont proposés par des restaurateurs ou des voyageurs inspirés venus offrir leurs savoirs culinaires. `,
                 img: `https://cdn.discordapp.com/attachments/697362929946722358/721760646554976316/recettesucces.png`,
                 title: `La recette d'un succès`,
+                svg:"cards",
                 key: 4
               }
             },
