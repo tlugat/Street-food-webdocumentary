@@ -145,6 +145,7 @@ export default {
     @include medium {
       bottom: -6rem;
       font-size: 18px;
+      width: 40%;
       transition: .2s;
       &:hover {
         background: $green;
