@@ -50,9 +50,7 @@
     </div>
     <div class="fond">
       <h4 class="fond__title">Le saviez vous ?</h4>
-      <p class="fond__text">
-        {{ lsv }}
-      </p>
+      <p class="fond__text">{{ lsv }}</p>
     </div>
   </div>
 </template>
@@ -60,13 +58,13 @@
 <script>
 export default {
   props: {
-    lsv: String,
+    lsv: String
   },
   methods: {
     slideLsv() {
       this.$emit("slide-lsv");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -95,16 +93,27 @@ export default {
       width: 40%;
     }
     &__title {
-      font-size: 20px;
+      font-size: 16px;
       color: white;
       padding-left: 28px;
-      padding-top: 15px;
+      padding-top: 12px;
+      font-weight: bold;
       margin: 0;
+
+      @include medium {
+        font-size: 16px;
+        padding-top: 15px;
+      }
     }
     &__text {
       font-size: 12px;
-      padding: 0.5rem 2rem;
+      padding: 0.2rem 2rem;
       width: 80%;
+      line-height: 15px;
+      @include medium {
+        font-size: 14px;
+        line-height: 21px;
+      }
     }
   }
   .fleche {
