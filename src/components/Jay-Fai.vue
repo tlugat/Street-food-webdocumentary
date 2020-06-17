@@ -33,7 +33,13 @@
         </ul>
       </div>
     </div>
-    <jay-card class="card" v-if="displayCard" :data="cardProps"></jay-card>
+
+    <jay-card
+      @close-card="displayCard = false"
+      class="card"
+      v-if="displayCard"
+      :data="cardProps"
+    ></jay-card>
   </div>
 </template>
 
@@ -102,7 +108,7 @@ export default {
   },
   methods: {
     getData(numero) {
-      this.displayCard = !this.displayCard;
+      this.displayCard = true;
       if (numero + 1 == this.cards[numero].number) {
         this.cardProps = this.cards[numero];
       }
@@ -113,6 +119,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
+
 .jay-fai {
   @include flex(column, center, center);
 
@@ -127,11 +134,20 @@ export default {
     margin-top: 56px;
   }
 }
+@keyframes rotate {
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 .card {
   position: absolute;
   left: 50%;
   top: 15%;
   transform: translateX(-50%);
+  transition: 0.4s ease-in-out;
 }
 
 .tags {
