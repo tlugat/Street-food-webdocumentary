@@ -57,6 +57,11 @@
           <a>Recettes</a>
         </router-link>
       </li>
+      <li>
+        <router-link class="test" to="/video">
+          <a>Video</a>
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -143,6 +148,12 @@ export default {
               name: "chefs",
               params: {
                 title: "Les grands chefs s'en mêlent"
+              }
+            },
+            {
+              name: "video",
+              params: {
+                title: "video"
               }
             },
             {
