@@ -58,7 +58,7 @@ export default {
         "/text/4",
         "/recettes",
         "/text/5",
-        "/chefs",
+        "/chefs/Les grands chefs s'en mêlent",
         "/full-text/3",
       ],
     };

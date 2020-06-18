@@ -80,7 +80,7 @@ export default {
           [
             { to: "/text/4", indexPage: 9 },
             { to: "/text/5", indexPage: 11 },
-            { to: "chefs", indexPage: 12 },
+            { to: "/chefs/Les grands chefs s'en mêlent", indexPage: 12 },
             { to: "/full-text/3", indexPage: 13 },
           ],
         ],
