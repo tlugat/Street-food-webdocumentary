@@ -217,7 +217,9 @@ export default {
       height: 335px;
       @include flex(null, null, flex-end);
       h2 {
+        @include flex(null, center, center);
         position: absolute;
+        width: 60%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, 120%);
@@ -249,22 +251,25 @@ export default {
       @include flex(column, null, center);
       text-align: center;
       .title {
-        font-size: 14px;
+        font-size: 16px;
         border-bottom: solid 1px $yellow;
         padding: 0.5rem 0 0.2rem 0;
         margin-bottom: 0.5rem;
+        font-weight: 600;
 
         @include small {
           font-size: 18px;
         }
       }
       .text {
-        font-size: 11px;
+        font-size: 14px;
         width: 200px;
+        line-height: 21px;
 
         @include small {
-          font-size: 14px;
+          font-size: 16px;
           width: 220px;
+          line-height: 24px;
         }
       }
     }

@@ -20,7 +20,7 @@ import Title from "../Utils/TheTitle/Title";
 export default {
   components: {
     ChefCard,
-    Title,
+    Title
   },
   data() {
     return {
@@ -34,8 +34,8 @@ export default {
             description:
               "Des sandwich d’inspiration Japonaise pour renouveler la street food parisienne ",
             img:
-              "https://cdn.discordapp.com/attachments/697362929946722358/721464037501698138/marxito.png",
-          },
+              "https://cdn.discordapp.com/attachments/697362929946722358/721464037501698138/marxito.png"
+          }
         },
         {
           name: "Christian Constant",
@@ -46,8 +46,8 @@ export default {
             description:
               "Deliveroo, s'associe avec Christian Constant pour revisiter un plat street food, le kebab !",
             img:
-              "https://cdn.discordapp.com/attachments/697362929946722358/721464074973741127/kebab.png",
-          },
+              "https://cdn.discordapp.com/attachments/697362929946722358/721464074973741127/kebab.png"
+          }
         },
         {
           name: "Akram Benallal",
@@ -58,8 +58,8 @@ export default {
             description:
               "« J'adore le panini. Il est bien pensé, fin, chaud, élégant, croustillant. »",
             img:
-              "https://cdn.discordapp.com/attachments/697362929946722358/721464107060035584/panini.png",
-          },
+              "https://cdn.discordapp.com/attachments/697362929946722358/721464107060035584/panini.png"
+          }
         },
         {
           name: "Gregory Marchand",
@@ -70,12 +70,12 @@ export default {
             description:
               "Grégory Marchand, revisite le sandwich toasté au pastrami.",
             img:
-              "https://cdn.discordapp.com/attachments/697362929946722358/721464138240360538/sandwich.png",
-          },
-        },
-      ],
+              "https://cdn.discordapp.com/attachments/697362929946722358/721464138240360538/sandwich.png"
+          }
+        }
+      ]
     };
-  },
+  }
 };
 </script>
 
@@ -83,8 +83,11 @@ export default {
 @import "@/assets/global.scss";
 .chefs-page {
   &__cards {
+    @include flex(column, center, center);
+
     @include large {
-      @include flex(null, space-around, center);
+      @include flex(row, space-around, center);
+      padding-top: 3rem;
     }
   }
   &__title {
