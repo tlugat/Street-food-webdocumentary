@@ -138,13 +138,14 @@ export default {
   display: flex;
   flex-direction: row;
   width: 180px;
-  border: solid black 1px;
+  border: solid black 2px;
   padding: 10px;
   align-items: center;
   justify-content: space-around;
   transition: 0.2s;
   &:hover {
-    background: $yellow;
+    background: $black;
+    color:white;
   }
 }
 h3 {
