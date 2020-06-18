@@ -369,6 +369,12 @@
           </defs>
         </svg>
       </div>
+    <audio
+        autoplay
+        src="../assets/son/food.mp3" type="audio/mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
     </div>
     <img :src="content[item].data.img" class="halfPage__img" />
   </div>
