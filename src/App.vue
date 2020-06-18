@@ -101,7 +101,7 @@ export default {
   transition: 0.2s;
   cursor: pointer;
   &:hover {
-    background: rgba(0, 0, 0, 0.548);
+    background: rgba(0, 0, 0, 0.137);
     fill: $green;
   }
 }
