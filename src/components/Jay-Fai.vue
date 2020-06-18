@@ -3,7 +3,7 @@
     <h1>Jay Fai</h1>
     <img
       src="https://cdn.discordapp.com/attachments/697362929946722358/721752094654332968/jay_fai.png"
-      alt=""
+      alt
     />
     <div class="tags">
       <div class="tags__col1">
@@ -14,7 +14,7 @@
             v-for="(title, index) in titles"
             :key="numbers[index]"
           >
-            <jay-tag :title="titles[index]" :number="numbers[index]"> </jay-tag>
+            <jay-tag :title="titles[index]" :number="numbers[index]"></jay-tag>
           </li>
         </ul>
       </div>
@@ -27,19 +27,13 @@
             v-for="(title2, index) in titles2"
             :key="numbers2[index]"
           >
-            <jay-tag :title="titles2[index]" :number="numbers2[index]">
-            </jay-tag>
+            <jay-tag :title="titles2[index]" :number="numbers2[index]"></jay-tag>
           </li>
         </ul>
       </div>
     </div>
 
-    <jay-card
-      @close-card="displayCard = false"
-      class="card"
-      v-if="displayCard"
-      :data="cardProps"
-    ></jay-card>
+    <jay-card @close-card="displayCard = false" class="card" v-if="displayCard" :data="cardProps"></jay-card>
   </div>
 </template>
 
@@ -49,7 +43,7 @@ import JayCard from "./JayCard";
 export default {
   components: {
     JayTag,
-    JayCard,
+    JayCard
   },
   data() {
     return {
@@ -66,44 +60,44 @@ export default {
             "https://cdn.discordapp.com/attachments/697362929946722358/722533944695980103/en_famille.png",
           description:
             "Ses deux filles ont démissionné de leur travailler afin d’aider leur mère à tenir le restaurant suite au prix qu’elle a reçu.",
-          number: "1",
+          number: "1"
         },
         {
           img:
-            "https://cdn.discordapp.com/attachments/697362929946722358/722830736343957594/michelin.png",
+            "https://cdn.discordapp.com/attachments/697362929946722358/723114815345655884/michelin.png",
           description:
             "Elle a reçu en 2018 l’une des 17 étoiles récompensées par le célèbre guide Michelin.",
-          number: "2",
+          number: "2"
         },
         {
           img:
             "https://cdn.discordapp.com/attachments/697362929946722358/722533927570505818/sa_specialite.png",
           description:
             "Son plat le plus célébre est sa fameuse omelette au crabe.",
-          number: "3",
+          number: "3"
         },
         {
           img:
             "https://cdn.discordapp.com/attachments/697362929946722358/722533890241200258/look.png",
           description:
             "C’est une femme qui a un look très atypique quand elle cuisine elle porte en général un bonnet et des lunettes de ski.",
-          number: "4",
+          number: "4"
         },
         {
           img:
             "https://cdn.discordapp.com/attachments/697362929946722358/722533903247736842/authenticite.png",
           description:
             "Ce petit « boui-boui » est tenu par Supinya Junsutade qui perpétue l’activité de son père créée il y a 70 ans.",
-          number: "5",
+          number: "5"
         },
         {
           img:
             "https://cdn.discordapp.com/attachments/697362929946722358/722533916724166746/identite.png",
           description:
             "Le restaurant propose des plats préparée en plein air, sur des foyers à charbon et avec des tables et des chaises en plastique en guide de salle de restaurant.",
-          number: "6",
-        },
-      ],
+          number: "6"
+        }
+      ]
     };
   },
   methods: {
@@ -112,8 +106,8 @@ export default {
       if (numero + 1 == this.cards[numero].number) {
         this.cardProps = this.cards[numero];
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -129,15 +123,19 @@ export default {
     font-weight: bold;
     color: transparent;
     -webkit-text-stroke: 2px #d1d1d1;
-    @include medium{
-      font-size: 288px;
+    @include medium {
+      font-size: 220px;
       position: absolute;
+    }
+
+    @include large {
+      font-size: 285px;
     }
   }
   img {
     width: 230px;
-    margin-top: 56px;
-    @include medium{
+    margin-top: 5%;
+    @include medium {
       width: 614px;
       height: 584px;
       position: absolute;
@@ -158,7 +156,7 @@ export default {
   top: 15%;
   transform: translateX(-50%);
   transition: 0.4s ease-in-out;
-  @include medium{
+  @include medium {
     top: 30%;
   }
 }
@@ -169,12 +167,34 @@ export default {
   margin-top: 20%;
   height: 50vh;
   width: 100vw;
+
+  @include medium {
+    margin-top: 10%;
+  }
   &__col1 {
     display: flex;
     flex-direction: column;
+
+    ul {
+      @include medium {
+        padding-left: 5rem;
+      }
+
+      @include large {
+        padding-left: 12rem;
+      }
+    }
   }
-  @include medium{
-    margin-top: 10%;
+
+  &__col2 {
+    ul {
+      @include medium {
+        padding-right: 5rem;
+      }
+      @include large {
+        padding-right: 12rem;
+      }
+    }
   }
 }
 </style>

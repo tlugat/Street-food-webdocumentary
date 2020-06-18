@@ -11,8 +11,8 @@
 export default {
   props: {
     title: String,
-    number: String,
-  },
+    number: String
+  }
 };
 </script>
 
@@ -46,8 +46,8 @@ export default {
   &__number--left {
   }
   &__title {
-    vertical-align: middle;
-    line-height: 50px;
+    height: 100%;
+    @include flex(null, center, center);
   }
 }
 </style>
