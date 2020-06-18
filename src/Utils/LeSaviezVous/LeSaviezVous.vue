@@ -58,13 +58,13 @@
 <script>
 export default {
   props: {
-    lsv: String
+    lsv: String,
   },
   methods: {
     slideLsv() {
       this.$emit("slide-lsv");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -127,10 +127,36 @@ export default {
     svg {
       height: 1.8rem;
       width: 1.8rem;
-      top: 50%;
-      left: 55%;
+      top: 20%;
+      left: 40%;
       transform: translate(-50%, -50%);
       position: absolute;
+      animation: shake 1.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+  }
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
     }
   }
 }
