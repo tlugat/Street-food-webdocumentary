@@ -58,11 +58,11 @@ export default {
   width: 100%;
   height: 100vh;
   background: url("../assets/img/landing-page/background-landing-small.png")
-    no-repeat;
+    no-repeat center fixed;
   @include medium {
     object-fit: cover;
-    background: url("../assets/img/landing-page/background_home_desktop.png")
-      no-repeat;
+    background: url("https://cdn.discordapp.com/attachments/697362929946722358/723182371280519239/bg.png")
+      no-repeat fixed center;
   }
   background-size: cover;
 }
