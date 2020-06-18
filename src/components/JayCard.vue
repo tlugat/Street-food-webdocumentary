@@ -2,6 +2,7 @@
   <transition name="flip">
     <div class="card">
       <img class="card__img" :src="data.img" />
+      <div class="traitJaune"></div>
       <p class="card__text">{{ data.description }}</p>
       <span class="card__number">{{ data.number }}</span>
       <svg
@@ -25,13 +26,13 @@
 <script>
 export default {
   props: {
-    data: Object,
+    data: Object
   },
   methods: {
     closeCard() {
       this.$emit("close-card");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -45,20 +46,35 @@ export default {
   width: 250px;
   height: 300px;
   background: $black;
-  @include medium{
+  @include flex(column, null, center);
+  @include medium {
     width: 325px;
     height: 388px;
   }
 
   &__img {
-    width: 100%;
+    width: 95%;
+    padding-top: 0.5rem;
+  }
+  .traitJaune {
+    margin-top: 1rem;
+    width: 10rem;
+    height: 2px;
+    background-color: $yellow;
   }
   &__text {
     font-size: 14px;
     padding: 5% 10%;
+    width: 90%;
     color: #fff;
     font-weight: 300;
-    line-height: 120%;
+    line-height: 21px;
+    text-align: center;
+
+    @include medium {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
   &__number {
     position: absolute;
@@ -78,7 +94,7 @@ export default {
     &:hover {
       background: $green;
     }
-    @include medium{
+    @include medium {
       width: 38px;
       height: 38px;
     }

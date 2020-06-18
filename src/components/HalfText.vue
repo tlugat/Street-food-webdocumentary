@@ -83,7 +83,7 @@
                 stroke-width="3"
               />
             </svg>
-            <div class="pointJaune1"></div>
+            <div class="pointJaune"></div>
             <p class="trucks__itemText">Chariot portable</p>
           </div>
           <div class="trucks__item2">
@@ -140,7 +140,7 @@
                 stroke-width="3"
               />
             </svg>
-            <div class="pointJaune2"></div>
+            <div class="pointJaune"></div>
             <p class="trucks__itemText">Kiosque</p>
           </div>
           <div class="trucks__item3">
@@ -188,7 +188,7 @@
                 stroke-width="3"
               />
             </svg>
-            <div class="pointJaune3"></div>
+            <div class="pointJaune"></div>
             <p class="trucks__itemText">Food truck</p>
           </div>
         </div>
@@ -383,7 +383,7 @@ export default {
   components: {
     Title,
     LeSaviezVous,
-    SuccesCard
+    SuccesCard,
   },
 
   beforeRouteUpdate(to, from, next) {
@@ -401,7 +401,7 @@ export default {
         "Peut couteux ",
         "Gain de temps",
         "Préparation rapide",
-        "Produits de qualité"
+        "Produits de qualité",
       ],
       content: [
         {
@@ -413,8 +413,8 @@ export default {
             title: `Les origines des cantines de rue`,
             lsv: `Dans les rues de paris au 19ème siècle on vendait des lanières de pommes de terre frites qui sont d’ailleurs à l’origine des frites que l’on connait si bien. `,
             svg: "pyramide",
-            key: 6
-          }
+            key: 6,
+          },
         },
         {
           name: "today",
@@ -424,8 +424,8 @@ export default {
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721760690565808180/today.png`,
             title: `Mais aujourd'hui la street food c'est quoi ?`,
             svg: "trucks",
-            key: 5
-          }
+            key: 5,
+          },
         },
         {
           name: "recette",
@@ -435,8 +435,8 @@ export default {
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721760646554976316/recettesucces.png`,
             title: `La recette d'un succès`,
             svg: "cards",
-            key: 4
-          }
+            key: 4,
+          },
         },
         {
           name: "chic",
@@ -447,8 +447,8 @@ export default {
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721782756878712863/burger.png`,
             lsv: `Le burger le plus cher du monde coûte 4700 euros. Il est composé de bœuf de Kobé, truffes noires, du fois gras et une sauce faite à partir de truffes blanches.`,
             svg: "burger",
-            key: 2
-          }
+            key: 2,
+          },
         },
         {
           name: "fine-casual",
@@ -460,24 +460,24 @@ export default {
             title: `La tendance du "fine casual"`,
             lsv: `La gastronomie française représenterait pas moins de 20 à 50% de notre impact environnemental.`,
             svg: "toque",
-            key: 1
-          }
-        }
-      ]
+            key: 1,
+          },
+        },
+      ],
     };
   },
   methods: {
     slideLsv() {
       document.querySelector(".lsv").classList.toggle("open");
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
 
-@mixin green-square($top, $bottom, $left, $right) {
+@mixin green-square($top, $bottom, $left, $right, $transform) {
   &::before {
     content: "";
     height: 1.6rem;
@@ -489,6 +489,8 @@ export default {
     left: $left;
     right: $right;
     z-index: -1;
+    transform: $transform;
+    transition: 0.4s;
 
     @include medium {
       height: 3rem;
@@ -497,16 +499,25 @@ export default {
   }
 }
 
+@mixin point-jaune {
+  width: 8px;
+  height: 8px;
+  background-color: $yellow;
+  margin-top: 2rem;
+}
+
 .lsv {
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 45%;
   transform: translateX(80%);
   transition: 0.4s ease-in-out;
   width: 100%;
   z-index: 1;
+  cursor: pointer;
   @include medium {
     transform: translateX(40%);
+    top: 60%;
   }
 }
 .lsv.open {
@@ -523,9 +534,10 @@ export default {
     margin-top: 2rem;
     padding-left: 0.5rem;
     margin-bottom: 3rem;
+    transition: 0.4s;
     @include medium {
       @include flex(null, flex-start, center);
-      margin-top: 5rem;
+      transform: translateY(3rem);
       padding-left: 1.5rem;
       margin-bottom: 0;
     }
@@ -533,7 +545,7 @@ export default {
     svg {
       width: 60px;
       height: auto;
-      transition: all 1s;
+      transition: all 0.4s;
       transform-origin: 50% 50%;
 
       @include medium {
@@ -569,36 +581,35 @@ export default {
       position: relative;
       height: 100%;
       align-self: flex-end;
-      @include green-square(-1rem, null, -0.5rem, null);
+      @include green-square(-1rem, null, -0.5rem, null, null);
 
       @include medium {
-        @include green-square(-1rem, null, -1rem, null);
+        @include green-square(-1rem, null, -1rem, null, null);
+        &:hover {
+          @include green-square(-1rem, null, -0.5rem, null, scale(2));
+        }
       }
-      .pointJaune1 {
-        width: 8px;
-        height: 8px;
-        margin-top: 2rem;
-        background-color: $yellow;
-      }
+    }
+    .pointJaune {
+      width: 8px;
+      height: 8px;
+      background-color: $yellow;
+      margin-top: 2rem;
     }
     &__item2 {
       margin-right: 3rem;
       margin-left: 3rem;
       position: relative;
       height: 100%;
-      @include green-square(null, 2.2rem, null, -1rem);
+      @include green-square(null, 2.2rem, null, -1rem, null);
 
       @include medium {
-        @include green-square(null, 2rem, null, -1rem);
+        &:hover {
+          @include green-square(null, 2rem, null, -1rem, scale(2));
+        }
+        @include green-square(null, 2rem, null, -1rem, null);
         margin-right: 4rem;
         margin-left: 4rem;
-      }
-
-      .pointJaune2 {
-        width: 8px;
-        height: 8px;
-        background-color: $yellow;
-        margin-top: 2rem;
       }
       svg {
         width: 45px;
@@ -613,17 +624,14 @@ export default {
     &__item3 {
       height: 100%;
       align-self: flex-end;
-      @include green-square(-0.5rem, null, null, -0.5rem);
+      @include green-square(-0.5rem, null, null, -0.5rem, null);
       position: relative;
 
       @include medium {
-        @include green-square(-0.5rem, null, null, -0.5rem);
-      }
-      .pointJaune3 {
-        width: 8px;
-        height: 8px;
-        background-color: $yellow;
-        margin-top: 2rem;
+        &:hover {
+          @include green-square(-0.5rem, null, null, -0.5rem, scale(2));
+        }
+        @include green-square(-0.5rem, null, null, -0.5rem, null);
       }
     }
   }
@@ -718,8 +726,7 @@ export default {
   }
 }
 .cards {
-  @include flex(null, center, center);
-  flex-wrap: wrap;
+  @include flex(column, flex-start, center);
   padding-top: 1rem;
 
   @include large {
@@ -736,7 +743,6 @@ export default {
       margin-left: 10%;
     }
   }
+ } 
 
-  
-} 
 </style>

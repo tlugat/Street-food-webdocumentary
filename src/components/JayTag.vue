@@ -43,11 +43,9 @@ export default {
     height: auto;
     color: $black;
   }
-  &__number--left {
-  }
   &__title {
-    vertical-align: middle;
-    line-height: 50px;
+    height: 100%;
+    @include flex(null, center, center);
   }
 }
 </style>

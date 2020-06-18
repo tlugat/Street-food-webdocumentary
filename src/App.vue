@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <svg
+      v-if="indexPage < routes.length"
       @click="nextPage"
       class="arrow-right"
       xmlns="http://www.w3.org/2000/svg"
@@ -14,6 +15,7 @@
       />
     </svg>
     <svg
+      v-if="indexPage > 0"
       @click="previousPage"
       class="arrow-left"
       xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +87,25 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
+
+@mixin slideArrow($right, $left) {
+  position: absolute;
+  position: fixed;
+  top: 50%;
+  right: $right;
+  left: $left;
+  transform: translateY(-50%);
+  z-index: 1;
+  height: 100%;
+  fill: lightgray;
+  transition: 0.2s;
+  cursor: pointer;
+  &:hover {
+    background: rgba(0, 0, 0, 0.137);
+    fill: $green;
+  }
+}
+
 #app {
   height: 100%;
   width: 100%;
@@ -96,19 +117,10 @@ export default {
     height: 100vh;
   }
   .arrow-right {
-    position: absolute;
-    position: fixed;
-    top: 50%;
-    right: 2.5%;
-    transform: translateY(-50%);
-    z-index: 1;
+    @include slideArrow(0, null);
   }
   .arrow-left {
-    position: absolute;
-    position: fixed;
-    top: 50%;
-    left: 2.5%;
-    transform: translateY(-50%);
+    @include slideArrow(null, 0);
   }
   .slide-enter-active,
   .fade-leave-active {
