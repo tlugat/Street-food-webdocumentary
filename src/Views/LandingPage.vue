@@ -60,7 +60,7 @@ export default {
 
 .height {
   height: 100vh;
-  background: url("../assets/img/landing-page/background-landing-small.png")
+  background: url("https://cdn.discordapp.com/attachments/697362929946722358/723199021497319444/bg_small.png")
     no-repeat center fixed;
   @include medium {
     object-fit: cover;
