@@ -31,7 +31,7 @@
     <transition name="slide">
       <router-view class="view"></router-view>
     </transition>
-    <Menu class="menu"></Menu>
+    <Menu @set-index-page="setIndexPage" class="menu"></Menu>
   </div>
 </template>
 
@@ -80,6 +80,9 @@ export default {
         this.$router.go(-1);
         this.indexPage--;
       }
+    },
+    setIndexPage(index) {
+      this.indexPage = index;
     },
   },
 };
