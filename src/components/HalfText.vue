@@ -13,15 +13,15 @@
         <p v-if="content[item].data.text2">{{ content[item].data.text2 }}</p>
         <p v-if="content[item].data.text3">{{ content[item].data.text3 }}</p>
         <transition name="bounce">
-        <div v-if="content[item].data.svg == 'cards'" class="cards"> 
-          <succesCard
-            class="cards__card"
-            v-for="(data, index) in avantages"
-            :key="10 + index"
-            :avantage="avantages[index]"
-            :icon="svgs[index]"
-          ></succesCard>
-        </div>
+          <div v-if="content[item].data.svg == 'cards'" class="cards">
+            <succesCard
+              class="cards__card"
+              v-for="(data, index) in avantages"
+              :key="10 + index"
+              :avantage="avantages[index]"
+              :icon="svgs[index]"
+            ></succesCard>
+          </div>
         </transition>
         <div v-if="content[item].data.svg == 'trucks'" class="trucks">
           <div class="trucks__item1">
@@ -375,7 +375,6 @@
 </template>
 
 <script>
-
 import Title from "../Utils/TheTitle/Title";
 import LeSaviezVous from "../Utils/LeSaviezVous/LeSaviezVous";
 import SuccesCard from "../components/SuccesComponents/succesCard";
@@ -383,7 +382,7 @@ export default {
   components: {
     Title,
     LeSaviezVous,
-    SuccesCard,
+    SuccesCard
   },
 
   beforeRouteUpdate(to, from, next) {
@@ -393,7 +392,7 @@ export default {
 
   data() {
     return {
-      bounce:true,
+      bounce: true,
       item: this.$route.params.id - 1,
       trucks: false,
       svgs: ["money", "time", "fast", "star"],
@@ -401,7 +400,7 @@ export default {
         "Peut couteux ",
         "Gain de temps",
         "Préparation rapide",
-        "Produits de qualité",
+        "Produits de qualité"
       ],
       content: [
         {
@@ -413,8 +412,8 @@ export default {
             title: `Les origines des cantines de rue`,
             lsv: `Dans les rues de paris au 19ème siècle on vendait des lanières de pommes de terre frites qui sont d’ailleurs à l’origine des frites que l’on connait si bien. `,
             svg: "pyramide",
-            key: 6,
-          },
+            key: 6
+          }
         },
         {
           name: "today",
@@ -424,8 +423,8 @@ export default {
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721760690565808180/today.png`,
             title: `Mais aujourd'hui la street food c'est quoi ?`,
             svg: "trucks",
-            key: 5,
-          },
+            key: 5
+          }
         },
         {
           name: "recette",
@@ -435,8 +434,8 @@ export default {
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721760646554976316/recettesucces.png`,
             title: `La recette d'un succès`,
             svg: "cards",
-            key: 4,
-          },
+            key: 4
+          }
         },
         {
           name: "chic",
@@ -447,8 +446,8 @@ export default {
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721782756878712863/burger.png`,
             lsv: `Le burger le plus cher du monde coûte 4700 euros. Il est composé de bœuf de Kobé, truffes noires, du fois gras et une sauce faite à partir de truffes blanches.`,
             svg: "burger",
-            key: 2,
-          },
+            key: 2
+          }
         },
         {
           name: "fine-casual",
@@ -460,17 +459,17 @@ export default {
             title: `La tendance du "fine casual"`,
             lsv: `La gastronomie française représenterait pas moins de 20 à 50% de notre impact environnemental.`,
             svg: "toque",
-            key: 1,
-          },
-        },
-      ],
+            key: 1
+          }
+        }
+      ]
     };
   },
   methods: {
     slideLsv() {
       document.querySelector(".lsv").classList.toggle("open");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -726,7 +725,8 @@ export default {
   }
 }
 .cards {
-  @include flex(column, flex-start, center);
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 1rem;
 
   @include large {
@@ -743,6 +743,5 @@ export default {
       margin-left: 10%;
     }
   }
- } 
-
+}
 </style>

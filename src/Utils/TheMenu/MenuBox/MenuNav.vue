@@ -36,11 +36,7 @@
       />
     </svg>
     <ul v-if="displayChapters" class="menu__list">
-      <li
-        @click="selectChapter(index)"
-        v-for="(chapter, index) in summary.chapters"
-        :key="index"
-      >
+      <li @click="selectChapter(index)" v-for="(chapter, index) in summary.chapters" :key="index">
         <a>{{ chapter }}</a>
       </li>
     </ul>
@@ -50,14 +46,14 @@
         v-for="(chapter, index) in summary.testChapters[test]"
         :key="index"
       >
-        <router-link :to="summary.routes[test][index].to">{{
+        <router-link :to="summary.routes[test][index].to">
+          {{
           chapter
-        }}</router-link>
+          }}
+        </router-link>
       </li>
       <li>
-        <router-link class="test" to="/recettes">
-          Recettes
-        </router-link>
+        <router-link class="test" to="/recettes">Recettes</router-link>
       </li>
     </ul>
   </div>
@@ -75,31 +71,34 @@ export default {
             { to: "/text/1", indexPage: 1 },
             { to: "/text/2", indexPage: 3 },
             { to: "/text/3", indexPage: 6 },
-            { to: "/jay-fai", indexPage: 7 },
+            { to: "/jay-fai", indexPage: 7 }
           ],
           [
             { to: "/text/4", indexPage: 9 },
             { to: "/text/5", indexPage: 11 },
             { to: "chefs", indexPage: 12 },
-            { to: "/full-text/3", indexPage: 13 },
-          ],
+            { to: "/full-text/3", indexPage: 13 }
+          ]
         ],
-        chapters: ["Chapitre 1", "Chapitre 2"],
+        chapters: [
+          "1 - La street food c'est quoi ?",
+          "2 - La street food se gatsronomise"
+        ],
         testChapters: [
           [
             "Les origines",
             "La street food c'est quoi ?",
             "La recette d'un succès",
-            "Jay Fai",
+            "Jay Fai"
           ],
           [
             "Une street-food plus chic",
             "Le fine Casual",
             "Les grands chefs s'en mêlent",
-            "L'apogée de la cuisine de rue",
-          ],
-        ],
-      },
+            "L'apogée de la cuisine de rue"
+          ]
+        ]
+      }
     };
   },
 
@@ -110,8 +109,8 @@ export default {
     },
     back() {
       this.displayChapters = true;
-    },
-  },
+    }
+  }
 };
 </script>
 

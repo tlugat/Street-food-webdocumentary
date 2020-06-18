@@ -120,9 +120,9 @@
 export default {
   props: {
     avantage: String,
-    icon: String,
+    icon: String
     // svgs: String,
-  },
+  }
 };
 </script>
 
@@ -133,6 +133,7 @@ export default {
   display: flex;
   margin-bottom: 5%;
   align-items: center;
+  flex-wrap: wrap;
 }
 .card {
   display: flex;
@@ -145,7 +146,7 @@ export default {
   transition: 0.2s;
   &:hover {
     background: $black;
-    color:white;
+    color: white;
   }
 }
 h3 {
