@@ -722,8 +722,7 @@ export default {
   }
 }
 .cards {
-  @include flex(null, center, center);
-  flex-wrap: wrap;
+  @include flex(column, flex-start, center);
   padding-top: 1rem;
 
   @include large {
@@ -732,13 +731,6 @@ export default {
 
   @include xlarge {
     padding-top: 1rem;
-  }
-
-  &__card {
-    margin-left: 5%;
-    @include medium {
-      margin-left: 10%;
-    }
   }
 }
 </style>
