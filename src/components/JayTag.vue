@@ -11,8 +11,8 @@
 export default {
   props: {
     title: String,
-    number: String
-  }
+    number: String,
+  },
 };
 </script>
 
@@ -42,8 +42,6 @@ export default {
     font-weight: bold;
     height: auto;
     color: $black;
-  }
-  &__number--left {
   }
   &__title {
     height: 100%;
