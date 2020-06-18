@@ -18,7 +18,7 @@ export default new VueRouter({
       component: LandingPage,
     },
     {
-      path: "/chefs",
+      path: "/chefs/:title",
       name: "chefs",
       component: Chefs,
     },

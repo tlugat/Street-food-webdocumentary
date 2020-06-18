@@ -52,9 +52,6 @@
           }}
         </router-link>
       </li>
-      <li>
-        <router-link class="test" to="/recettes">Recettes</router-link>
-      </li>
     </ul>
   </div>
 </template>
@@ -76,8 +73,8 @@ export default {
           [
             { to: "/text/4", indexPage: 9 },
             { to: "/text/5", indexPage: 11 },
-            { to: "chefs", indexPage: 12 },
-            { to: "/full-text/3", indexPage: 13 }
+            { to: "/chefs/Les grands chefs s'en mêlent", indexPage: 12 },
+            { to: "/full-text/3", indexPage: 13 },
           ]
         ],
         chapters: [
