@@ -3,7 +3,7 @@
 ## Webdocumentary project about Street food evolution
 Bonjour à tous ! 👋🏼
 
-Nous sommes étudiants 👩‍🎓🧑‍🎓  en 1er année à Hetic. Notre mission ?  Réaliser un webdocumentaire sur le theme de notre choix et pour cela nous avont 3 semaines. 
+Nous sommes étudiants 👩‍🎓🧑‍🎓 à Hetic devons réaliser un projet de fin d'année. Notre mission ?  Réaliser un webdocumentaire sur le theme de notre choix et pour cela nous avons 3 semaines. 
 
 Nous sommes heureux de vous présenter notre projet de fin d'année, qui porte sur le thème de... 🥁
 
