@@ -58,6 +58,7 @@ export default {
         "/text/4",
         "/recettes",
         "/text/5",
+        "/chefs-video",
         "/chefs/Les grands chefs s'en mêlent",
         "/full-text/3",
       ],
@@ -77,7 +78,7 @@ export default {
     },
     previousPage() {
       if (this.indexPage > 0) {
-        this.$router.go(-1);
+        this.$router.push(this.routes[this.indexPage - 1]);
         this.indexPage--;
       }
     },

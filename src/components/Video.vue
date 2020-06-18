@@ -1,40 +1,66 @@
 <template>
-    <div class="main">
-        <h1>Revite du Club Sandwich by Thierry Marx</h1>
-        <video class="video" src="../assets/videos/le-club-sandwich-revisite.mp4" autoplay loop>Votre navigateur ne supporte pas la vidéo.</video>
+  <div class="height">
+    <div class="video">
+      <h1 class="video__title">Revisite du Club Sandwich by Thierry Marx</h1>
+      <video
+        class="video"
+        src="../assets/videos/le-club-sandwich-revisite.mp4"
+        autoplay
+        loop
+      >
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
     </div>
+  </div>
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+      displayTitle: false,
+    };
+  },
+  methods: {
+    // displayTitle() {
+    //   // document.querySelector('.video__title').addEventListener
+    // }
+  },
+};
 </script>
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
-
-.main{
-    width: 100%;
-    background-position: center center;
-    background-size: contain;
-    background-color: black;
-    padding:20%;
+.height {
+  height: 100vh;
+  width: 100vw;
 }
-
- .video{
-    position: absolute;
-    top: 5%;
-    right: 0;
-    bottom: 0;
-    left: 5%;
-    object-fit: cover;
-}
-
-h1{
-    font-size:$title-font;
+.video {
+  width: 100%;
+  height: 100%;
+  &__title {
+    font-size: $title-font;
     position: absolute;
     z-index: 100;
     font-weight: bold;
-    top: 95%;
-    left: 5%;
-    color: white;
+    top: 0;
+    left: 0;
+    color: $yellow;
+    opacity: 0;
+    transition: 0.2s;
+    padding: 2rem;
+    width: 100%;
+    cursor: default;
+    background: rgba(0, 0, 0, 0.137);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.video {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
 }
 </style>
