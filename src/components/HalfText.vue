@@ -12,7 +12,8 @@
         <p v-if="content[item].data.text1">{{ content[item].data.text1 }}</p>
         <p v-if="content[item].data.text2">{{ content[item].data.text2 }}</p>
         <p v-if="content[item].data.text3">{{ content[item].data.text3 }}</p>
-        <div v-if="content[item].data.svg == 'cards'" class="cards">
+        <transition name="bounce">
+        <div v-if="content[item].data.svg == 'cards'" class="cards"> 
           <succesCard
             class="cards__card"
             v-for="(data, index) in avantages"
@@ -21,6 +22,7 @@
             :icon="svgs[index]"
           ></succesCard>
         </div>
+        </transition>
         <div v-if="content[item].data.svg == 'trucks'" class="trucks">
           <div class="trucks__item1">
             <svg
@@ -373,6 +375,7 @@
 </template>
 
 <script>
+
 import Title from "../Utils/TheTitle/Title";
 import LeSaviezVous from "../Utils/LeSaviezVous/LeSaviezVous";
 import SuccesCard from "../components/SuccesComponents/succesCard";
@@ -390,6 +393,7 @@ export default {
 
   data() {
     return {
+      bounce:true,
       item: this.$route.params.id - 1,
       trucks: false,
       svgs: ["money", "time", "fast", "star"],
@@ -732,5 +736,13 @@ export default {
   @include xlarge {
     padding-top: 1rem;
   }
-}
+
+  &__card {
+    margin-left: 5%;
+    @include medium {
+      margin-left: 10%;
+    }
+  }
+ } 
+
 </style>
