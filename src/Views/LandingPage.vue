@@ -133,7 +133,7 @@ export default {
 }
 .startBtnContainer {
   position: absolute;
-  top: 50%;
+  top: 65%;
   left: 50%;
   width: 60%;
   transform: translateX(-50%);
@@ -165,7 +165,7 @@ export default {
       width: 70%;
     }
     @include medium {
-      bottom: -6rem;
+      top: 50%;
       font-size: 18px;
       width: 40%;
       transition: 0.2s;
