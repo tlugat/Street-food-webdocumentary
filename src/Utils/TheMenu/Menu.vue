@@ -6,7 +6,10 @@
         <br />NU
       </p>
     </div>
-    <menu-nav class="menu__nav"></menu-nav>
+    <menu-nav
+      @set-index-page="setIndexPage($event)"
+      class="menu__nav"
+    ></menu-nav>
   </div>
 </template>
 
@@ -20,6 +23,9 @@ export default {
   methods: {
     slideNav() {
       document.querySelector(".menu__nav").classList.toggle("open");
+    },
+    setIndexPage(index) {
+      this.$emit("set-index-page", index);
     },
   },
 };

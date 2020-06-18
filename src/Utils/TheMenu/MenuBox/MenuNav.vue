@@ -46,11 +46,11 @@
     </ul>
     <ul v-if="!displayChapters" class="menu__list">
       <li
-        @click="setIndexPage"
+        @click="$emit('set-index-page', summary.routes[test][index].indexPage)"
         v-for="(chapter, index) in summary.testChapters[test]"
         :key="index"
       >
-        <router-link :to="summary.routes[test][index]">{{
+        <router-link :to="summary.routes[test][index].to">{{
           chapter
         }}</router-link>
       </li>
@@ -71,8 +71,18 @@ export default {
       test: null,
       summary: {
         routes: [
-          ["/text/1", "/text/2", "/text/3", { name: "jay-fai" }],
-          ["/text/4", "/text/5", "chefs", "/full-text/3"],
+          [
+            { to: "/text/1", indexPage: 1 },
+            { to: "/text/2", indexPage: 3 },
+            { to: "/text/3", indexPage: 6 },
+            { to: "/jay-fai", indexPage: 7 },
+          ],
+          [
+            { to: "/text/4", indexPage: 9 },
+            { to: "/text/5", indexPage: 11 },
+            { to: "chefs", indexPage: 12 },
+            { to: "/full-text/3", indexPage: 13 },
+          ],
         ],
         chapters: ["Chapitre 1", "Chapitre 2"],
         testChapters: [
@@ -92,6 +102,7 @@ export default {
       },
     };
   },
+
   methods: {
     selectChapter(index) {
       this.test = index;
@@ -100,7 +111,6 @@ export default {
     back() {
       this.displayChapters = true;
     },
-    setIndexPage() {},
   },
 };
 </script>
