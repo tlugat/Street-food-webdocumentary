@@ -54,9 +54,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
+body {
+  width: 100vw;
+  height: 100%;
+}
 .landing {
-  width: 100%;
-  height: 100vh;
   background: url("../assets/img/landing-page/background-landing-small.png")
     no-repeat;
   @include medium {
@@ -64,7 +66,6 @@ export default {
     background: url("../assets/img/landing-page/background_home_desktop.png")
       no-repeat;
   }
-  background-size: cover;
 }
 .menu {
   position: absolute;
