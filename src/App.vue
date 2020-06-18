@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <svg
+      v-if="indexPage < routes.length"
       @click="nextPage"
       class="arrow-right"
       xmlns="http://www.w3.org/2000/svg"
@@ -14,6 +15,7 @@
       />
     </svg>
     <svg
+      v-if="indexPage > 0"
       @click="previousPage"
       class="arrow-left"
       xmlns="http://www.w3.org/2000/svg"
