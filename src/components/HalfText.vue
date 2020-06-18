@@ -191,6 +191,12 @@
             <div class="pointJaune"></div>
             <p class="trucks__itemText">Food truck</p>
           </div>
+          <audio
+        autoplay
+        src="../assets/son/food.mp3" type="audio/mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+          </audio>
         </div>
         <svg
           v-if="content[item].data.svg == 'pyramide'"
@@ -346,6 +352,12 @@
             </clipPath>
           </defs>
         </svg>
+        <audio
+        autoplay
+        src="../assets/son/friture.mp3" type="audio/mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+          </audio>
         <svg
           v-if="content[item].data.svg == 'toque'"
           class="textContainer__background"
@@ -367,14 +379,15 @@
               <rect width="427" height="381.38" fill="white" />
             </clipPath>
           </defs>
+          
         </svg>
-      </div>
-    <audio
+        <audio
         autoplay
-        src="../assets/son/food.mp3" type="audio/mp3">
+        src="../assets/son/sound1.mp3" type="audio/mp3">
             Your browser does not support the
             <code>audio</code> element.
-    </audio>
+          </audio>
+      </div>
     </div>
     <img :src="content[item].data.img" class="halfPage__img" />
   </div>
