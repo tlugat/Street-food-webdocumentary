@@ -29,7 +29,7 @@
       />
     </svg>
     <transition name="slide">
-      <router-view class="view"></router-view>
+      <router-view @start-nav="startNav" class="view"></router-view>
     </transition>
     <Menu @set-index-page="setIndexPage" class="menu"></Menu>
   </div>

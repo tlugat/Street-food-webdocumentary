@@ -7,9 +7,7 @@
         <p class="globalTitles__subtitle">D'un mode de vie à une tendance</p>
         <h1 class="globalTitles__title">STREET FOOD</h1>
       </div>
-      <div class="startBtnContainer">
-        <button class="startBtnContainer__btn">Place à la dégusation !</button>
-      </div>
+
       <div class="disclaimer">
         <div class="disclaimer__textWrapper">
           <svg
@@ -131,47 +129,7 @@ export default {
     }
   }
 }
-.startBtnContainer {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  width: 60%;
-  transform: translateX(-50%);
-  @include flex(null, center, null);
-  &__btn {
-    padding: 1rem 1rem;
-    background: none;
-    color: white;
-    border: solid 2px $green;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: $green;
-      transform: translate3d(0, 100%, 0);
-      transition: 0.3s transform ease;
-    }
-    &:hover::before {
-      transform: translate3d(0, 0, 0);
-      z-index: -10;
-    }
-    @include small {
-      width: 70%;
-    }
-    @include medium {
-      top: 50%;
-      font-size: 18px;
-      width: 40%;
-      transition: 0.2s;
-    }
-  }
-}
+
 .disclaimer {
   width: 13rem;
   padding: 1rem 3rem;

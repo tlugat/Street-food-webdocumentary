@@ -191,12 +191,6 @@
             <div class="pointJaune"></div>
             <p class="trucks__itemText">Food truck</p>
           </div>
-          <audio
-        autoplay
-        src="../assets/son/food.mp3" type="audio/mp3">
-            Your browser does not support the
-            <code>audio</code> element.
-          </audio>
         </div>
         <svg
           v-if="content[item].data.svg == 'pyramide'"
@@ -352,12 +346,6 @@
             </clipPath>
           </defs>
         </svg>
-        <audio
-        autoplay
-        src="../assets/son/friture.mp3" type="audio/mp3">
-            Your browser does not support the
-            <code>audio</code> element.
-          </audio>
         <svg
           v-if="content[item].data.svg == 'toque'"
           class="textContainer__background"
@@ -379,14 +367,43 @@
               <rect width="427" height="381.38" fill="white" />
             </clipPath>
           </defs>
-          
         </svg>
         <audio
-        autoplay
-        src="../assets/son/sound1.mp3" type="audio/mp3">
-            Your browser does not support the
-            <code>audio</code> element.
-          </audio>
+          v-if="content[item].name == 'today'"
+          autoplay
+          src="../assets/son/sound1.mp3"
+          type="audio/mp3"
+        >
+          Your browser does not support the
+          <code>audio</code> element.
+        </audio>
+        <audio
+          v-if="content[item].name == 'origines'"
+          autoplay
+          src="../assets/son/friture.mp3"
+          type="audio/mp3"
+        >
+          Your browser does not support the
+          <code>audio</code> element.
+        </audio>
+        <audio
+          v-if="content[item].name == 'fine-casual'"
+          autoplay
+          src="../assets/son/sound2.mp3"
+          type="audio/mp3"
+        >
+          Your browser does not support the
+          <code>audio</code> element.
+        </audio>
+        <audio
+          v-if="content[item].name == 'chic'"
+          autoplay
+          src="../assets/son/food.mp3"
+          type="audio/mp3"
+        >
+          Your browser does not support the
+          <code>audio</code> element.
+        </audio>
       </div>
     </div>
     <img :src="content[item].data.img" class="halfPage__img" />
@@ -401,7 +418,7 @@ export default {
   components: {
     Title,
     LeSaviezVous,
-    SuccesCard
+    SuccesCard,
   },
 
   beforeRouteUpdate(to, from, next) {
@@ -419,7 +436,7 @@ export default {
         "Peut couteux ",
         "Gain de temps",
         "Préparation rapide",
-        "Produits de qualité"
+        "Produits de qualité",
       ],
       content: [
         {
@@ -431,8 +448,8 @@ export default {
             title: `Les origines des cantines de rue`,
             lsv: `Dans les rues de paris au 19ème siècle on vendait des lanières de pommes de terre frites qui sont d’ailleurs à l’origine des frites que l’on connait si bien. `,
             svg: "pyramide",
-            key: 6
-          }
+            key: 6,
+          },
         },
         {
           name: "today",
@@ -442,8 +459,8 @@ export default {
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721760690565808180/today.png`,
             title: `Mais aujourd'hui la street food c'est quoi ?`,
             svg: "trucks",
-            key: 5
-          }
+            key: 5,
+          },
         },
         {
           name: "recette",
@@ -453,8 +470,8 @@ export default {
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721760646554976316/recettesucces.png`,
             title: `La recette d'un succès`,
             svg: "cards",
-            key: 4
-          }
+            key: 4,
+          },
         },
         {
           name: "chic",
@@ -465,8 +482,8 @@ export default {
             img: `https://cdn.discordapp.com/attachments/697362929946722358/721782756878712863/burger.png`,
             lsv: `Le burger le plus cher du monde coûte 4700 euros. Il est composé de bœuf de Kobé, truffes noires, du fois gras et une sauce faite à partir de truffes blanches.`,
             svg: "burger",
-            key: 2
-          }
+            key: 2,
+          },
         },
         {
           name: "fine-casual",
@@ -478,17 +495,17 @@ export default {
             title: `La tendance du "fine casual"`,
             lsv: `La gastronomie française représenterait pas moins de 20 à 50% de notre impact environnemental.`,
             svg: "toque",
-            key: 1
-          }
-        }
-      ]
+            key: 1,
+          },
+        },
+      ],
     };
   },
   methods: {
     slideLsv() {
       document.querySelector(".lsv").classList.toggle("open");
-    }
-  }
+    },
+  },
 };
 </script>
 
