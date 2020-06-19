@@ -1,8 +1,13 @@
 <template>
   <div :style="setBackground" class="fullPage">
-    <div class="test"></div>
+    <div class="background-black"></div>
     <div class="height">
-      <Title v-if="content[item].title" :title="content[item].title" s class="fullPage__title"></Title>
+      <Title
+        v-if="content[item].title"
+        :title="content[item].title"
+        s
+        class="fullPage__title"
+      ></Title>
       <div class="text-part">
         <div class="text-part__textContainer">
           <svg
@@ -68,7 +73,7 @@ import Title from "../Utils/TheTitle/Title";
 
 export default {
   components: {
-    Title
+    Title,
   },
   data() {
     return {
@@ -87,9 +92,9 @@ export default {
         {
           text1: `Bilan ? L’ancienne junk food répond désormais aux codes éthiques du bien manger. Le veau de lait tourne sur les broches des kebabs de luxe, et la cuisine devient spectacle. Là, on assemble les ingrédients sous les yeux des clients, ici on pétrit la pâte à noodle à grand renfort d’huile de coude. Quitte à faire grimper la note ! Comptez entre 13€ et 18€ pour cette nouvelle cuisine de luxe. Embourgeoisement de la street food, ou mutation éthique et healthy de la junk food ? À vous de voir… Après dégustation, bien sûr !`,
           title: `L'apogée de la cuisine de rue ?`,
-          background: `https://cdn.discordapp.com/attachments/697362929946722358/722862534968737862/boucher.png`
-        }
-      ]
+          background: `https://cdn.discordapp.com/attachments/697362929946722358/722862534968737862/boucher.png`,
+        },
+      ],
     };
   },
   beforeRouteUpdate(to, from, next) {
@@ -101,21 +106,21 @@ export default {
     setBackground() {
       return {
         background: `url(${this.content[this.item].background})`,
-        backgroundSize: "cover"
+        backgroundSize: "cover",
       };
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 @import "@/assets/global.scss";
 @import "@/assets/_fonts.scss";
-.test {
+.background-black {
   height: 100vh;
   width: 100vw;
   background: $black;
-  opacity: 70%;
+  opacity: 0.7;
 }
 .fullPage {
   color: #fff;
