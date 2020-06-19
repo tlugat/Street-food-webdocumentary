@@ -1,6 +1,6 @@
 <template>
   <div class="Stat">
-    <div class="background-black"></div>
+    <!-- <div class="background-black"></div> -->
     <div class="Stat__Top">
       <div class="Stat__Top__Map">
         <svg
