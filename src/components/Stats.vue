@@ -1,5 +1,6 @@
 <template>
   <div class="Stat">
+    <div class="background-black"></div>
     <div class="Stat__Top">
       <div class="Stat__Top__Map">
         <svg
@@ -370,20 +371,19 @@
       <div class="Stat__Top__Info">
         <h1>29%</h1>
         <p>
-          <span class="Stat__Yellow">De l’ensemble des travailleurs</span> étaient
-          des
-          <span class="Stat__Yellow">vendeurs de rue</span> Amerique centrale.
+          <span class="Stat__Yellow">De l’ensemble des travailleurs</span>
+          étaient des <span class="Stat__Yellow">vendeurs de rue</span> Amerique
+          centrale.
         </p>
       </div>
       <article class="Stat__Top__Text">
         <p>
           L'importance de la cuisine de rue dans
-          <span
-            class="Stat__Yellow"
-          >l'économie des pays émergents</span> est souvent sous-évaluée car elle est considérée comme faisant partie du secteur informel. La cuisine de rue engendre pourtant des
-          <span
-            class="Stat__Yellow"
-          >revenus importants</span> constitue une source
+          <span class="Stat__Yellow">l'économie des pays émergents</span> est
+          souvent sous-évaluée car elle est considérée comme faisant partie du
+          secteur informel. La cuisine de rue engendre pourtant des
+          <span class="Stat__Yellow">revenus importants</span> constitue une
+          source
           <span class="Stat__Yellow">appréciable d'emploi.</span>
         </p>
       </article>
@@ -392,7 +392,8 @@
       <div class="Stat__Bot__Price">
         <h1>10€</h1>
         <p>
-          <span class="Stat__Yellow">Le prix moyen</span> d’un repas dans une enseigne dite “street food”
+          <span class="Stat__Yellow">Le prix moyen</span> d’un repas dans une
+          enseigne dite “street food”
         </p>
       </div>
 
@@ -489,6 +490,12 @@ export default {};
 <style lang="scss" scoped>
 @import "@/assets/global.scss";
 
+.background-black {
+  height: 100vh;
+  background: $black;
+  opacity: 0.7;
+}
+
 @media (max-width: 768px) {
   .Stat {
     background-color: #231f20;
@@ -562,6 +569,7 @@ export default {};
     &__Bot {
       padding-top: 5rem;
       padding-bottom: 2rem;
+
       &__Men {
         display: none;
       }
@@ -588,6 +596,9 @@ export default {};
           line-height: 16.5px;
           width: 120px;
           text-align: center;
+        }
+        svg {
+          padding-right: 2rem;
         }
       }
       &__People {
@@ -698,9 +709,8 @@ export default {};
       display: flex;
       justify-content: flex-end;
       align-items: center;
-
+      transition: 0.5s;
       &:hover svg {
-        transition: 0.5s;
         opacity: 1;
       }
       &__Price {
