@@ -60,11 +60,11 @@ export default {
 
 .height {
   height: 100vh;
-  background: url("https://cdn.discordapp.com/attachments/697362929946722358/723199021497319444/bg_small.png")
-    no-repeat center fixed;
+  background: url("https://cdn.discordapp.com/attachments/697362929946722358/723226061181026364/fondmobile.png") ;
+
   @include medium {
-    object-fit: cover;
-    background: url("https://cdn.discordapp.com/attachments/697362929946722358/723182371280519239/bg.png")
+
+    background: url("https://cdn.discordapp.com/attachments/697362929946722358/723224837161746432/fond3.png")
       no-repeat fixed center;
   }
 }
