@@ -491,11 +491,11 @@ export default {};
 
 @media (max-width: 768px) {
   .Stat {
-    background-color: #231f20;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: url("https://cdn.discordapp.com/attachments/697362929946722358/723227512359878715/fond4.png");
 
     h1 {
       color: white;
@@ -627,6 +627,8 @@ export default {};
   .Stat {
     height: 100%;
     background-color: #231f20;
+    
+    background: url("https://cdn.discordapp.com/attachments/697362929946722358/723227512359878715/fond4.png");
 
     &__Yellow {
       color: #d2aa1d;
