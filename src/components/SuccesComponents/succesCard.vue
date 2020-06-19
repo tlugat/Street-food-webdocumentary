@@ -111,7 +111,7 @@
           </clipPath>
         </defs>
       </svg>
-      <h3>{{ avantage }}</h3>
+      <h3 class="sucessCard__title">{{ avantage }}</h3>
     </div>
   </div>
 </template>
@@ -120,9 +120,9 @@
 export default {
   props: {
     avantage: String,
-    icon: String
+    icon: String,
     // svgs: String,
-  }
+  },
 };
 </script>
 
@@ -143,14 +143,31 @@ export default {
   padding: 10px;
   align-items: center;
   justify-content: space-around;
-  transition: 0.2s;
-  &:hover {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     background: $black;
-    color: white;
+    transform: translate3d(0, 100%, 0);
+    transition: 0.4s transform ease;
+  }
+  &:hover::before {
+    transform: translate3d(0, 0, 0);
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
   }
 }
 h3 {
   width: 15rem;
   padding-left: 5%;
+  cursor: default;
 }
 </style>

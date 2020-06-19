@@ -8,7 +8,7 @@ import HalfText from "./components/HalfText";
 import JayFai from "./components/Jay-Fai";
 import Stats from "./components/Stats";
 import LandingPage from "./Views/LandingPage";
-
+import Video from "./components/Video";
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -51,6 +51,10 @@ export default new VueRouter({
       name: "jay-fai",
       component: JayFai,
       props: true,
+    },
+    {
+      path: "/chefs-video",
+      component: Video,
     },
   ],
 });
